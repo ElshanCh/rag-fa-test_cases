@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+3. Titolo: Mappatura dei nuovi sottocampi ISO con la tabella TR
+   Descrizione: Salvataggio dei sottocampi 111.66, 111.67 e 047.01 nella tabella TR del Sistema Antifrode.
+   Obiettivo: Assicurarsi che i sottocampi ISO siano correttamente mappati e salvati nella tabella TR.
+   Output atteso: Corretta mappatura e salvataggio dei sottocampi nella tabella TR.
+   Input atteso: Messaggi ISO 1100, 1120/1121 con i sottocampi pertinenti.
+   Keywords: mappatura, sottocampi ISO, tabella TR, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica mappatura sottocampo 111.66 per transazioni Mastercard
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente mappato e salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 sia correttamente mappato per le transazioni Mastercard.
+   Output atteso: Il sottocampo 111.66 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+
+2. Titolo: Verifica mappatura sottocampo 111.66 per transazioni VISA
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente mappato e salvato nella tabella TR per le transazioni VISA con processingCode = 260000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 sia correttamente mappato per le transazioni VISA.
+   Output atteso: Il sottocampo 111.66 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+
+3. Titolo: Verifica mappatura sottocampo 111.67 per transazioni Mastercard
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente mappato e salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 sia correttamente mappato per le transazioni Mastercard.
+   Output atteso: Il sottocampo 111.67 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+
+4. Titolo: Verifica mappatura sottocampo 111.67 per transazioni VISA
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente mappato e salvato nella tabella TR per le transazioni VISA con processingCode = 260000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 sia correttamente mappato per le transazioni VISA.
+   Output atteso: Il sottocampo 111.67 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+
+5. Titolo: Verifica mappatura sottocampo 047.01 per tutti i messaggi
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente mappato e salvato nella tabella TR per tutti i messaggi ISO 1100 e 1120/1121.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia correttamente mappato per tutti i messaggi ISO pertinenti.
+   Output atteso: Il sottocampo 047.01 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con i valori di dominio specificati per il sottocampo 047.01.
+
+6. Titolo: Verifica non sovrascrittura sottocampi in tabella TR
+   Descrizione: Verifica che i sottocampi 111.66, 111.67 e 047.01 non vengano sovrascritti nella tabella TR se già presenti, alla ricezione dei messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Obiettivo: Assicurarsi che i valori esistenti dei sottocampi nella tabella TR non vengano sovrascritti in caso di ricezione di messaggi specifici.
+   Output atteso: I valori esistenti dei sottocampi nella tabella TR rimangono invariati dopo la ricezione dei messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Input atteso: Messaggi ISO 1120 di riallineamento o di Time-out o di Off-line con i sottocampi pertinenti già presenti nella tabella TR.
+
+Questi micro test cases coprono la mappatura e il salvataggio dei sottocampi ISO specificati nella tabella TR del Sistema Antifrode, come richiesto dal Macro Test fornito.

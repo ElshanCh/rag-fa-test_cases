@@ -1,0 +1,45 @@
+Based on the provided Functional Analysis documentation, the following test cases can be summarized:
+
+1. **Gestione dati aggiuntivi su messaggio ISO**
+   - Description: Addition of new subfields 111.66 (Sender Identification Type) and 111.67 (Sender Identification Value) to the ISO message for Visa/Mastercard transactions.
+   - Goal: To verify that the new subfields are correctly added and populated in the ISO message.
+   - Expected output: The ISO message contains the new subfields with correct data types and values as per the rules specified.
+   - Expected input: Transactions with processing codes 280000, 200000 (Mastercard), and 260000, 200000 (Visa).
+
+2. **Controlli formali Autorizzativo**
+   - Description: Addition of a new subfield 047.01 (Reg487 Verification Result) to the ISO message to transport the outcome of formal checks performed by Autorizzativo.
+   - Goal: To ensure that the new subfield correctly reflects the result of the formal checks.
+   - Expected output: The ISO message includes subfield 047.01 with values indicating the result of the checks.
+   - Expected input: ISO messages 1100, 1120, 1121 with various scenarios of formal checks.
+
+3. **Mapping Campi ISO con Tabella TR**
+   - Description: Mapping of new and existing ISO message fields with the Sistema AntiFrode TR table.
+   - Goal: To confirm that the mapping of ISO fields to the TR table is accurate and that new fields are correctly stored.
+   - Expected output: The TR table reflects the correct mapping and storage of ISO message fields.
+   - Expected input: ISO messages 1100, 1120, 1121 with the relevant fields populated.
+
+4. **Integrazione dati Trasferimento Fondi nella GUI Sistema AntiFrode**
+   - Description: Integration of new data fields related to fund transfers into the GUI of Sistema AntiFrode for rule and accumulator parameters.
+   - Goal: To validate that the new data fields are available and functional in the GUI for rule setup and accumulator management.
+   - Expected output: The GUI displays the new fields in the rule parameters and accumulator settings.
+   - Expected input: User navigation through the GUI to set up rules and accumulators.
+
+5. **Dettaglio Transazione Finanziaria**
+   - Description: Display of additional data fields ("Sender Identification Type", "Sender Identification Value", and "Reg487 Verification Result") in the financial transaction detail page.
+   - Goal: To check that the additional data fields are visible and correctly displayed in the transaction detail page.
+   - Expected output: The transaction detail page shows the new data fields with accurate information.
+   - Expected input: Access to the transaction detail page through the GUI.
+
+6. **Risposte Sistema AntiFrode**
+   - Description: Configuration of Sistema AntiFrode to provide specific response codes and reasons for denial related to fund transfer traceability checks.
+   - Goal: To ensure that Sistema AntiFrode responds with the correct codes and reasons when a fund transfer fails traceability checks.
+   - Expected output: Sistema AntiFrode issues response codes "57" or "119" and denial reason "R4 - No dati Reg847" as appropriate.
+   - Expected input: Transactions that fail the traceability checks.
+
+7. **Contesto svolgimento TEST**
+   - Description: Execution of tests for each new piece of information in the specified functional areas and in the following order: GUI Web setup, ON-LINE messages, and GUI Web inquiry.
+   - Goal: To comprehensively test the new functionalities in the specified order and ensure they work as expected.
+   - Expected output: Successful setup and inquiry in the GUI Web and correct processing of ON-LINE messages.
+   - Expected input: Test cases covering all new information and functionalities in the specified areas.
+
+Please note that the expected inputs and outputs are based on the provided documentation and the actual values may vary depending on the specific implementation details.

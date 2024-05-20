@@ -1,0 +1,69 @@
+1. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi UE
+   Descrizione: Verifica che i trasferimenti di fondi all'interno dell'UE contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi intra-UE non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: UE, trasferimento fondi, campi obbligatori, controllo autorizzativo
+
+2. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo inferiore a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo < 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo < 1000 Euro
+
+3. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo maggiore o uguale a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo >= 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo >= 1000 Euro
+
+4. Titolo: Verifica Integrazione Nuovi Sottocampi nel Messaggio ISO
+   Descrizione: Verifica che i nuovi sottocampi 111.66 e 111.67 siano correttamente integrati nel messaggio ISO.
+   Obiettivo: Assicurarsi che i dati del documento di identificazione dell'ordinante siano correttamente trasmessi nel messaggio ISO.
+   Output atteso: Messaggio ISO contenente i nuovi sottocampi valorizzati.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati secondo le regole specificate.
+   Keywords: messaggio ISO, sottocampi, documento identificazione, ordinante
+
+5. Titolo: Verifica Salvataggio Dati nel Sistema AntiFrode
+   Descrizione: Verifica che i dati dei nuovi sottocampi siano correttamente salvati nella tabella delle transazioni del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che i dati relativi all'identificazione dell'ordinante siano correttamente memorizzati nel Sistema AntiFrode.
+   Output atteso: Dati dei sottocampi presenti nella tabella TR del Sistema AntiFrode.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati.
+   Keywords: Sistema AntiFrode, salvataggio dati, tabella TR, sottocampi
+
+6. Titolo: Verifica Risposta Negativa per Mancata Tracciabilità
+   Descrizione: Verifica che il Sistema AntiFrode fornisca una risposta negativa in caso di mancata tracciabilità dei dati del trasferimento fondi.
+   Obiettivo: Assicurarsi che le transazioni non conformi alle regole di tracciabilità siano correttamente bloccate.
+   Output atteso: Codice di risposta "57" o "119" in caso di mancata tracciabilità.
+   Input atteso: Trasferimento fondi con dati non conformi alle regole di tracciabilità.
+   Keywords: Sistema AntiFrode, risposta negativa, mancata tracciabilità, codici risposta
+
+7. Titolo: Verifica Configurazione Nuovo Motivo di Rifiuto R4
+   Descrizione: Verifica che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia correttamente configurato nel Sistema AntiFrode.
+   Obiettivo: Distinguere le negate per mancata tracciabilità del Trasferimento Fondi.
+   Output atteso: Nuovo motivo di rifiuto "R4" configurato e utilizzabile nel sistema.
+   Input atteso: Configurazione del nuovo motivo di rifiuto nel Sistema AntiFrode.
+   Keywords: Sistema AntiFrode, motivo di rifiuto, R4, configurazione
+
+8. Titolo: Verifica Funzionalità GUI Web Sistema AntiFrode
+   Descrizione: Verifica che la GUI Web del Sistema AntiFrode gestisca correttamente i nuovi parametri e codici risposta.
+   Obiettivo: Assicurarsi che l'interfaccia utente del Sistema AntiFrode rifletta le nuove implementazioni.
+   Output atteso: GUI Web che mostra e permette la gestione dei nuovi parametri e codici risposta.
+   Input atteso: Interazione con la GUI Web per la configurazione delle regole e la visualizzazione dei dettagli delle transazioni.
+   Keywords: GUI Web, Sistema AntiFrode, nuovi parametri, codici risposta
+
+9. Titolo: Verifica Messaggi Autorizzativi e Codici Risposta
+   Descrizione: Verifica che i messaggi autorizzativi 1100, 1120, 1121 gestiscano correttamente i nuovi dati e forniscano i relativi codici risposta.
+   Obiettivo: Assicurarsi che i messaggi autorizzativi riflettano le nuove implementazioni e forniscano risposte appropriate.
+   Output atteso: Messaggi autorizzativi che includono i nuovi dati e generano i codici risposta corretti.
+   Input atteso: Messaggi autorizzativi inviati con i nuovi dati implementati.
+   Keywords: messaggi autorizzativi, codici risposta, 1100, 1120, 1121
+
+10. Titolo: Verifica Inquiry Autorizzativo e Codici Risposta
+    Descrizione: Verifica che l'inquiry autorizzativo nel Sistema AntiFrode mostri correttamente i dettagli delle transazioni e i codici risposta associati.
+    Obiettivo: Assicurarsi che l'inquiry autorizzativo fornisca informazioni dettagliate e accurate sulle transazioni.
+    Output atteso: Inquiry autorizzativo che mostra i dettagli delle transazioni e i codici risposta corretti.
+    Input atteso: Richiesta di dettaglio transazione attraverso l'inquiry autorizzativo.
+    Keywords: inquiry autorizzativo, Sistema AntiFrode, dettagli transazione, codici risposta

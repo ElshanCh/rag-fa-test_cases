@@ -1,0 +1,374 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica Reg487 Verification Result
+   Descrizione: Controllo dell'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia valorizzato correttamente.
+   Output atteso: 0 = Tutti i controlli Reg487 superati, 1-6 = Specifico errore di validazione.
+   Input atteso: Valori da 0 a 6.
+   Keywords: Reg487 Verification Result, controllo formale, Autorizzativo, validazione.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Reg487 Verification Result - Codice 0
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 0 quando tutti i controlli Reg487 sono superati.
+   Obiettivo: Assicurarsi che il valore 0 sia assegnato correttamente quando non ci sono errori di validazione.
+   Input atteso: Nessun errore di validazione presente.
+   Output atteso: Reg487 Verification Result = 0
+   Procedura: 
+   - Inviare una transazione con tutti i campi obbligatori correttamente valorizzati.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 0.
+
+2. Titolo: Verifica Reg487 Verification Result - Codice 1
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 1 in caso di Identificativo operazione errato.
+   Obiettivo: Assicurarsi che il valore 1 sia assegnato correttamente quando l'Identificativo operazione è errato.
+   Input atteso: Identificativo operazione errato.
+   Output atteso: Reg487 Verification Result = 1
+   Procedura: 
+   - Inviare una transazione con Identificativo operazione errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 1.
+
+3. Titolo: Verifica Reg487 Verification Result - Codice 2
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 2 in caso di Cognome, nome ordinante errato.
+   Obiettivo: Assicurarsi che il valore 2 sia assegnato correttamente quando il Cognome o il nome dell'ordinante sono errati.
+   Input atteso: Cognome, nome ordinante errato.
+   Output atteso: Reg487 Verification Result = 2
+   Procedura: 
+   - Inviare una transazione con Cognome o nome dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 2.
+
+4. Titolo: Verifica Reg487 Verification Result - Codice 3
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 3 in caso di Cognome, nome beneficiario errato.
+   Obiettivo: Assicurarsi che il valore 3 sia assegnato correttamente quando il Cognome o il nome del beneficiario sono errati.
+   Input atteso: Cognome, nome beneficiario errato.
+   Output atteso: Reg487 Verification Result = 3
+   Procedura: 
+   - Inviare una transazione con Cognome o nome del beneficiario errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 3.
+
+5. Titolo: Verifica Reg487 Verification Result - Codice 4
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 4 in caso di Indirizzo ordinante errato.
+   Obiettivo: Assicurarsi che il valore 4 sia assegnato correttamente quando l'Indirizzo dell'ordinante è errato.
+   Input atteso: Indirizzo ordinante errato.
+   Output atteso: Reg487 Verification Result = 4
+   Procedura: 
+   - Inviare una transazione con Indirizzo dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 4.
+
+6. Titolo: Verifica Reg487 Verification Result - Codice 5
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 5 in caso di Documento ordinante errato.
+   Obiettivo: Assicurarsi che il valore 5 sia assegnato correttamente quando il Documento dell'ordinante è errato.
+   Input atteso: Documento ordinante errato.
+   Output atteso: Reg487 Verification Result = 5
+   Procedura: 
+   - Inviare una transazione con Documento dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 5.
+
+7. Titolo: Verifica Reg487 Verification Result - Codice 6
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 6 in caso di Account ordinante errato.
+   Obiettivo: Assicurarsi che il valore 6 sia assegnato correttamente quando il Numero di identificazione account dell'ordinante è errato.
+   Input atteso: Account ordinante errato.
+   Output atteso: Reg487 Verification Result = 6
+   Procedura: 
+   - Inviare una transazione con Numero di identificazione account dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 6.
+
+Please note that each test case should be executed with the appropriate transaction type and processing code as mentioned in the context to ensure the correct functioning of the "Reg487 Verification Result" field.
+##################################################
+MACRO TEST
+2. Titolo: Controllo Trasferimento Fondi infra UE
+   Descrizione: Verifica della presenza del campo "Cod. unico di identificazione operazione" per trasferimenti infra UE.
+   Obiettivo: Verificare l'obbligatorietà del campo per trasferimenti infra UE.
+   Output atteso: Campo obbligatorio valorizzato.
+   Input atteso: Cod. unico di identificazione operazione.
+   Keywords: Trasferimento fondi, infra UE, codice identificativo, obbligatorio.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Cod. unico di identificazione operazione per Mastercard Payment Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione Mastercard Payment Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni Mastercard Payment Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione Mastercard Payment Transaction (processingCode = 280000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+2. Titolo: Verifica Cod. unico di identificazione operazione per Mastercard Funding Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione Mastercard Funding Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni Mastercard Funding Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione Mastercard Funding Transaction (processingCode = 200000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+3. Titolo: Verifica Cod. unico di identificazione operazione per VISA Original Credit Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione VISA Original Credit Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni VISA Original Credit Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione VISA Original Credit Transaction (processingCode = 260000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+4. Titolo: Verifica Cod. unico di identificazione operazione per VISA Account Funding Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione VISA Account Funding Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni VISA Account Funding Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione VISA Account Funding Transaction (processingCode = 200000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+Each of these micro test cases focuses on a specific transaction type within the Mastercard and VISA networks, ensuring that the "Cod. unico di identificazione operazione" is mandatory and correctly populated for intra-EU fund transfers as per the new regulatory requirements.
+##################################################
+MACRO TEST
+3. Titolo: Controllo Trasferimento Fondi extra UE < 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo < 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario.
+   Keywords: Trasferimento fondi, extra UE, importo minore di 1000,00 euro, campi obbligatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+Micro Test Case 1:
+- Titolo: Verifica Cod. unico di identificazione operazione per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Codice unico di identificazione operazione per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Codice unico di identificazione operazione sia presente e corretto per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Codice unico di identificazione operazione fornito.
+- Output atteso: Conferma della presenza e correttezza del Codice unico di identificazione operazione.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Codice unico di identificazione operazione sia presente nel messaggio ISO.
+  3. Confermare che il Codice corrisponda a quello atteso e sia corretto.
+
+Micro Test Case 2:
+- Titolo: Verifica Cognome e Nome ordinante per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Cognome e Nome dell'ordinante per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Cognome e Nome dell'ordinante siano presenti e corretti per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Cognome e Nome dell'ordinante forniti.
+- Output atteso: Conferma della presenza e correttezza del Cognome e Nome dell'ordinante.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Cognome e Nome dell'ordinante siano presenti nel messaggio ISO.
+  3. Confermare che i dati corrispondano a quelli attesi e siano corretti.
+
+Micro Test Case 3:
+- Titolo: Verifica Cognome e Nome beneficiario per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Cognome e Nome del beneficiario per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Cognome e Nome del beneficiario siano presenti e corretti per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Cognome e Nome del beneficiario forniti.
+- Output atteso: Conferma della presenza e correttezza del Cognome e Nome del beneficiario.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Cognome e Nome del beneficiario siano presenti nel messaggio ISO.
+  3. Confermare che i dati corrispondano a quelli attesi e siano corretti.
+
+Micro Test Case 4:
+- Titolo: Verifica risposta Sistema Antifrode per dati mancanti in trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della risposta del Sistema Antifrode in caso di dati mancanti per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Verificare che il Sistema Antifrode risponda correttamente in caso di mancanza di uno o più campi obbligatori.
+- Input atteso: Trasferimento fondi con uno o più campi obbligatori mancanti.
+- Output atteso: Risposta di negazione dal Sistema Antifrode con codice "57" o "119" e motivo di rifiuto "R4 - No dati Reg847".
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro omettendo uno dei campi obbligatori.
+  2. Inviare la richiesta al Sistema Antifrode.
+  3. Verificare che la risposta del Sistema Antifrode sia una negazione con i codici e motivi di rifiuto attesi.
+
+Questi micro test cases coprono le verifiche dei campi obbligatori per trasferimenti extra UE con importo inferiore a 1000,00 euro, come richiesto dal Macro Test fornito.
+##################################################
+MACRO TEST
+4. Titolo: Controllo Trasferimento Fondi extra UE >= 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo uguale o superiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo >= 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario, Indirizzo ordinante, Documento di identità ordinante, Num. di identificazione account ordinante.
+   Keywords: Trasferimento fondi, extra UE, importo maggiore o uguale a 1000,00 euro, campi obbligatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza del Codice Unico di Identificazione Operazione per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che il Codice Unico di Identificazione Operazione sia presente e corretto per trasferimenti extra UE >= 1000,00 euro.
+   Input atteso: Codice Unico di Identificazione Operazione valido.
+   Output atteso: Conferma della presenza e validità del Codice Unico di Identificazione Operazione.
+   Procedura: 
+   - Inserire un Codice Unico di Identificazione Operazione valido per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti il codice e proceda con il trasferimento.
+   - Ripetere il test inserendo un codice non valido e verificare che il sistema blocchi il trasferimento.
+
+2. Titolo: Verifica Dati Ordinante per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza dei dati dell'ordinante per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i dati dell'ordinante (Cognome, Nome, Indirizzo, Documento di identità, Num. di identificazione account) siano presenti e corretti.
+   Input atteso: Dati ordinante completi e validi.
+   Output atteso: Conferma della presenza e validità dei dati dell'ordinante.
+   Procedura: 
+   - Inserire dati completi e validi dell'ordinante per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti i dati e proceda con il trasferimento.
+   - Ripetere il test inserendo dati incompleti o non validi e verificare che il sistema blocchi il trasferimento.
+
+3. Titolo: Verifica Dati Beneficiario per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza dei dati del beneficiario per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i dati del beneficiario (Cognome, Nome) siano presenti e corretti.
+   Input atteso: Dati beneficiario completi e validi.
+   Output atteso: Conferma della presenza e validità dei dati del beneficiario.
+   Procedura: 
+   - Inserire dati completi e validi del beneficiario per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti i dati e proceda con il trasferimento.
+   - Ripetere il test inserendo dati incompleti o non validi e verificare che il sistema blocchi il trasferimento.
+
+4. Titolo: Verifica Integrazione Campi ISO con Sistema Antifrode per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo dell'integrazione dei campi ISO (111.66, 111.67, 047.01) con il Sistema Antifrode per trasferimenti extra UE >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i campi ISO siano correttamente integrati e salvati nel Sistema Antifrode.
+   Input atteso: Messaggi ISO con i campi 111.66, 111.67, 047.01 correttamente valorizzati.
+   Output atteso: Conferma che i campi ISO sono stati ricevuti e salvati correttamente nel Sistema Antifrode.
+   Procedura: 
+   - Inviare un messaggio ISO con i campi 111.66, 111.67, 047.01 valorizzati per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il Sistema Antifrode riceva e salvi correttamente i campi.
+   - Ripetere il test con campi ISO non valorizzati o errati e verificare che il Sistema Antifrode segnali un errore.
+
+5. Titolo: Verifica Risposta Sistema Antifrode per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della risposta del Sistema Antifrode in caso di dati mancanti o errati per trasferimenti extra UE >= 1000,00 euro.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda correttamente in caso di mancanza o errore nei dati obbligatori.
+   Input atteso: Trasferimento con dati obbligatori mancanti o errati.
+   Output atteso: Risposta di negazione dal Sistema Antifrode con codice "57" o "119" e motivo di rifiuto "R4 - No dati Reg847".
+   Procedura: 
+   - Effettuare un trasferimento extra UE >= 1000,00 euro con dati obbligatori mancanti o errati.
+   - Verificare che il Sistema Antifrode risponda con una negazione e i codici di risposta appropriati.
+   - Ripetere il test con tutti i dati obbligatori presenti e corretti e verificare che il trasferimento venga accettato.
+##################################################
+MACRO TEST
+5. Titolo: Integrazione dati Trasferimento Fondi nella GUI Sistema Antifrode
+   Descrizione: Verifica che i nuovi campi siano integrati e disponibili per la creazione di regole e accumulatori nel Sistema Antifrode.
+   Obiettivo: Assicurarsi che i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" siano presenti e utilizzabili nella GUI.
+   Output atteso: Campi disponibili e funzionanti nella GUI.
+   Input atteso: Dati del trasferimento fondi.
+   Keywords: GUI, Sistema Antifrode, integrazione dati, regole, accumulatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica campo "Sender Identification Type" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Sender Identification Type" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Type" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Sender Identification Type" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Sender Identification Type" sia presente nella combo "Transazione" dei Parametri Regola.
+
+2. Titolo: Verifica campo "Sender Identification Value" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Sender Identification Value" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Value" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Sender Identification Value" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Sender Identification Value" sia presente nella combo "Transazione" dei Parametri Regola.
+
+3. Titolo: Verifica campo "Reg487 Verification Result" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Reg487 Verification Result" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Reg487 Verification Result" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Reg487 Verification Result" sia presente nella combo "Transazione" dei Parametri Regola.
+
+4. Titolo: Verifica integrazione campi in Dettaglio Transazione Finanziaria
+   Descrizione: Verifica che i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" siano visualizzati correttamente nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i nuovi campi siano integrati e mostrati correttamente nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: N/A
+   Output atteso: Campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" visualizzati nella sezione "Mastercard Money Send".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menu Autorizzazioni e eseguire una ricerca per PAN.
+   - Selezionare una transazione dalla lista e visualizzare il dettaglio.
+   - Verificare la presenza e corretta visualizzazione dei campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" nella sezione "Mastercard Money Send".
+
+5. Titolo: Verifica creazione regole con nuovi campi
+   Descrizione: Testare la possibilità di creare nuove regole utilizzando i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Obiettivo: Assicurarsi che sia possibile creare regole che includano i nuovi campi integrati.
+   Input atteso: N/A
+   Output atteso: Creazione di una nuova regola che include i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menù Regole e selezionare Gestione Regole.
+   - Creare una nuova regola e selezionare i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" dalla combo "Transazione" dei Parametri Regola.
+   - Salvare la regola e verificare che sia stata creata correttamente.
+
+6. Titolo: Verifica creazione accumulatori evoluti con nuovi campi
+   Descrizione: Testare la possibilità di creare nuovi accumulatori evoluti utilizzando i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Obiettivo: Assicurarsi che sia possibile creare accumulatori evoluti che includano i nuovi campi integrati.
+   Input atteso: N/A
+   Output atteso: Creazione di un nuovo accumulatore evoluto che include i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menù Regole e selezionare Accumulatori Evoluti.
+   - Creare un nuovo accumulatore evoluto e selezionare i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" dalla combo "Transazione" dei Parametri Regola.
+   - Salvare l'accumulatore evoluto e verificare che sia stato creato correttamente.
+##################################################
+MACRO TEST
+6. Titolo: Risposta Sistema Antifrode per mancata tracciabilità
+   Descrizione: Configurazione e verifica delle risposte del Sistema Antifrode in caso di mancata tracciabilità del Trasferimento Fondi.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda correttamente in caso di fallimento dei controlli di tracciabilità.
+   Output atteso: Codici Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale, con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Fallimento dei controlli nelle Regole finanziarie.
+   Keywords: Sistema Antifrode, tracciabilità, risposta negativa, codici risposta, motivo rifiuto.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Risposta per Trasferimento Fondi intra-UE senza Cod. Unico
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi intra-UE senza Codice Unico di Identificazione Operazione.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando manca il Codice Unico di Identificazione Operazione per trasferimenti intra-UE.
+   Input atteso: Trasferimento fondi intra-UE senza Cod. unico di identificazione operazione.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi intra-UE senza valorizzare il campo Cod. unico di identificazione operazione.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+2. Titolo: Verifica Codice Risposta per Trasferimento Fondi extra-UE < 1000 senza Dati Ordinante
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi extra-UE con importo inferiore a 1000 euro senza dati completi dell'ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando mancano i dati dell'ordinante per trasferimenti extra-UE con importo inferiore a 1000 euro.
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000 euro senza dati completi dell'ordinante.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo inferiore a 1000 euro senza valorizzare i campi Cognome e Nome dell'ordinante.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+3. Titolo: Verifica Codice Risposta per Trasferimento Fondi extra-UE >= 1000 senza Dati Completi
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi extra-UE con importo pari o superiore a 1000 euro senza tutti i dati obbligatori.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando mancano uno o più dati obbligatori per trasferimenti extra-UE con importo pari o superiore a 1000 euro.
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000 euro senza uno o più dati obbligatori.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo pari o superiore a 1000 euro senza valorizzare uno o più dei seguenti campi: Cod. unico di identificazione operazione, Cognome e Nome dell'ordinante, Indirizzo dell'ordinante, Documento di identità dell'ordinante, Num. di identificazione account dell'ordinante.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+4. Titolo: Verifica Motivo Rifiuto "R4 - No dati Reg847" per Dati Mancanti
+   Descrizione: Verifica che il Sistema Antifrode utilizzi il motivo di rifiuto "R4 - No dati Reg847" in caso di dati mancanti che impediscono la tracciabilità del trasferimento fondi.
+   Obiettivo: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia utilizzato correttamente dal Sistema Antifrode in caso di mancata tracciabilità.
+   Input atteso: Qualsiasi transazione di trasferimento fondi che non supera i controlli di tracciabilità.
+   Output atteso: Motivo Rifiuto "R4 - No dati Reg847".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi che non supera i controlli di tracciabilità.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il motivo di rifiuto "R4 - No dati Reg847" sia utilizzato nella risposta del Sistema Antifrode.
+
+Questi micro test cases coprono diversi scenari di mancata tracciabilità e verificano che il Sistema Antifrode risponda correttamente in base alle specifiche fornite.

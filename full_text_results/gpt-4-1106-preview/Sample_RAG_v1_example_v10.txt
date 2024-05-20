@@ -1,0 +1,57 @@
+- Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Infra UE
+  Descrizione: Implementazione controlli per la presenza dei campi obbligatori nei trasferimenti di fondi all'interno dell'UE.
+  Obiettivo: Assicurarsi che tutti i trasferimenti di fondi infra UE contengano i campi obbligatori.
+  Output atteso: Blocco delle operazioni che non contengono i dati obbligatori.
+  Input atteso: Trasferimenti di fondi infra UE con tutti i campi obbligatori valorizzati.
+  Keywords: Trasferimenti fondi, UE, campi obbligatori, blocco operazioni
+
+- Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE < 1.000,00
+  Descrizione: Implementazione controlli per la presenza dei campi obbligatori nei trasferimenti di fondi extra UE con importo inferiore a 1.000,00.
+  Obiettivo: Assicurarsi che tutti i trasferimenti di fondi extra UE con importo inferiore a 1.000,00 contengano i campi obbligatori.
+  Output atteso: Blocco delle operazioni che non contengono i dati obbligatori.
+  Input atteso: Trasferimenti di fondi extra UE con importo inferiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+  Keywords: Trasferimenti fondi, extra UE, importo < 1.000,00, campi obbligatori, blocco operazioni
+
+- Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE >= 1.000,00
+  Descrizione: Implementazione controlli per la presenza dei campi obbligatori nei trasferimenti di fondi extra UE con importo pari o superiore a 1.000,00.
+  Obiettivo: Assicurarsi che tutti i trasferimenti di fondi extra UE con importo pari o superiore a 1.000,00 contengano i campi obbligatori.
+  Output atteso: Blocco delle operazioni che non contengono i dati obbligatori.
+  Input atteso: Trasferimenti di fondi extra UE con importo pari o superiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+  Keywords: Trasferimenti fondi, extra UE, importo >= 1.000,00, campi obbligatori, blocco operazioni
+
+- Titolo: Verifica Integrazione Nuovi Sottocampi nel Messaggio ISO
+  Descrizione: Aggiunta di due nuovi sottocampi (111.66 e 111.67) nel messaggio ISO per il documento di identificazione dell'ordinante.
+  Obiettivo: Verificare la corretta integrazione e valorizzazione dei nuovi sottocampi nel messaggio ISO.
+  Output atteso: Corretta valorizzazione dei sottocampi 111.66 e 111.67 nel messaggio ISO.
+  Input atteso: Messaggi ISO 1100, 1120, 1121 con i nuovi sottocampi valorizzati.
+  Keywords: Messaggio ISO, sottocampi, documento identificazione, ordinante
+
+- Titolo: Verifica Salvataggio Dati Sottocampi nella Tabella TR
+  Descrizione: Salvataggio dei nuovi sottocampi del messaggio ISO nella tabella delle transazioni Sistema AntiFrode.
+  Obiettivo: Assicurarsi che i nuovi sottocampi siano correttamente salvati nella tabella TR.
+  Output atteso: Dati dei sottocampi presenti nella tabella TR.
+  Input atteso: Messaggi ISO con i nuovi sottocampi valorizzati.
+  Keywords: Salvataggio dati, sottocampi, tabella TR, Sistema AntiFrode
+
+- Titolo: Verifica Configurazione Nuovi Parametri nelle Regole Sistema AntiFrode
+  Descrizione: Configurazione dei nuovi parametri relativi ai dati dell'Ordinante e del Beneficiario nelle regole del Sistema AntiFrode.
+  Obiettivo: Verificare che i nuovi parametri siano configurabili e funzionanti nelle regole del Sistema AntiFrode.
+  Output atteso: Configurazione e funzionamento corretto dei nuovi parametri nelle regole.
+  Input atteso: Dati dell'Ordinante e del Beneficiario per la configurazione delle regole.
+  Keywords: Configurazione, parametri, regole, Sistema AntiFrode
+
+- Titolo: Verifica Risposte di Negazione per Mancata Tracciabilità
+  Descrizione: Configurazione delle risposte di negazione per mancata tracciabilità del Trasferimento Fondi nel Sistema AntiFrode.
+  Obiettivo: Assicurarsi che le risposte di negazione siano configurate correttamente per i casi di mancata tracciabilità.
+  Output atteso: Risposte di negazione corrette per i casi di mancata tracciabilità.
+  Input atteso: Transazioni non conformi alle regole di tracciabilità.
+  Keywords: Risposte di negazione, mancata tracciabilità, Sistema AntiFrode
+
+- Titolo: Verifica Nuovo Motivo di Rifiuto "R4 - No dati Reg847"
+  Descrizione: Implementazione e configurazione del nuovo motivo di rifiuto "R4 - No dati Reg847" nel Sistema AntiFrode.
+  Obiettivo: Verificare che il nuovo motivo di rifiuto sia configurato e funzionante nel sistema.
+  Output atteso: Corretta gestione delle negate con motivo "R4 - No dati Reg847".
+  Input atteso: Transazioni negate per mancata tracciabilità.
+  Keywords: Motivo di rifiuto, R4, No dati Reg847, Sistema AntiFrode
+
+Questi sono alcuni esempi di casi di micro test che possono essere creati sulla base delle modifiche e degli aggiornamenti implementati nel software o servizio descritto nella documentazione di Analisi Funzionale fornita.

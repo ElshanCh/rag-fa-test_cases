@@ -1,0 +1,29 @@
+Descrizione: Aggiunta di dati aggiuntivi del Documento Ordinante (Sender) e controlli formali Autorizzativo nel messaggio ISO per il Sistema AntiFrode.
+Obiettivo: Verificare che i nuovi sottocampi (111.66 e 111.67) siano correttamente valorizzati e che il nuovo sottocampo (047.01) trasporti l'esito dei controlli formali.
+Output atteso: I sottocampi devono essere presenti e correttamente valorizzati nei messaggi ISO 1100, 1120, 1121 e salvati nella tabella TR del Sistema AntiFrode.
+Input atteso: Transazioni Visa/Mastercard con i valori di ProcessingCode specificati (280000, 200000, 260000).
+
+Descrizione: Mappatura dei nuovi campi ISO con la tabella TR del Sistema AntiFrode.
+Obiettivo: Assicurarsi che i nuovi campi ISO siano correttamente mappati con la tabella TR e che i dati siano salvati e gestiti correttamente.
+Output atteso: Corrispondenza tra i campi ISO e i campi TR come specificato nella documentazione.
+Input atteso: Messaggi ISO 1100, 1120, 1121 contenenti i nuovi campi.
+
+Descrizione: Integrazione dei dati di Trasferimento Fondi nella GUI del Sistema AntiFrode e aggiornamento delle regole e accumulatori.
+Obiettivo: Verificare che i nuovi dati siano disponibili e gestibili nelle regole e negli accumulatori e che siano visualizzati correttamente nella GUI.
+Output atteso: Nuovi campi disponibili nella GUI per la creazione di regole e accumulatori e visualizzati nel dettaglio della transazione finanziaria.
+Input atteso: Dati di Trasferimento Fondi inseriti attraverso la GUI del Sistema AntiFrode.
+
+Descrizione: Configurazione delle risposte di negazione del Sistema AntiFrode per mancata tracciabilità del Trasferimento Fondi.
+Obiettivo: Assicurarsi che il sistema risponda con i codici di negazione corretti in caso di fallimento dei controlli di tracciabilità.
+Output atteso: Risposte corrette dal sistema AntiFrode come "57" o "119" in caso di negazione.
+Input atteso: Transazioni che non superano i controlli di tracciabilità.
+
+Descrizione: Configurazione e test del nuovo motivo di rifiuto "R4 - No dati Reg847" per le negate relative alla tracciabilità del Trasferimento Fondi.
+Obiettivo: Verificare che il nuovo motivo di rifiuto sia configurato correttamente e che venga utilizzato in modo appropriato.
+Output atteso: Il motivo di rifiuto "R4" viene utilizzato correttamente nelle transazioni negate per mancata tracciabilità.
+Input atteso: Transazioni negate per mancata tracciabilità.
+
+Descrizione: Test complessivi sui nuovi aggiornamenti implementati nel Sistema AntiFrode.
+Obiettivo: Eseguire test end-to-end per verificare il corretto funzionamento delle nuove funzionalità in diversi ambiti funzionali.
+Output atteso: Tutte le nuove funzionalità funzionano come previsto e i dati sono gestiti correttamente in tutti i componenti del sistema.
+Input atteso: Diverse tipologie di transazioni che attraversano i vari ambiti funzionali (GUI Web, messaggi autorizzativi, inquiry autorizzativo).

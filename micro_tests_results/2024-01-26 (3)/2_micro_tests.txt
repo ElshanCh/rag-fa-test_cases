@@ -1,0 +1,57 @@
+##################################################
+MACRO TEST
+3. Titolo: Controllo Trasferimento Fondi extra UE < 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo < 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario.
+   Keywords: Trasferimento fondi, extra UE, importo minore di 1000,00 euro, campi obbligatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+Micro Test Case 1:
+- Titolo: Verifica Cod. unico di identificazione operazione per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Codice unico di identificazione operazione per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Codice unico di identificazione operazione sia presente e corretto per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Codice unico di identificazione operazione fornito.
+- Output atteso: Conferma della presenza e correttezza del Codice unico di identificazione operazione.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Codice unico di identificazione operazione sia presente nel messaggio ISO.
+  3. Confermare che il Codice corrisponda a quello atteso e sia corretto.
+
+Micro Test Case 2:
+- Titolo: Verifica Cognome e Nome ordinante per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Cognome e Nome dell'ordinante per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Cognome e Nome dell'ordinante siano presenti e corretti per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Cognome e Nome dell'ordinante forniti.
+- Output atteso: Conferma della presenza e correttezza del Cognome e Nome dell'ordinante.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Cognome e Nome dell'ordinante siano presenti nel messaggio ISO.
+  3. Confermare che i dati corrispondano a quelli attesi e siano corretti.
+
+Micro Test Case 3:
+- Titolo: Verifica Cognome e Nome beneficiario per trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della presenza e correttezza del Cognome e Nome del beneficiario per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Assicurarsi che il Cognome e Nome del beneficiario siano presenti e corretti per trasferimenti extra UE < 1000,00 euro.
+- Input atteso: Cognome e Nome del beneficiario forniti.
+- Output atteso: Conferma della presenza e correttezza del Cognome e Nome del beneficiario.
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro.
+  2. Verificare che il Cognome e Nome del beneficiario siano presenti nel messaggio ISO.
+  3. Confermare che i dati corrispondano a quelli attesi e siano corretti.
+
+Micro Test Case 4:
+- Titolo: Verifica risposta Sistema Antifrode per dati mancanti in trasferimenti extra UE < 1000,00 euro
+- Descrizione: Controllo della risposta del Sistema Antifrode in caso di dati mancanti per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+- Obiettivo: Verificare che il Sistema Antifrode risponda correttamente in caso di mancanza di uno o più campi obbligatori.
+- Input atteso: Trasferimento fondi con uno o più campi obbligatori mancanti.
+- Output atteso: Risposta di negazione dal Sistema Antifrode con codice "57" o "119" e motivo di rifiuto "R4 - No dati Reg847".
+- Procedura: 
+  1. Inserire un trasferimento fondi extra UE con importo < 1000,00 euro omettendo uno dei campi obbligatori.
+  2. Inviare la richiesta al Sistema Antifrode.
+  3. Verificare che la risposta del Sistema Antifrode sia una negazione con i codici e motivi di rifiuto attesi.
+
+Questi micro test cases coprono le verifiche dei campi obbligatori per trasferimenti extra UE con importo inferiore a 1000,00 euro, come richiesto dal Macro Test fornito.

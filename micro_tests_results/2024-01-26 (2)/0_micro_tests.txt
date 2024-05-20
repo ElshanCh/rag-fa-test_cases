@@ -1,0 +1,53 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica dell'aggiunta dei sottocampi 111.66 e 111.67
+   Descrizione: Aggiunta di due sottocampi al campo ISO 111 per identificare il tipo e il valore del documento dell'ordinante.
+   Obiettivo: Assicurarsi che i sottocampi 111.66 e 111.67 siano correttamente valorizzati e inviati nei messaggi ISO.
+   Output atteso: I sottocampi 111.66 e 111.67 devono essere presenti e correttamente valorizzati nei messaggi ISO pertinenti.
+   Input atteso: Transazioni Visa/Mastercard con i processingCode specificati.
+   Keywords: sottocampi, ISO 111, documento ordinante, valorizzazione, messaggi ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica valorizzazione sottocampo 111.66 per Mastercard Payment Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia valorizzato correttamente per una transazione Mastercard con processingCode 280000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 (Sender Identification Type) sia presente e correttamente valorizzato per le Payment Transaction Mastercard.
+   Input atteso: Transazione Mastercard con processingCode 280000.
+   Output atteso: Sottocampo 111.66 valorizzato secondo la regola specificata per Mastercard.
+   Procedura: 
+   - Creare una transazione Mastercard con processingCode 280000.
+   - Verificare che il sottocampo 111.66 sia presente nel messaggio ISO.
+   - Controllare che il valore del sottocampo 111.66 corrisponda a quello atteso (SE 02 SF 12 Sender Data – Identification type).
+
+2. Titolo: Verifica valorizzazione sottocampo 111.67 per Mastercard Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia valorizzato correttamente per una transazione Mastercard con processingCode 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 (Sender Identification Value) sia presente e correttamente valorizzato per le Funding Transaction Mastercard.
+   Input atteso: Transazione Mastercard con processingCode 200000.
+   Output atteso: Sottocampo 111.67 valorizzato secondo la regola specificata per Mastercard.
+   Procedura: 
+   - Creare una transazione Mastercard con processingCode 200000.
+   - Verificare che il sottocampo 111.67 sia presente nel messaggio ISO.
+   - Controllare che il valore del sottocampo 111.67 corrisponda a quello atteso (SE 02 SF 13 Sender Data – Identification number).
+
+3. Titolo: Verifica valorizzazione sottocampo 111.66 per VISA Original Credit Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia valorizzato correttamente per una transazione VISA con processingCode 260000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 (Sender Identification Type) sia presente e correttamente valorizzato per le Original Credit Transaction VISA.
+   Input atteso: Transazione VISA con processingCode 260000.
+   Output atteso: Sottocampo 111.66 valorizzato secondo la regola specificata per VISA.
+   Procedura: 
+   - Creare una transazione VISA con processingCode 260000.
+   - Verificare che il sottocampo 111.66 sia presente nel messaggio ISO.
+   - Controllare che il valore del sottocampo 111.66 corrisponda a quello atteso (Field 56 DataSetID 03 Tag 9F20 Sender identification type code).
+
+4. Titolo: Verifica valorizzazione sottocampo 111.67 per VISA Account Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia valorizzato correttamente per una transazione VISA con processingCode 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 (Sender Identification Value) sia presente e correttamente valorizzato per le Account Funding Transaction VISA.
+   Input atteso: Transazione VISA con processingCode 200000.
+   Output atteso: Sottocampo 111.67 valorizzato secondo la regola specificata per VISA.
+   Procedura: 
+   - Creare una transazione VISA con processingCode 200000.
+   - Verificare che il sottocampo 111.67 sia presente nel messaggio ISO.
+   - Controllare che il valore del sottocampo 111.67 corrisponda a quello atteso (Field 56 DataSetID 03 Tag 9F22 Sender identification value).
+
+Questi micro test cases coprono la verifica della corretta valorizzazione dei sottocampi 111.66 e 111.67 per le transazioni specificate nei circuiti Mastercard e VISA, in linea con il Macro Test fornito.

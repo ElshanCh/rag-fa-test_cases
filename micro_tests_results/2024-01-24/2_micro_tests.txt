@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+3. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo maggiore o uguale a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo >= 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo >= 1000 Euro
+##################################################
+
+Based on the provided Macro Test and the context from the Functional analysis documentation, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il campo "Cod. unico di identificazione operazione" sia presente e correttamente valorizzato.
+   Output atteso: Codice unico di identificazione operazione presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+2. Titolo: Verifica Cognome e Nome dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il cognome e il nome dell'ordinante.
+   Obiettivo: Assicurarsi che i campi "Cognome ordinante" e "Nome ordinante" siano presenti e correttamente valorizzati.
+   Output atteso: Cognome e nome dell'ordinante presenti nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+3. Titolo: Verifica Cognome e Nome del Beneficiario per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il cognome e il nome del beneficiario.
+   Obiettivo: Assicurarsi che i campi "Cognome beneficiario" e "Nome beneficiario" siano presenti e correttamente valorizzati.
+   Output atteso: Cognome e nome del beneficiario presenti nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+4. Titolo: Verifica Indirizzo dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga l'indirizzo dell'ordinante.
+   Obiettivo: Assicurarsi che il campo "Indirizzo ordinante" sia presente e correttamente valorizzato.
+   Output atteso: Indirizzo dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+5. Titolo: Verifica Documento di Identità dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il documento di identità dell'ordinante.
+   Obiettivo: Assicurarsi che i campi "Documento di identità ordinante" siano presenti e correttamente valorizzati.
+   Output atteso: Documento di identità dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+6. Titolo: Verifica Numero di Identificazione Account dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il numero di identificazione dell'account dell'ordinante.
+   Obiettivo: Assicurarsi che il campo "Num. di identificazione account ordinante" sia presente e correttamente valorizzato.
+   Output atteso: Numero di identificazione account dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+Please note that each micro test case should be executed with the appropriate test data that includes all mandatory fields as per the functional analysis documentation. The expected output for each test case is the successful authorization of the fund transfer without any errors, indicating that all mandatory fields are present and correctly filled.

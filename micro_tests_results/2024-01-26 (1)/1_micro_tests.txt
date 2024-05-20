@@ -1,0 +1,55 @@
+##################################################
+MACRO TEST
+2. Titolo: Controllo dei dati aggiuntivi Documento Ordinante nel Sistema Antifrode
+   Descrizione: Aggiunta di due nuovi sottocampi nel campo ISO 111 per identificare il tipo e il valore del documento dell'ordinante.
+   Obiettivo: Verificare che i sottocampi 111.66 e 111.67 siano correttamente valorizzati e inviati nei messaggi ISO pertinenti.
+   Output atteso: Valorizzazione corretta dei sottocampi 111.66 e 111.67.
+   Input atteso: Transazioni Visa/Mastercard con i valori del campo ISO 003 ProcessingCode specificati.
+   Keywords: Sistema Antifrode, sottocampi 111.66, 111.67, documento ordinante, messaggio ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica valorizzazione sottocampo 111.66 per Mastercard Payment Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia correttamente valorizzato per una transazione Mastercard con ProcessingCode 280000.
+   Obiettivo: Assicurarsi che il tipo di documento dell'ordinante sia correttamente inserito nel sottocampo 111.66 per le Payment Transaction Mastercard.
+   Output atteso: Valorizzazione corretta del sottocampo 111.66 con il tipo di documento dell'ordinante.
+   Input atteso: Transazione Mastercard con ProcessingCode 280000.
+
+2. Titolo: Verifica valorizzazione sottocampo 111.67 per Mastercard Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia correttamente valorizzato per una transazione Mastercard con ProcessingCode 200000.
+   Obiettivo: Assicurarsi che il valore del documento dell'ordinante sia correttamente inserito nel sottocampo 111.67 per le Funding Transaction Mastercard.
+   Output atteso: Valorizzazione corretta del sottocampo 111.67 con il valore del documento dell'ordinante.
+   Input atteso: Transazione Mastercard con ProcessingCode 200000.
+
+3. Titolo: Verifica valorizzazione sottocampo 111.66 per VISA Original Credit Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia correttamente valorizzato per una transazione VISA con ProcessingCode 260000.
+   Obiettivo: Assicurarsi che il tipo di documento dell'ordinante sia correttamente inserito nel sottocampo 111.66 per le Original Credit Transaction VISA.
+   Output atteso: Valorizzazione corretta del sottocampo 111.66 con il tipo di documento dell'ordinante.
+   Input atteso: Transazione VISA con ProcessingCode 260000.
+
+4. Titolo: Verifica valorizzazione sottocampo 111.67 per VISA Account Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia correttamente valorizzato per una transazione VISA con ProcessingCode 200000.
+   Obiettivo: Assicurarsi che il valore del documento dell'ordinante sia correttamente inserito nel sottocampo 111.67 per le Account Funding Transaction VISA.
+   Output atteso: Valorizzazione corretta del sottocampo 111.67 con il valore del documento dell'ordinante.
+   Input atteso: Transazione VISA con ProcessingCode 200000.
+
+5. Titolo: Verifica invio sottocampi 111.66 e 111.67 nei messaggi ISO 1100
+   Descrizione: Controllo che i sottocampi 111.66 e 111.67 siano presenti e correttamente valorizzati nei messaggi di richiesta autorizzazione ISO 1100.
+   Obiettivo: Assicurarsi che i sottocampi relativi al documento dell'ordinante siano inviati correttamente nei messaggi di richiesta autorizzazione.
+   Output atteso: Presenza e corretta valorizzazione dei sottocampi 111.66 e 111.67 nei messaggi ISO 1100.
+   Input atteso: Messaggio ISO 1100 per transazioni Visa/Mastercard.
+
+6. Titolo: Verifica non sovrascrittura sottocampi in tabella TR per messaggi 1120 di riallineamento
+   Descrizione: Assicurarsi che la ricezione dei messaggi 1120 di riallineamento non sovrascriva i valori dei sottocampi 111.66, 111.67 e 047.01 già salvati nella tabella TR.
+   Obiettivo: Verificare che i valori esistenti nella tabella TR non vengano sovrascritti in caso di ricezione di messaggi 1120 di riallineamento.
+   Output atteso: Mantenimento dei valori originali dei sottocampi nella tabella TR dopo la ricezione di messaggi 1120 di riallineamento.
+   Input atteso: Messaggi 1120 di riallineamento per transazioni Visa/Mastercard.
+
+7. Titolo: Verifica corretta valorizzazione sottocampo 047.01 per controlli formali Autorizzativo
+   Descrizione: Controllo che il sottocampo 047.01 sia correttamente valorizzato con l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali sia correttamente riportato nel sottocampo 047.01.
+   Output atteso: Valorizzazione corretta del sottocampo 047.01 con l'esito dei controlli formali.
+   Input atteso: Risultato dei controlli formali effettuati da Autorizzativo.
+
+Questi micro test cases sono stati creati per verificare la corretta implementazione e funzionamento dei nuovi sottocampi aggiunti al sistema Antifrode, in relazione al documento dell'ordinante nelle transazioni Visa e Mastercard, come descritto nella documentazione fornita.

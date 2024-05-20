@@ -1,0 +1,61 @@
+##################################################
+MACRO TEST
+2. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo inferiore a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo < 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo < 1000 Euro
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il codice unico di identificazione operazione sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo del codice unico di identificazione sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo codice unico di identificazione presente e corretto.
+   Input atteso: Trasferimento fondi con campo codice unico di identificazione valorizzato.
+
+2. Titolo: Verifica Cognome Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il cognome dell'ordinante sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo cognome ordinante sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo cognome ordinante presente e corretto.
+   Input atteso: Trasferimento fondi con campo cognome ordinante valorizzato.
+
+3. Titolo: Verifica Nome Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il nome dell'ordinante sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo nome ordinante sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo nome ordinante presente e corretto.
+   Input atteso: Trasferimento fondi con campo nome ordinante valorizzato.
+
+4. Titolo: Verifica Cognome Beneficiario per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il cognome del beneficiario sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo cognome beneficiario sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo cognome beneficiario presente e corretto.
+   Input atteso: Trasferimento fondi con campo cognome beneficiario valorizzato.
+
+5. Titolo: Verifica Nome Beneficiario per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il nome del beneficiario sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo nome beneficiario sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo nome beneficiario presente e corretto.
+   Input atteso: Trasferimento fondi con campo nome beneficiario valorizzato.
+
+6. Titolo: Verifica Assenza Indirizzo Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il campo indirizzo ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il campo indirizzo ordinante.
+   Output atteso: Trasferimento autorizzato senza campo indirizzo ordinante.
+   Input atteso: Trasferimento fondi senza campo indirizzo ordinante valorizzato.
+
+7. Titolo: Verifica Assenza Documento Identità Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il campo documento di identità ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il campo documento di identità ordinante.
+   Output atteso: Trasferimento autorizzato senza campo documento di identità ordinante.
+   Input atteso: Trasferimento fondi senza campo documento di identità ordinante valorizzato.
+
+8. Titolo: Verifica Assenza Numero Identificazione Account Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il numero di identificazione account ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il numero di identificazione account ordinante.
+   Output atteso: Trasferimento autorizzato senza numero di identificazione account ordinante.
+   Input atteso: Trasferimento fondi senza numero di identificazione account ordinante valorizzato.
+
+Please note that these micro test cases are designed to verify the presence of mandatory fields for fund transfers outside the EU with an amount less than 1000 Euros, as per the Macro Test provided. Each test case focuses on a specific field and its requirement based on the functional analysis documentation.

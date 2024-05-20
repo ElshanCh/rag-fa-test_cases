@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi UE
+   Descrizione: Verifica che i trasferimenti di fondi all'interno dell'UE contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi intra-UE non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: UE, trasferimento fondi, campi obbligatori, controllo autorizzativo
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti Fondi UE
+   Descrizione: Verifica che il codice unico di identificazione operazione sia presente per i trasferimenti di fondi intra-UE.
+   Obiettivo: Assicurarsi che il campo del codice unico di identificazione operazione sia valorizzato per i trasferimenti di fondi all'interno dell'UE.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi intra-UE con codice unico di identificazione operazione valorizzato.
+
+2. Titolo: Verifica Presenza Cognome e Nome Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che i campi cognome e nome dell'ordinante non siano obbligatori per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza dei campi cognome e nome dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza dei campi cognome e nome dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza cognome e nome dell'ordinante.
+
+3. Titolo: Verifica Presenza Cognome e Nome Beneficiario per Trasferimenti Fondi UE
+   Descrizione: Verifica che i campi cognome e nome del beneficiario non siano obbligatori per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza dei campi cognome e nome del beneficiario non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza dei campi cognome e nome del beneficiario.
+   Input atteso: Trasferimento fondi intra-UE senza cognome e nome del beneficiario.
+
+4. Titolo: Verifica Presenza Indirizzo Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo indirizzo dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo indirizzo dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo indirizzo dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza indirizzo dell'ordinante.
+
+5. Titolo: Verifica Presenza Documento di Identità Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo documento di identità dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo documento di identità dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo documento di identità dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza documento di identità dell'ordinante.
+
+6. Titolo: Verifica Presenza Numero di Identificazione Account Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo numero di identificazione account dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo numero di identificazione account dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo numero di identificazione account dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza numero di identificazione account dell'ordinante.
+
+Please note that these micro test cases are designed to validate the presence of mandatory fields for intra-EU fund transfers as per the provided context and Macro Test. Each test case focuses on a specific field or set of fields to ensure that their presence or absence aligns with the regulatory requirements for intra-EU transactions.

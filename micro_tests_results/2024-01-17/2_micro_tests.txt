@@ -1,0 +1,62 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Mapping Campi ISO con Tabella TR
+Descrizione: Verifica della corretta mappatura dei nuovi campi ISO con la tabella TR del Sistema AntiFrode.
+Obiettivo: Assicurarsi che i nuovi campi ISO siano correttamente mappati e salvati nella tabella TR.
+Output atteso: I nuovi campi devono essere presenti e correttamente mappati nella tabella TR.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con i nuovi campi ISO.
+Keywords: Mapping, campi ISO, tabella TR, Sistema AntiFrode
+
+##################################################
+
+Based on the provided context and the summarized Macro Test, here are the micro test cases formatted similarly:
+
+**Micro Test Case 1: Verifica Campo ISO 111.66 e 111.67 per Mastercard**
+Titolo: Test Case per Verifica Campo ISO 111.66 e 111.67 per Transazioni Mastercard
+Descrizione: Verifica che i nuovi sottocampi 111.66 (Sender Identification Type) e 111.67 (Sender Identification Value) siano correttamente valorizzati per le transazioni Mastercard.
+Obiettivo: Assicurarsi che i sottocampi 111.66 e 111.67 siano presenti e correttamente valorizzati nelle transazioni Mastercard.
+Output atteso: I sottocampi devono essere presenti e correttamente valorizzati nel messaggio ISO per le transazioni Mastercard.
+Input atteso: Messaggi ISO 1100, 1120, 1121 per Mastercard con processingCode = 280000 e 200000.
+Keywords: Campo ISO 111.66, Campo ISO 111.67, Mastercard, Sistema AntiFrode
+
+**Micro Test Case 2: Verifica Campo ISO 111.66 e 111.67 per VISA**
+Titolo: Test Case per Verifica Campo ISO 111.66 e 111.67 per Transazioni VISA
+Descrizione: Verifica che i nuovi sottocampi 111.66 (Sender Identification Type) e 111.67 (Sender Identification Value) siano correttamente valorizzati per le transazioni VISA.
+Obiettivo: Assicurarsi che i sottocampi 111.66 e 111.67 siano presenti e correttamente valorizzati nelle transazioni VISA.
+Output atteso: I sottocampi devono essere presenti e correttamente valorizzati nel messaggio ISO per le transazioni VISA.
+Input atteso: Messaggi ISO 1100, 1120, 1121 per VISA con processingCode = 260000 e 200000.
+Keywords: Campo ISO 111.66, Campo ISO 111.67, VISA, Sistema AntiFrode
+
+**Micro Test Case 3: Verifica Campo ISO 047.01**
+Titolo: Test Case per Verifica Campo ISO 047.01
+Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente valorizzato e rifletta l'esito dei controlli formali.
+Obiettivo: Assicurarsi che il sottocampo 047.01 sia presente e correttamente valorizzato con l'esito dei controlli formali.
+Output atteso: Il sottocampo 047.01 deve essere presente e correttamente valorizzato nel messaggio ISO.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con i possibili valori di esito dei controlli formali.
+Keywords: Campo ISO 047.01, Reg487 Verification Result, Sistema AntiFrode
+
+**Micro Test Case 4: Verifica Mappatura Campi ISO con Tabella TR**
+Titolo: Test Case per Verifica Mappatura Campi ISO con Tabella TR
+Descrizione: Verifica che tutti i campi ISO siano correttamente mappati con la tabella TR del Sistema AntiFrode, inclusi i nuovi campi.
+Obiettivo: Assicurarsi che la mappatura dei campi ISO con la tabella TR sia completa e corretta.
+Output atteso: Tutti i campi ISO devono essere presenti e correttamente mappati nella tabella TR.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con tutti i campi ISO da mappare.
+Keywords: Mappatura, Campi ISO, Tabella TR, Sistema AntiFrode
+
+**Micro Test Case 5: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi**
+Titolo: Test Case per Verifica Presenza Campi Obbligatori per Trasferimenti Fondi
+Descrizione: Verifica che i campi obbligatori per i trasferimenti fondi intra-UE ed extra-UE siano presenti e corretti a seconda dell'importo della transazione.
+Obiettivo: Assicurarsi che i campi obbligatori per i trasferimenti fondi siano presenti e corretti.
+Output atteso: I campi obbligatori devono essere presenti e corretti nel messaggio ISO in base all'ambito geografico e all'importo della transazione.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con dati di trasferimenti fondi intra-UE ed extra-UE.
+Keywords: Campi Obbligatori, Trasferimenti Fondi, Sistema AntiFrode
+
+**Micro Test Case 6: Verifica Non Sovrascrittura Campo ISO 047.01**
+Titolo: Test Case per Verifica Non Sovrascrittura Campo ISO 047.01
+Descrizione: Verifica che gli advice dei messaggi ISO 1120 e 1121 non sovrascrivano il campo 047.01 registrato con il messaggio 1100.
+Obiettivo: Assicurarsi che il campo 047.01 non venga sovrascritto dagli advice di riallineamento.
+Output atteso: Il campo 047.01 deve mantenere il valore registrato con il messaggio 1100 anche dopo la ricezione degli advice 1120 e 1121.
+Input atteso: Messaggi ISO 1100 seguiti da 1120 e 1121 di riallineamento.
+Keywords: Campo ISO 047.01, Sovrascrittura, Advice, Sistema AntiFrode
+
+These micro test cases are designed to cover various aspects of the new implementation or update to the software or service as described in the functional analysis documentation. Each test case focuses on a specific area of functionality, ensuring comprehensive testing of the system's new features and updates.

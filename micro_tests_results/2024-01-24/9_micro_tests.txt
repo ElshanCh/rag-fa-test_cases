@@ -1,0 +1,55 @@
+##################################################
+MACRO TEST
+10. Titolo: Verifica Inquiry Autorizzativo e Codici Risposta
+    Descrizione: Verifica che l'inquiry autorizzativo nel Sistema AntiFrode mostri correttamente i dettagli delle transazioni e i codici risposta associati.
+    Obiettivo: Assicurarsi che l'inquiry autorizzativo fornisca informazioni dettagliate e accurate sulle transazioni.
+    Output atteso: Inquiry autorizzativo che mostra i dettagli delle transazioni e i codici risposta corretti.
+    Input atteso: Richiesta di dettaglio transazione attraverso l'inquiry autorizzativo.
+    Keywords: inquiry autorizzativo, Sistema AntiFrode, dettagli transazione, codici risposta
+##################################################
+
+Based on the provided context and the Macro Test "Verifica Inquiry Autorizzativo e Codici Risposta," here are the detailed micro test cases:
+
+1. Titolo: Verifica Presenza Campi Obbligatori per Transazioni intra UE
+   Descrizione: Verifica che per le transazioni intra UE, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni intra UE.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni intra UE valorizzati correttamente.
+   Input atteso: Transazione intra UE con tutti i campi obbligatori valorizzati.
+
+2. Titolo: Verifica Presenza Campi Obbligatori per Transazioni extra UE < 1.000,00
+   Descrizione: Verifica che per le transazioni extra UE con importo inferiore a 1.000,00, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni extra UE con importo inferiore a 1.000,00.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni extra UE < 1.000,00 valorizzati correttamente.
+   Input atteso: Transazione extra UE con importo inferiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+
+3. Titolo: Verifica Presenza Campi Obbligatori per Transazioni extra UE >= 1.000,00
+   Descrizione: Verifica che per le transazioni extra UE con importo pari o superiore a 1.000,00, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni extra UE con importo pari o superiore a 1.000,00.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni extra UE >= 1.000,00 valorizzati correttamente.
+   Input atteso: Transazione extra UE con importo pari o superiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+
+4. Titolo: Verifica Risposta Sistema AntiFrode per Transazioni non Conformi
+   Descrizione: Verifica che il Sistema AntiFrode fornisca il codice di risposta corretto in caso di transazioni non conformi.
+   Obiettivo: Assicurarsi che il Sistema AntiFrode risponda con il codice di risposta appropriato quando una transazione non supera i controlli di tracciabilità.
+   Output atteso: Codici di risposta "57" per Visa e Mastercard o "119" per le banche di debito internazionale in caso di transazioni non conformi.
+   Input atteso: Transazione non conforme alle regole di tracciabilità.
+
+5. Titolo: Verifica Integrazione e Visualizzazione Dati Aggiuntivi nel Dettaglio Transazione
+   Descrizione: Verifica che i dati aggiuntivi siano integrati e visualizzati correttamente nel dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i nuovi campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" siano presenti e corretti nel dettaglio transazione.
+   Output atteso: Visualizzazione corretta dei nuovi campi nel dettaglio della transazione finanziaria.
+   Input atteso: Transazione finanziaria con i nuovi campi dati aggiuntivi.
+
+6. Titolo: Verifica Configurazione Codici Risposta in Regole Finanziarie
+   Descrizione: Verifica che i codici di risposta siano configurati correttamente nelle regole finanziarie.
+   Obiettivo: Assicurarsi che i codici di risposta "57" e "119" siano impostati correttamente nelle form delle regole finanziarie.
+   Output atteso: Configurazione corretta dei codici di risposta nelle regole finanziarie.
+   Input atteso: Regole finanziarie configurate con i codici di risposta "57" e "119".
+
+7. Titolo: Verifica Visualizzazione Codici Risposta nel Dettaglio Autorizzazione
+   Descrizione: Verifica che i codici di risposta siano visualizzati correttamente nel dettaglio dell'autorizzazione.
+   Obiettivo: Assicurarsi che i codici di risposta "57" e "119" siano visualizzati nel dettaglio dell'autorizzazione in caso di negazione.
+   Output atteso: Visualizzazione corretta dei codici di risposta nel dettaglio dell'autorizzazione.
+   Input atteso: Dettaglio autorizzazione con codici di risposta "57" e "119" in caso di negazione.
+
+These micro test cases are designed to ensure that the new implementation or update to the software or service is thoroughly tested for compliance with the anti-money laundering regulations and that the Anti-Fraud System correctly handles authorization inquiries and response codes for fund transfer transactions.

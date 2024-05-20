@@ -1,0 +1,41 @@
+1. Titolo: Verifica Reg487 Verification Result
+   Descrizione: Controllo dell'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia valorizzato correttamente.
+   Output atteso: 0 = Tutti i controlli Reg487 superati, 1-6 = Specifico errore di validazione.
+   Input atteso: Valori da 0 a 6.
+   Keywords: Reg487 Verification Result, controllo formale, Autorizzativo, validazione.
+
+2. Titolo: Controllo Trasferimento Fondi infra UE
+   Descrizione: Verifica della presenza del campo "Cod. unico di identificazione operazione" per trasferimenti infra UE.
+   Obiettivo: Verificare l'obbligatorietà del campo per trasferimenti infra UE.
+   Output atteso: Campo obbligatorio valorizzato.
+   Input atteso: Cod. unico di identificazione operazione.
+   Keywords: Trasferimento fondi, infra UE, codice identificativo, obbligatorio.
+
+3. Titolo: Controllo Trasferimento Fondi extra UE < 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo inferiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo < 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario.
+   Keywords: Trasferimento fondi, extra UE, importo minore di 1000,00 euro, campi obbligatori.
+
+4. Titolo: Controllo Trasferimento Fondi extra UE >= 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo uguale o superiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo >= 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario, Indirizzo ordinante, Documento di identità ordinante, Num. di identificazione account ordinante.
+   Keywords: Trasferimento fondi, extra UE, importo maggiore o uguale a 1000,00 euro, campi obbligatori.
+
+5. Titolo: Integrazione dati Trasferimento Fondi nella GUI Sistema Antifrode
+   Descrizione: Verifica che i nuovi campi siano integrati e disponibili per la creazione di regole e accumulatori nel Sistema Antifrode.
+   Obiettivo: Assicurarsi che i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" siano presenti e utilizzabili nella GUI.
+   Output atteso: Campi disponibili e funzionanti nella GUI.
+   Input atteso: Dati del trasferimento fondi.
+   Keywords: GUI, Sistema Antifrode, integrazione dati, regole, accumulatori.
+
+6. Titolo: Risposta Sistema Antifrode per mancata tracciabilità
+   Descrizione: Configurazione e verifica delle risposte del Sistema Antifrode in caso di mancata tracciabilità del Trasferimento Fondi.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda correttamente in caso di fallimento dei controlli di tracciabilità.
+   Output atteso: Codici Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale, con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Fallimento dei controlli nelle Regole finanziarie.
+   Keywords: Sistema Antifrode, tracciabilità, risposta negativa, codici risposta, motivo rifiuto.

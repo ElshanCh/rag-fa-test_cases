@@ -1,0 +1,512 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi UE
+   Descrizione: Verifica che i trasferimenti di fondi all'interno dell'UE contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi intra-UE non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: UE, trasferimento fondi, campi obbligatori, controllo autorizzativo
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti Fondi UE
+   Descrizione: Verifica che il codice unico di identificazione operazione sia presente per i trasferimenti di fondi intra-UE.
+   Obiettivo: Assicurarsi che il campo del codice unico di identificazione operazione sia valorizzato per i trasferimenti di fondi all'interno dell'UE.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi intra-UE con codice unico di identificazione operazione valorizzato.
+
+2. Titolo: Verifica Presenza Cognome e Nome Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che i campi cognome e nome dell'ordinante non siano obbligatori per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza dei campi cognome e nome dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza dei campi cognome e nome dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza cognome e nome dell'ordinante.
+
+3. Titolo: Verifica Presenza Cognome e Nome Beneficiario per Trasferimenti Fondi UE
+   Descrizione: Verifica che i campi cognome e nome del beneficiario non siano obbligatori per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza dei campi cognome e nome del beneficiario non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza dei campi cognome e nome del beneficiario.
+   Input atteso: Trasferimento fondi intra-UE senza cognome e nome del beneficiario.
+
+4. Titolo: Verifica Presenza Indirizzo Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo indirizzo dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo indirizzo dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo indirizzo dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza indirizzo dell'ordinante.
+
+5. Titolo: Verifica Presenza Documento di Identità Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo documento di identità dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo documento di identità dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo documento di identità dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza documento di identità dell'ordinante.
+
+6. Titolo: Verifica Presenza Numero di Identificazione Account Ordinante per Trasferimenti Fondi UE
+   Descrizione: Verifica che il campo numero di identificazione account dell'ordinante non sia obbligatorio per i trasferimenti di fondi intra-UE.
+   Obiettivo: Confermare che l'assenza del campo numero di identificazione account dell'ordinante non blocchi il trasferimento di fondi intra-UE.
+   Output atteso: Trasferimento autorizzato nonostante l'assenza del campo numero di identificazione account dell'ordinante.
+   Input atteso: Trasferimento fondi intra-UE senza numero di identificazione account dell'ordinante.
+
+Please note that these micro test cases are designed to validate the presence of mandatory fields for intra-EU fund transfers as per the provided context and Macro Test. Each test case focuses on a specific field or set of fields to ensure that their presence or absence aligns with the regulatory requirements for intra-EU transactions.
+##################################################
+MACRO TEST
+2. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo inferiore a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo < 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo < 1000 Euro
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il codice unico di identificazione operazione sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo del codice unico di identificazione sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo codice unico di identificazione presente e corretto.
+   Input atteso: Trasferimento fondi con campo codice unico di identificazione valorizzato.
+
+2. Titolo: Verifica Cognome Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il cognome dell'ordinante sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo cognome ordinante sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo cognome ordinante presente e corretto.
+   Input atteso: Trasferimento fondi con campo cognome ordinante valorizzato.
+
+3. Titolo: Verifica Nome Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il nome dell'ordinante sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo nome ordinante sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo nome ordinante presente e corretto.
+   Input atteso: Trasferimento fondi con campo nome ordinante valorizzato.
+
+4. Titolo: Verifica Cognome Beneficiario per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il cognome del beneficiario sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo cognome beneficiario sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo cognome beneficiario presente e corretto.
+   Input atteso: Trasferimento fondi con campo cognome beneficiario valorizzato.
+
+5. Titolo: Verifica Nome Beneficiario per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il nome del beneficiario sia presente per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Assicurarsi che il campo nome beneficiario sia valorizzato per trasferimenti di fondi extra UE < 1000 Euro.
+   Output atteso: Campo nome beneficiario presente e corretto.
+   Input atteso: Trasferimento fondi con campo nome beneficiario valorizzato.
+
+6. Titolo: Verifica Assenza Indirizzo Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il campo indirizzo ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il campo indirizzo ordinante.
+   Output atteso: Trasferimento autorizzato senza campo indirizzo ordinante.
+   Input atteso: Trasferimento fondi senza campo indirizzo ordinante valorizzato.
+
+7. Titolo: Verifica Assenza Documento Identità Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il campo documento di identità ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il campo documento di identità ordinante.
+   Output atteso: Trasferimento autorizzato senza campo documento di identità ordinante.
+   Input atteso: Trasferimento fondi senza campo documento di identità ordinante valorizzato.
+
+8. Titolo: Verifica Assenza Numero Identificazione Account Ordinante per Trasferimenti Fondi Extra UE < 1000 Euro
+   Descrizione: Verifica che il numero di identificazione account ordinante non sia obbligatorio per trasferimenti di fondi extra UE con importo inferiore a 1000 Euro.
+   Obiettivo: Confermare che il trasferimento di fondi extra UE < 1000 Euro sia autorizzato anche senza il numero di identificazione account ordinante.
+   Output atteso: Trasferimento autorizzato senza numero di identificazione account ordinante.
+   Input atteso: Trasferimento fondi senza numero di identificazione account ordinante valorizzato.
+
+Please note that these micro test cases are designed to verify the presence of mandatory fields for fund transfers outside the EU with an amount less than 1000 Euros, as per the Macro Test provided. Each test case focuses on a specific field and its requirement based on the functional analysis documentation.
+##################################################
+MACRO TEST
+3. Titolo: Verifica Presenza Campi Obbligatori per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che i trasferimenti di fondi extra UE con importo maggiore o uguale a 1000 Euro contengano tutti i campi obbligatori.
+   Obiettivo: Assicurarsi che i trasferimenti di fondi extra UE con importo >= 1000 Euro non vengano bloccati per mancanza di dati.
+   Output atteso: Trasferimento autorizzato senza errori.
+   Input atteso: Trasferimento fondi con tutti i campi obbligatori valorizzati.
+   Keywords: extra UE, trasferimento fondi, campi obbligatori, controllo autorizzativo, importo >= 1000 Euro
+##################################################
+
+Based on the provided Macro Test and the context from the Functional analysis documentation, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il campo "Cod. unico di identificazione operazione" sia presente e correttamente valorizzato.
+   Output atteso: Codice unico di identificazione operazione presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+2. Titolo: Verifica Cognome e Nome dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il cognome e il nome dell'ordinante.
+   Obiettivo: Assicurarsi che i campi "Cognome ordinante" e "Nome ordinante" siano presenti e correttamente valorizzati.
+   Output atteso: Cognome e nome dell'ordinante presenti nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+3. Titolo: Verifica Cognome e Nome del Beneficiario per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il cognome e il nome del beneficiario.
+   Obiettivo: Assicurarsi che i campi "Cognome beneficiario" e "Nome beneficiario" siano presenti e correttamente valorizzati.
+   Output atteso: Cognome e nome del beneficiario presenti nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+4. Titolo: Verifica Indirizzo dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga l'indirizzo dell'ordinante.
+   Obiettivo: Assicurarsi che il campo "Indirizzo ordinante" sia presente e correttamente valorizzato.
+   Output atteso: Indirizzo dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+5. Titolo: Verifica Documento di Identità dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il documento di identità dell'ordinante.
+   Obiettivo: Assicurarsi che i campi "Documento di identità ordinante" siano presenti e correttamente valorizzati.
+   Output atteso: Documento di identità dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+6. Titolo: Verifica Numero di Identificazione Account dell'Ordinante per Trasferimenti Fondi Extra UE >= 1000 Euro
+   Descrizione: Verifica che il trasferimento di fondi extra UE con importo >= 1000 Euro contenga il numero di identificazione dell'account dell'ordinante.
+   Obiettivo: Assicurarsi che il campo "Num. di identificazione account ordinante" sia presente e correttamente valorizzato.
+   Output atteso: Numero di identificazione account dell'ordinante presente nel trasferimento.
+   Input atteso: Trasferimento fondi con importo >= 1000 Euro.
+
+Please note that each micro test case should be executed with the appropriate test data that includes all mandatory fields as per the functional analysis documentation. The expected output for each test case is the successful authorization of the fund transfer without any errors, indicating that all mandatory fields are present and correctly filled.
+##################################################
+MACRO TEST
+4. Titolo: Verifica Integrazione Nuovi Sottocampi nel Messaggio ISO
+   Descrizione: Verifica che i nuovi sottocampi 111.66 e 111.67 siano correttamente integrati nel messaggio ISO.
+   Obiettivo: Assicurarsi che i dati del documento di identificazione dell'ordinante siano correttamente trasmessi nel messaggio ISO.
+   Output atteso: Messaggio ISO contenente i nuovi sottocampi valorizzati.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati secondo le regole specificate.
+   Keywords: messaggio ISO, sottocampi, documento identificazione, ordinante
+##################################################
+
+Based on the provided context and the Macro Test, here are the detailed micro test cases:
+
+1. Titolo: Verifica Valorizzazione Campo 111.66 per Mastercard Payment Transaction
+   Descrizione: Verifica che il sottocampo 111.66 sia correttamente valorizzato per una transazione Mastercard con processingCode = 280000.
+   Obiettivo: Assicurarsi che il tipo di documento di identificazione dell'ordinante (Sender Identification Type) sia correttamente trasmesso nel messaggio ISO per una Payment Transaction Mastercard.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.66 valorizzato con il tipo di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 280000 e campo 111.66 valorizzato secondo la regola: Se MC SE 02 SF 12 Sender Data – Identification type.
+
+2. Titolo: Verifica Valorizzazione Campo 111.67 per Mastercard Funding Transaction
+   Descrizione: Verifica che il sottocampo 111.67 sia correttamente valorizzato per una transazione Mastercard con processingCode = 200000.
+   Obiettivo: Assicurarsi che il valore del documento di identificazione dell'ordinante (Sender Identification Value) sia correttamente trasmesso nel messaggio ISO per una Funding Transaction Mastercard.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.67 valorizzato con il numero di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 200000 e campo 111.67 valorizzato secondo la regola: Se MC SE 02 SF 13 Sender Data – Identification number.
+
+3. Titolo: Verifica Valorizzazione Campo 111.66 per Visa Original Credit Transaction
+   Descrizione: Verifica che il sottocampo 111.66 sia correttamente valorizzato per una transazione Visa con processingCode = 260000.
+   Obiettivo: Assicurarsi che il tipo di documento di identificazione dell'ordinante (Sender Identification Type) sia correttamente trasmesso nel messaggio ISO per una Original Credit Transaction Visa.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.66 valorizzato con il tipo di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 260000 e campo 111.66 valorizzato secondo la regola: Se VISA Field 56 DataSetID 03 Tag 9F20 Sender identification type code.
+
+4. Titolo: Verifica Valorizzazione Campo 111.67 per Visa Account Funding Transaction
+   Descrizione: Verifica che il sottocampo 111.67 sia correttamente valorizzato per una transazione Visa con processingCode = 200000.
+   Obiettivo: Assicurarsi che il valore del documento di identificazione dell'ordinante (Sender Identification Value) sia correttamente trasmesso nel messaggio ISO per una Account Funding Transaction Visa.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.67 valorizzato con il numero di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 200000 e campo 111.67 valorizzato secondo la regola: Se VISA Field 56 DataSetID 03 Tag 9F22 Sender identification value.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 su Advice Messaggi
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i sottocampi 111.66 e 111.67 non vengano sovrascritti durante l'invio degli advice di riallineamento.
+   Output atteso: Advice dei messaggi 1120 e 1121 che mantengono i valori dei campi 111.66 e 111.67 come registrati nel messaggio 1100.
+   Input atteso: Messaggi ISO 1120 e 1121 inviati come advice di riallineamento (non per Time-out o Off-line).
+
+6. Titolo: Verifica Integrazione Campo 047.01 nei Messaggi ISO
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente integrato e valorizzato nei messaggi ISO 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali effettuati da Autorizzativo sia correttamente trasmesso e registrato nel Sistema AntiFrode.
+   Output atteso: Messaggio ISO contenente il sottocampo 047.01 con l'esito dei controlli formali.
+   Input atteso: Messaggio ISO con campo 047.01 valorizzato con uno dei possibili valori (0-6) a seconda dell'esito dei controlli formali.
+
+Questi micro test cases sono stati creati per verificare l'integrazione e la corretta valorizzazione dei nuovi sottocampi nel messaggio ISO, come descritto nel contesto fornito.
+##################################################
+MACRO TEST
+5. Titolo: Verifica Salvataggio Dati nel Sistema AntiFrode
+   Descrizione: Verifica che i dati dei nuovi sottocampi siano correttamente salvati nella tabella delle transazioni del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che i dati relativi all'identificazione dell'ordinante siano correttamente memorizzati nel Sistema AntiFrode.
+   Output atteso: Dati dei sottocampi presenti nella tabella TR del Sistema AntiFrode.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati.
+   Keywords: Sistema AntiFrode, salvataggio dati, tabella TR, sottocampi
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Salvataggio Campo 111.66 per Transazione Mastercard
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 o 200000.
+   Obiettivo: Assicurarsi che il tipo di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni Mastercard.
+   Output atteso: Campo 111.66 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.66 valorizzato per transazioni Mastercard.
+
+2. Titolo: Verifica Salvataggio Campo 111.67 per Transazione Mastercard
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 o 200000.
+   Obiettivo: Assicurarsi che il numero di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni Mastercard.
+   Output atteso: Campo 111.67 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.67 valorizzato per transazioni Mastercard.
+
+3. Titolo: Verifica Salvataggio Campo 111.66 per Transazione VISA
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente salvato nella tabella TR per le transazioni VISA con processingCode = 260000 o 200000.
+   Obiettivo: Assicurarsi che il tipo di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni VISA.
+   Output atteso: Campo 111.66 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.66 valorizzato per transazioni VISA.
+
+4. Titolo: Verifica Salvataggio Campo 111.67 per Transazione VISA
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente salvato nella tabella TR per le transazioni VISA con processingCode = 260000 o 200000.
+   Obiettivo: Assicurarsi che il numero di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni VISA.
+   Output atteso: Campo 111.67 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.67 valorizzato per transazioni VISA.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 su Advice
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i campi relativi all'identificazione dell'ordinante non vengano sovrascritti durante il processo di riallineamento.
+   Output atteso: Campi 111.66 e 111.67 non modificati dopo la ricezione degli advice 1120 e 1121.
+   Input atteso: Messaggi ISO 1120 e 1121 con advice di riallineamento.
+
+6. Titolo: Verifica Salvataggio Campo 047.01 Reg487 Verification Result
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente salvato nella tabella TR per i messaggi ISO 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali effettuati da Autorizzativo sia memorizzato correttamente nel Sistema AntiFrode.
+   Output atteso: Campo 047.01 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 047.01 valorizzato.
+
+7. Titolo: Verifica Non Sovrascrittura Campo 047.01 su Advice
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano il campo 047.01 registrato con il messaggio 1100.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali non venga sovrascritto durante il processo di riallineamento.
+   Output atteso: Campo 047.01 non modificato dopo la ricezione degli advice 1120 e 1121.
+   Input atteso: Messaggi ISO 1120 e 1121 con advice di riallineamento.
+##################################################
+MACRO TEST
+6. Titolo: Verifica Risposta Negativa per Mancata Tracciabilità
+   Descrizione: Verifica che il Sistema AntiFrode fornisca una risposta negativa in caso di mancata tracciabilità dei dati del trasferimento fondi.
+   Obiettivo: Assicurarsi che le transazioni non conformi alle regole di tracciabilità siano correttamente bloccate.
+   Output atteso: Codice di risposta "57" o "119" in caso di mancata tracciabilità.
+   Input atteso: Trasferimento fondi con dati non conformi alle regole di tracciabilità.
+   Keywords: Sistema AntiFrode, risposta negativa, mancata tracciabilità, codici risposta
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Infra UE senza Codice Unico
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi infra UE senza codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il trasferimento fondi infra UE senza codice unico di identificazione sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi infra UE senza codice unico di identificazione operazione.
+
+2. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE < 1.000,00 senza Cognome Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante.
+
+3. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Indirizzo Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante.
+
+4. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Documento di Identità Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante.
+
+5. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Num. di Identificazione Account Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante.
+
+Please note that these micro test cases are designed to test the specific scenarios where the Sistema AntiFrode should provide a negative response due to the lack of traceability data as per the requirements outlined in the functional analysis documentation. Each test case focuses on a different aspect of the traceability data requirements for intra-EU and extra-EU fund transfers with varying amounts.
+##################################################
+MACRO TEST
+7. Titolo: Verifica Configurazione Nuovo Motivo di Rifiuto R4
+   Descrizione: Verifica che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia correttamente configurato nel Sistema AntiFrode.
+   Obiettivo: Distinguere le negate per mancata tracciabilità del Trasferimento Fondi.
+   Output atteso: Nuovo motivo di rifiuto "R4" configurato e utilizzabile nel sistema.
+   Input atteso: Configurazione del nuovo motivo di rifiuto nel Sistema AntiFrode.
+   Keywords: Sistema AntiFrode, motivo di rifiuto, R4, configurazione
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Presenza Nuovo Motivo di Rifiuto R4 in Configurazione
+   Descrizione: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia presente nella configurazione del Sistema AntiFrode.
+   Obiettivo: Confermare l'aggiunta del nuovo motivo di rifiuto "R4" nella lista dei motivi di rifiuto disponibili.
+   Output atteso: Il motivo di rifiuto "R4" è elencato tra i motivi di rifiuto nel Sistema AntiFrode.
+   Input atteso: Accesso alla configurazione dei motivi di rifiuto nel Sistema AntiFrode.
+
+2. Titolo: Test Integrazione Nuovo Motivo di Rifiuto R4 in GUI Sistema AntiFrode
+   Descrizione: Verificare che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia integrato e visualizzabile nella GUI del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che il motivo di rifiuto "R4" sia selezionabile e gestibile attraverso la GUI del Sistema AntiFrode.
+   Output atteso: Il motivo di rifiuto "R4" appare nella combo "Transazione" dei Parametri Regola e nei dettagli dell'Autorizzazione.
+   Input atteso: Navigazione nella GUI del Sistema AntiFrode per verificare la presenza del motivo di rifiuto "R4".
+
+3. Titolo: Test Risposta Sistema AntiFrode con Motivo di Rifiuto R4
+   Descrizione: Controllare che il Sistema AntiFrode fornisca la risposta di rifiuto "R4 - No dati Reg847" quando una transazione non supera i controlli di tracciabilità.
+   Obiettivo: Verificare che il Sistema AntiFrode risponda correttamente con il motivo di rifiuto "R4" in caso di dati mancanti secondo il Reg. (UE) 847/2015.
+   Output atteso: Ricezione del codice di risposta "57" o "119" con il motivo di rifiuto "R4" per transazioni non conformi.
+   Input atteso: Simulazione di una transazione che non soddisfa i requisiti di tracciabilità.
+
+4. Titolo: Test Configurazione Regole Finanziarie con Motivo di Rifiuto R4
+   Descrizione: Verificare che le regole finanziarie siano configurate per utilizzare il nuovo motivo di rifiuto "R4 - No dati Reg847".
+   Obiettivo: Assicurarsi che le regole finanziarie nel Sistema AntiFrode siano aggiornate per includere il motivo di rifiuto "R4" come possibile esito.
+   Output atteso: Le regole finanziarie includono il motivo di rifiuto "R4" tra le opzioni configurabili.
+   Input atteso: Accesso alla configurazione delle regole finanziarie nel Sistema AntiFrode.
+
+5. Titolo: Test Autorizzativo Messaggi ISO con Motivo di Rifiuto R4
+   Descrizione: Verificare che i messaggi ISO 1100, 1120, 1121 includano il nuovo motivo di rifiuto "R4 - No dati Reg847" quando appropriato.
+   Obiettivo: Confermare che i messaggi autorizzativi riflettano correttamente il motivo di rifiuto "R4" quando una transazione viene negata per mancanza di dati.
+   Output atteso: I messaggi ISO contengono il motivo di rifiuto "R4" quando una transazione viene rifiutata per non conformità ai requisiti di tracciabilità.
+   Input atteso: Generazione di messaggi ISO con transazioni che non superano i controlli di tracciabilità.
+
+6. Titolo: Test Visualizzazione Motivo di Rifiuto R4 in Dettaglio Transazione
+   Descrizione: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia visualizzato correttamente nei dettagli della transazione finanziaria nella GUI del Sistema AntiFrode.
+   Obiettivo: Verificare che il motivo di rifiuto "R4" sia mostrato nella sezione "Mastercard Money Send" dei dettagli della transazione.
+   Output atteso: Il motivo di rifiuto "R4" è visibile nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: Navigazione nei dettagli della transazione finanziaria attraverso la GUI del Sistema AntiFrode.
+
+Questi micro test cases sono stati creati per assicurare che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia correttamente implementato e funzionante in tutte le parti del Sistema AntiFrode, come descritto nella documentazione di analisi funzionale.
+##################################################
+MACRO TEST
+8. Titolo: Verifica Funzionalità GUI Web Sistema AntiFrode
+   Descrizione: Verifica che la GUI Web del Sistema AntiFrode gestisca correttamente i nuovi parametri e codici risposta.
+   Obiettivo: Assicurarsi che l'interfaccia utente del Sistema AntiFrode rifletta le nuove implementazioni.
+   Output atteso: GUI Web che mostra e permette la gestione dei nuovi parametri e codici risposta.
+   Input atteso: Interazione con la GUI Web per la configurazione delle regole e la visualizzazione dei dettagli delle transazioni.
+   Keywords: GUI Web, Sistema AntiFrode, nuovi parametri, codici risposta
+##################################################
+
+Based on the provided context and the Macro Test, here are the detailed micro test cases:
+
+1. Titolo: Verifica Visualizzazione Nuovi Parametri in Gestione Regole
+   Descrizione: Assicurarsi che i nuovi parametri siano visualizzabili nella GUI Web del Sistema AntiFrode sotto il menu Gestione Regole.
+   Obiettivo: Verificare che i nuovi parametri (es. "Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result") siano presenti nella combo "Transazione" dei Parametri Regola.
+   Output atteso: I nuovi parametri appaiono correttamente nella combo "Transazione" nella form Regola Finanziaria.
+   Input atteso: Accesso alla sezione Gestione Regole e visualizzazione dei parametri della transazione.
+
+2. Titolo: Verifica Aggiunta Nuovi Parametri in Accumulatori Evoluti
+   Descrizione: Controllare che i nuovi parametri siano aggiunti correttamente nella GUI Web del Sistema AntiFrode sotto il menu Accumulatori Evoluti.
+   Obiettivo: Assicurarsi che i nuovi parametri siano presenti nella combo "Transazione" di tutti i Parametri Regola negli Accumulatori Evoluti.
+   Output atteso: I nuovi parametri sono visibili e gestibili nella combo "Transazione" nella form Accumulatore Evoluto.
+   Input atteso: Accesso alla sezione Accumulatori Evoluti e verifica della presenza dei nuovi parametri.
+
+3. Titolo: Verifica Dettaglio Transazione Finanziaria con Nuovi Dati
+   Descrizione: Verificare che i dati aggiuntivi siano mostrati correttamente nella pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Controllare che i nuovi dati ("Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result") siano visualizzati nella sezione "Mastercard Money Send" del dettaglio Autorizzazione.
+   Output atteso: I nuovi dati sono presenti e correttamente visualizzati nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: Navigazione alla pagina di dettaglio della transazione finanziaria attraverso il menu Autorizzazioni.
+
+4. Titolo: Verifica Configurazione Codici Risposta di Negazione
+   Descrizione: Assicurarsi che i codici di risposta di negazione siano configurati correttamente per i casi di mancata tracciabilità.
+   Obiettivo: Verificare che i codici di risposta "57" e "119" siano impostati nelle form delle Regole finanziarie e consultabili nel dettaglio dell’Autorizzazione.
+   Output atteso: I codici di risposta "57" e "119" sono configurati e visualizzabili correttamente.
+   Input atteso: Accesso alla form delle Regole finanziarie e verifica dei codici di risposta nel dettaglio dell’Autorizzazione.
+
+5. Titolo: Verifica Blocco Transazioni Non Conformi
+   Descrizione: Testare il blocco delle transazioni che non rispettano i requisiti di tracciabilità.
+   Obiettivo: Assicurarsi che il Sistema AntiFrode blocchi le transazioni che non contengono i dati obbligatori o che non superano i controlli formali.
+   Output atteso: Transazioni non conformi vengono bloccate e il trasferimento di fondi viene rifiutato.
+   Input atteso: Simulazione di transazioni con dati incompleti o non verificati per testare il blocco da parte del Sistema AntiFrode.
+
+6. Titolo: Verifica Gestione Nuovi Parametri per Transazioni UE e Extra UE
+   Descrizione: Controllare che la GUI Web del Sistema AntiFrode gestisca correttamente i nuovi parametri in base all'ambito geografico e ai vincoli di importo.
+   Obiettivo: Verificare che i campi obbligatori siano gestiti in modo appropriato per le transazioni infra UE, extra UE con importo < 1.000,00 e extra UE con importo >= 1.000,00.
+   Output atteso: La GUI Web riflette correttamente l'obbligatorietà dei campi in base all'ambito geografico e ai vincoli di importo.
+   Input atteso: Inserimento e verifica dei dati obbligatori per diverse tipologie di transazioni in base alla geografia e all'importo.
+
+Questi micro test cases dovrebbero coprire le principali funzionalità della GUI Web del Sistema AntiFrode in relazione ai nuovi parametri e codici risposta come descritto nella documentazione di analisi funzionale.
+##################################################
+MACRO TEST
+9. Titolo: Verifica Messaggi Autorizzativi e Codici Risposta
+   Descrizione: Verifica che i messaggi autorizzativi 1100, 1120, 1121 gestiscano correttamente i nuovi dati e forniscano i relativi codici risposta.
+   Obiettivo: Assicurarsi che i messaggi autorizzativi riflettano le nuove implementazioni e forniscano risposte appropriate.
+   Output atteso: Messaggi autorizzativi che includono i nuovi dati e generano i codici risposta corretti.
+   Input atteso: Messaggi autorizzativi inviati con i nuovi dati implementati.
+   Keywords: messaggi autorizzativi, codici risposta, 1100, 1120, 1121
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Messaggio Autorizzativo 1100 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1100 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1100 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1100 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1100 inviato con tutti i dati obbligatori completi.
+
+2. Titolo: Verifica Messaggio Autorizzativo 1120 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1120 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1120 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1120 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1120 inviato con tutti i dati obbligatori completi.
+
+3. Titolo: Verifica Messaggio Autorizzativo 1121 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1121 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1121 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1121 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1121 inviato con tutti i dati obbligatori completi.
+
+4. Titolo: Verifica Risposta Sistema AntiFrode per Messaggio 1100 con Dati Mancanti
+   Descrizione: Verifica che il sistema AntiFrode risponda correttamente con il codice di negazione "57" o "119" quando il messaggio 1100 non contiene tutti i dati obbligatori.
+   Obiettivo: Assicurarsi che il sistema AntiFrode blocchi le transazioni con dati mancanti e fornisca il codice di risposta di negazione appropriato.
+   Output atteso: Codice di risposta "57" o "119" in risposta a un messaggio 1100 con dati mancanti.
+   Input atteso: Messaggio 1100 inviato senza alcuni dati obbligatori.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 nei Messaggi 1120 e 1121
+   Descrizione: Verifica che i messaggi 1120 e 1121 di riallineamento non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i campi 111.66 e 111.67 non vengano sovrascritti nei messaggi di riallineamento.
+   Output atteso: Campi 111.66 e 111.67 preservati nei messaggi 1120 e 1121 se già presenti nel messaggio 1100.
+   Input atteso: Messaggi 1120 e 1121 inviati dopo un messaggio 1100 con i campi 111.66 e 111.67 valorizzati.
+
+6. Titolo: Verifica Esito Controlli Formali nel Campo 047.01 per Messaggio 1100
+   Descrizione: Verifica che il messaggio 1100 includa il nuovo sottocampo 047.01 con l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il messaggio 1100 rifletta l'esito dei controlli formali nel campo 047.01.
+   Output atteso: Messaggio 1100 con il sottocampo 047.01 che indica l'esito dei controlli formali.
+   Input atteso: Messaggio 1100 inviato con i dati obbligatori per la tracciabilità.
+
+7. Titolo: Verifica Salvataggio Campi 111.66, 111.67 e 047.01 nella Tabella TR
+   Descrizione: Verifica che i campi 111.66, 111.67 e 047.01 siano correttamente salvati nella tabella delle transazioni Sistema AntiFrode (tabella TR) dopo l'invio dei messaggi 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che i dati dei nuovi campi siano correttamente registrati nella tabella TR.
+   Output atteso: Campi 111.66, 111.67 e 047.01 presenti e correttamente valorizzati nella tabella TR.
+   Input atteso: Messaggi 1100, 1120, 1121 inviati con i nuovi dati implementati.
+
+Questi micro test cases sono stati creati per assicurare che i messaggi autorizzativi e i codici di risposta siano gestiti correttamente in relazione alle nuove implementazioni descritte nella documentazione di analisi funzionale.
+##################################################
+MACRO TEST
+10. Titolo: Verifica Inquiry Autorizzativo e Codici Risposta
+    Descrizione: Verifica che l'inquiry autorizzativo nel Sistema AntiFrode mostri correttamente i dettagli delle transazioni e i codici risposta associati.
+    Obiettivo: Assicurarsi che l'inquiry autorizzativo fornisca informazioni dettagliate e accurate sulle transazioni.
+    Output atteso: Inquiry autorizzativo che mostra i dettagli delle transazioni e i codici risposta corretti.
+    Input atteso: Richiesta di dettaglio transazione attraverso l'inquiry autorizzativo.
+    Keywords: inquiry autorizzativo, Sistema AntiFrode, dettagli transazione, codici risposta
+##################################################
+
+Based on the provided context and the Macro Test "Verifica Inquiry Autorizzativo e Codici Risposta," here are the detailed micro test cases:
+
+1. Titolo: Verifica Presenza Campi Obbligatori per Transazioni intra UE
+   Descrizione: Verifica che per le transazioni intra UE, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni intra UE.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni intra UE valorizzati correttamente.
+   Input atteso: Transazione intra UE con tutti i campi obbligatori valorizzati.
+
+2. Titolo: Verifica Presenza Campi Obbligatori per Transazioni extra UE < 1.000,00
+   Descrizione: Verifica che per le transazioni extra UE con importo inferiore a 1.000,00, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni extra UE con importo inferiore a 1.000,00.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni extra UE < 1.000,00 valorizzati correttamente.
+   Input atteso: Transazione extra UE con importo inferiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+
+3. Titolo: Verifica Presenza Campi Obbligatori per Transazioni extra UE >= 1.000,00
+   Descrizione: Verifica che per le transazioni extra UE con importo pari o superiore a 1.000,00, i campi obbligatori siano presenti e correttamente valorizzati.
+   Obiettivo: Assicurarsi che l'inquiry autorizzativo rilevi la presenza dei campi obbligatori per transazioni extra UE con importo pari o superiore a 1.000,00.
+   Output atteso: Inquiry autorizzativo che mostra tutti i campi obbligatori per transazioni extra UE >= 1.000,00 valorizzati correttamente.
+   Input atteso: Transazione extra UE con importo pari o superiore a 1.000,00 e tutti i campi obbligatori valorizzati.
+
+4. Titolo: Verifica Risposta Sistema AntiFrode per Transazioni non Conformi
+   Descrizione: Verifica che il Sistema AntiFrode fornisca il codice di risposta corretto in caso di transazioni non conformi.
+   Obiettivo: Assicurarsi che il Sistema AntiFrode risponda con il codice di risposta appropriato quando una transazione non supera i controlli di tracciabilità.
+   Output atteso: Codici di risposta "57" per Visa e Mastercard o "119" per le banche di debito internazionale in caso di transazioni non conformi.
+   Input atteso: Transazione non conforme alle regole di tracciabilità.
+
+5. Titolo: Verifica Integrazione e Visualizzazione Dati Aggiuntivi nel Dettaglio Transazione
+   Descrizione: Verifica che i dati aggiuntivi siano integrati e visualizzati correttamente nel dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i nuovi campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" siano presenti e corretti nel dettaglio transazione.
+   Output atteso: Visualizzazione corretta dei nuovi campi nel dettaglio della transazione finanziaria.
+   Input atteso: Transazione finanziaria con i nuovi campi dati aggiuntivi.
+
+6. Titolo: Verifica Configurazione Codici Risposta in Regole Finanziarie
+   Descrizione: Verifica che i codici di risposta siano configurati correttamente nelle regole finanziarie.
+   Obiettivo: Assicurarsi che i codici di risposta "57" e "119" siano impostati correttamente nelle form delle regole finanziarie.
+   Output atteso: Configurazione corretta dei codici di risposta nelle regole finanziarie.
+   Input atteso: Regole finanziarie configurate con i codici di risposta "57" e "119".
+
+7. Titolo: Verifica Visualizzazione Codici Risposta nel Dettaglio Autorizzazione
+   Descrizione: Verifica che i codici di risposta siano visualizzati correttamente nel dettaglio dell'autorizzazione.
+   Obiettivo: Assicurarsi che i codici di risposta "57" e "119" siano visualizzati nel dettaglio dell'autorizzazione in caso di negazione.
+   Output atteso: Visualizzazione corretta dei codici di risposta nel dettaglio dell'autorizzazione.
+   Input atteso: Dettaglio autorizzazione con codici di risposta "57" e "119" in caso di negazione.
+
+These micro test cases are designed to ensure that the new implementation or update to the software or service is thoroughly tested for compliance with the anti-money laundering regulations and that the Anti-Fraud System correctly handles authorization inquiries and response codes for fund transfer transactions.

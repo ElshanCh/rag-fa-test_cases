@@ -1,0 +1,57 @@
+##################################################
+MACRO TEST
+5. Titolo: Configurazione delle risposte di negazione del Sistema Antifrode
+   Descrizione: Configurazione delle risposte di negazione per mancata tracciabilità del Trasferimento Fondi.
+   Obiettivo: Assicurarsi che il sistema Antifrode risponda con i codici di negazione appropriati in caso di mancata verifica dell'obbligatorietà dei dati.
+   Output atteso: Risposte di negazione corrette dal sistema Antifrode.
+   Input atteso: Fallimento dei controlli nelle Regole finanziarie.
+   Keywords: risposte di negazione, Sistema Antifrode, codici di risposta, configurazione
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica negazione per mancata tracciabilità intra-UE
+   Descrizione: Testare la negazione di un trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il sistema Antifrode neghi un trasferimento fondi intra-UE senza il codice unico di identificazione operazione.
+   Input atteso: Trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+   Output atteso: Risposta di negazione "57" o "119" con motivo di rifiuto "R4 - No dati Reg847".
+   Procedura:
+      - Creare una transazione di trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+      - Inviare la transazione al sistema Antifrode.
+      - Verificare che il sistema Antifrode risponda con il codice di negazione "57" per Visa/Mastercard o "119" per le banche di debito internazionale.
+      - Verificare che il motivo di rifiuto sia "R4 - No dati Reg847".
+
+2. Titolo: Verifica negazione per mancata tracciabilità extra-UE sotto soglia
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro senza dati obbligatori.
+   Obiettivo: Assicurarsi che il sistema Antifrode neghi un trasferimento fondi extra-UE con importo < 1000,00 euro se mancano uno o più dati obbligatori.
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza uno o più dati obbligatori.
+   Output atteso: Risposta di negazione "57" o "119" con motivo di rifiuto "R4 - No dati Reg847".
+   Procedura:
+      - Creare una transazione di trasferimento fondi extra-UE con importo < 1000,00 euro senza uno o più dei seguenti dati: codice unico di identificazione operazione, cognome e nome ordinante, cognome e nome beneficiario.
+      - Inviare la transazione al sistema Antifrode.
+      - Verificare che il sistema Antifrode risponda con il codice di negazione "57" per Visa/Mastercard o "119" per le banche di debito internazionale.
+      - Verificare che il motivo di rifiuto sia "R4 - No dati Reg847".
+
+3. Titolo: Verifica negazione per mancata tracciabilità extra-UE sopra soglia
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza dati obbligatori.
+   Obiettivo: Assicurarsi che il sistema Antifrode neghi un trasferimento fondi extra-UE con importo >= 1000,00 euro se mancano uno o più dati obbligatori.
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza uno o più dati obbligatori.
+   Output atteso: Risposta di negazione "57" o "119" con motivo di rifiuto "R4 - No dati Reg847".
+   Procedura:
+      - Creare una transazione di trasferimento fondi extra-UE con importo >= 1000,00 euro senza uno o più dei seguenti dati: codice unico di identificazione operazione, cognome e nome ordinante, cognome e nome beneficiario, indirizzo ordinante, documento di identità ordinante, num. di identificazione account ordinante.
+      - Inviare la transazione al sistema Antifrode.
+      - Verificare che il sistema Antifrode risponda con il codice di negazione "57" per Visa/Mastercard o "119" per le banche di debito internazionale.
+      - Verificare che il motivo di rifiuto sia "R4 - No dati Reg847".
+
+4. Titolo: Verifica negazione per errore nei dati ordinante/beneficiario
+   Descrizione: Testare la negazione di un trasferimento fondi con dati errati di ordinante o beneficiario.
+   Obiettivo: Assicurarsi che il sistema Antifrode neghi un trasferimento fondi se i dati di ordinante o beneficiario sono errati.
+   Input atteso: Trasferimento fondi con dati errati di ordinante o beneficiario.
+   Output atteso: Risposta di negazione "57" o "119" con motivo di rifiuto "R4 - No dati Reg847".
+   Procedura:
+      - Creare una transazione di trasferimento fondi con dati errati di ordinante o beneficiario.
+      - Inviare la transazione al sistema Antifrode.
+      - Verificare che il sistema Antifrode risponda con il codice di negazione "57" per Visa/Mastercard o "119" per le banche di debito internazionale.
+      - Verificare che il motivo di rifiuto sia "R4 - No dati Reg847".
+
+Questi micro test cases coprono diversi scenari di negazione per mancata tracciabilità del trasferimento fondi, come richiesto dal contesto fornito.

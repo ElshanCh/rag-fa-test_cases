@@ -1,0 +1,61 @@
+##################################################
+MACRO TEST
+4. Titolo: Controllo Trasferimento Fondi extra UE >= 1000,00 euro
+   Descrizione: Verifica della presenza dei campi obbligatori per trasferimenti extra UE con importo uguale o superiore a 1000,00 euro.
+   Obiettivo: Verificare l'obbligatorietà dei campi per trasferimenti extra UE con importo >= 1000,00 euro.
+   Output atteso: Tutti i campi obbligatori valorizzati.
+   Input atteso: Cod. unico di identificazione operazione, Cognome e Nome ordinante, Cognome e Nome beneficiario, Indirizzo ordinante, Documento di identità ordinante, Num. di identificazione account ordinante.
+   Keywords: Trasferimento fondi, extra UE, importo maggiore o uguale a 1000,00 euro, campi obbligatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Unico di Identificazione Operazione per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza del Codice Unico di Identificazione Operazione per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che il Codice Unico di Identificazione Operazione sia presente e corretto per trasferimenti extra UE >= 1000,00 euro.
+   Input atteso: Codice Unico di Identificazione Operazione valido.
+   Output atteso: Conferma della presenza e validità del Codice Unico di Identificazione Operazione.
+   Procedura: 
+   - Inserire un Codice Unico di Identificazione Operazione valido per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti il codice e proceda con il trasferimento.
+   - Ripetere il test inserendo un codice non valido e verificare che il sistema blocchi il trasferimento.
+
+2. Titolo: Verifica Dati Ordinante per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza dei dati dell'ordinante per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i dati dell'ordinante (Cognome, Nome, Indirizzo, Documento di identità, Num. di identificazione account) siano presenti e corretti.
+   Input atteso: Dati ordinante completi e validi.
+   Output atteso: Conferma della presenza e validità dei dati dell'ordinante.
+   Procedura: 
+   - Inserire dati completi e validi dell'ordinante per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti i dati e proceda con il trasferimento.
+   - Ripetere il test inserendo dati incompleti o non validi e verificare che il sistema blocchi il trasferimento.
+
+3. Titolo: Verifica Dati Beneficiario per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della presenza e correttezza dei dati del beneficiario per trasferimenti extra UE con importo >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i dati del beneficiario (Cognome, Nome) siano presenti e corretti.
+   Input atteso: Dati beneficiario completi e validi.
+   Output atteso: Conferma della presenza e validità dei dati del beneficiario.
+   Procedura: 
+   - Inserire dati completi e validi del beneficiario per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il sistema accetti i dati e proceda con il trasferimento.
+   - Ripetere il test inserendo dati incompleti o non validi e verificare che il sistema blocchi il trasferimento.
+
+4. Titolo: Verifica Integrazione Campi ISO con Sistema Antifrode per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo dell'integrazione dei campi ISO (111.66, 111.67, 047.01) con il Sistema Antifrode per trasferimenti extra UE >= 1000,00 euro.
+   Obiettivo: Assicurarsi che i campi ISO siano correttamente integrati e salvati nel Sistema Antifrode.
+   Input atteso: Messaggi ISO con i campi 111.66, 111.67, 047.01 correttamente valorizzati.
+   Output atteso: Conferma che i campi ISO sono stati ricevuti e salvati correttamente nel Sistema Antifrode.
+   Procedura: 
+   - Inviare un messaggio ISO con i campi 111.66, 111.67, 047.01 valorizzati per un trasferimento extra UE >= 1000,00 euro.
+   - Verificare che il Sistema Antifrode riceva e salvi correttamente i campi.
+   - Ripetere il test con campi ISO non valorizzati o errati e verificare che il Sistema Antifrode segnali un errore.
+
+5. Titolo: Verifica Risposta Sistema Antifrode per Trasferimenti extra UE >= 1000,00 euro
+   Descrizione: Controllo della risposta del Sistema Antifrode in caso di dati mancanti o errati per trasferimenti extra UE >= 1000,00 euro.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda correttamente in caso di mancanza o errore nei dati obbligatori.
+   Input atteso: Trasferimento con dati obbligatori mancanti o errati.
+   Output atteso: Risposta di negazione dal Sistema Antifrode con codice "57" o "119" e motivo di rifiuto "R4 - No dati Reg847".
+   Procedura: 
+   - Effettuare un trasferimento extra UE >= 1000,00 euro con dati obbligatori mancanti o errati.
+   - Verificare che il Sistema Antifrode risponda con una negazione e i codici di risposta appropriati.
+   - Ripetere il test con tutti i dati obbligatori presenti e corretti e verificare che il trasferimento venga accettato.

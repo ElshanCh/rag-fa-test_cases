@@ -1,0 +1,53 @@
+##################################################
+MACRO TEST
+5. Titolo: Verifica Salvataggio Dati nel Sistema AntiFrode
+   Descrizione: Verifica che i dati dei nuovi sottocampi siano correttamente salvati nella tabella delle transazioni del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che i dati relativi all'identificazione dell'ordinante siano correttamente memorizzati nel Sistema AntiFrode.
+   Output atteso: Dati dei sottocampi presenti nella tabella TR del Sistema AntiFrode.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati.
+   Keywords: Sistema AntiFrode, salvataggio dati, tabella TR, sottocampi
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Salvataggio Campo 111.66 per Transazione Mastercard
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 o 200000.
+   Obiettivo: Assicurarsi che il tipo di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni Mastercard.
+   Output atteso: Campo 111.66 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.66 valorizzato per transazioni Mastercard.
+
+2. Titolo: Verifica Salvataggio Campo 111.67 per Transazione Mastercard
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 o 200000.
+   Obiettivo: Assicurarsi che il numero di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni Mastercard.
+   Output atteso: Campo 111.67 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.67 valorizzato per transazioni Mastercard.
+
+3. Titolo: Verifica Salvataggio Campo 111.66 per Transazione VISA
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente salvato nella tabella TR per le transazioni VISA con processingCode = 260000 o 200000.
+   Obiettivo: Assicurarsi che il tipo di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni VISA.
+   Output atteso: Campo 111.66 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.66 valorizzato per transazioni VISA.
+
+4. Titolo: Verifica Salvataggio Campo 111.67 per Transazione VISA
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente salvato nella tabella TR per le transazioni VISA con processingCode = 260000 o 200000.
+   Obiettivo: Assicurarsi che il numero di documento di identità dell'ordinante (Sender) sia memorizzato correttamente nel Sistema AntiFrode per le transazioni VISA.
+   Output atteso: Campo 111.67 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 111.67 valorizzato per transazioni VISA.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 su Advice
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i campi relativi all'identificazione dell'ordinante non vengano sovrascritti durante il processo di riallineamento.
+   Output atteso: Campi 111.66 e 111.67 non modificati dopo la ricezione degli advice 1120 e 1121.
+   Input atteso: Messaggi ISO 1120 e 1121 con advice di riallineamento.
+
+6. Titolo: Verifica Salvataggio Campo 047.01 Reg487 Verification Result
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente salvato nella tabella TR per i messaggi ISO 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali effettuati da Autorizzativo sia memorizzato correttamente nel Sistema AntiFrode.
+   Output atteso: Campo 047.01 presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO con campo 047.01 valorizzato.
+
+7. Titolo: Verifica Non Sovrascrittura Campo 047.01 su Advice
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano il campo 047.01 registrato con il messaggio 1100.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali non venga sovrascritto durante il processo di riallineamento.
+   Output atteso: Campo 047.01 non modificato dopo la ricezione degli advice 1120 e 1121.
+   Input atteso: Messaggi ISO 1120 e 1121 con advice di riallineamento.

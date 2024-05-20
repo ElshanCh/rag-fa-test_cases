@@ -1,0 +1,62 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Contesto Svolgimento TEST
+Descrizione: Verifica complessiva dell'implementazione delle nuove funzionalità nel contesto dei test funzionali di riferimento.
+Obiettivo: Eseguire test end-to-end per validare l'implementazione delle nuove funzionalità in diversi ambiti funzionali.
+Output atteso: Successo nei test funzionali in tutti gli ambiti di riferimento.
+Input atteso: Setup regole, messaggi autorizzativi, inquiry autorizzativo con i nuovi dati e controlli implementati.
+Keywords: Test end-to-end, funzionalità, ambiti funzionali, setup regole, messaggi autorizzativi
+##################################################
+
+Based on the provided context, here are the micro test cases formatted similarly to the provided Macro Test:
+
+**Micro Test Case 1: Verifica dei Dati Aggiuntivi Documento Ordinante (Sender)**
+Descrizione: Verifica dell'integrazione e della corretta gestione dei dati aggiuntivi dell'ordinante nel messaggio ISO.
+Obiettivo: Assicurarsi che i dati aggiuntivi dell'ordinante siano correttamente inclusi e gestiti nel messaggio ISO.
+Output atteso: I dati aggiuntivi dell'ordinante sono presenti e corretti nel messaggio ISO.
+Input atteso: Messaggio ISO con i dati aggiuntivi dell'ordinante.
+Keywords: Dati aggiuntivi, ordinante, messaggio ISO
+
+**Micro Test Case 2: Controllo dei Controlli Formali Autorizzativo**
+Descrizione: Verifica dell'esito dei controlli formali effettuati da Autorizzativo e la loro corretta trasmissione al Sistema AntiFrode.
+Obiettivo: Confermare che l'esito dei controlli formali sia correttamente codificato e inviato al Sistema AntiFrode.
+Output atteso: Esito dei controlli formali correttamente trasmesso al Sistema AntiFrode.
+Input atteso: Messaggio ISO con il sottocampo 047.01 contenente l'esito dei controlli formali.
+Keywords: Controlli formali, Autorizzativo, Sistema AntiFrode, messaggio ISO
+
+**Micro Test Case 3: Verifica Mappatura Campi ISO con Tabella TR**
+Descrizione: Test della corretta mappatura dei campi ISO con la tabella TR nel Sistema AntiFrode.
+Obiettivo: Assicurarsi che la mappatura dei campi ISO con la tabella TR sia eseguita correttamente.
+Output atteso: Corrispondenza esatta tra i campi ISO e la tabella TR nel Sistema AntiFrode.
+Input atteso: Messaggio ISO e tabella TR per la verifica della mappatura.
+Keywords: Mappatura, campi ISO, tabella TR, Sistema AntiFrode
+
+**Micro Test Case 4: Integrazione Dati Trasferimento Fondi nella GUI Sistema AntiFrode**
+Descrizione: Test dell'integrazione dei dati di trasferimento fondi nella GUI del Sistema AntiFrode.
+Obiettivo: Verificare che i dati di trasferimento fondi siano correttamente visualizzati nella GUI del Sistema AntiFrode.
+Output atteso: Dati di trasferimento fondi integrati e visualizzabili nella GUI del Sistema AntiFrode.
+Input atteso: Dati di trasferimento fondi per la verifica dell'integrazione nella GUI.
+Keywords: GUI, Sistema AntiFrode, trasferimento fondi
+
+**Micro Test Case 5: Risposte Sistema AntiFrode per Transazioni Non Conformi**
+Descrizione: Test delle risposte del Sistema AntiFrode in caso di transazioni non conformi alle regole di tracciabilità.
+Obiettivo: Assicurarsi che il Sistema AntiFrode fornisca le risposte corrette per transazioni non conformi.
+Output atteso: Risposte appropriate del Sistema AntiFrode per transazioni non conformi.
+Input atteso: Transazioni non conformi per testare le risposte del Sistema AntiFrode.
+Keywords: Sistema AntiFrode, risposte, transazioni non conformi
+
+**Micro Test Case 6: Configurazione e Test del Nuovo Motivo di Rifiuto R4**
+Descrizione: Test della configurazione e dell'efficacia del nuovo motivo di rifiuto "R4 - No dati Reg847" nel Sistema AntiFrode.
+Obiettivo: Verificare che il nuovo motivo di rifiuto sia configurato correttamente e funzioni come previsto.
+Output atteso: Il motivo di rifiuto "R4 - No dati Reg847" è configurato e funziona correttamente.
+Input atteso: Configurazione del motivo di rifiuto "R4 - No dati Reg847" e transazioni di test.
+Keywords: Motivo di rifiuto, R4, Sistema AntiFrode
+
+**Micro Test Case 7: Test End-to-End dei Nuovi Parametri e Codici Risposta**
+Descrizione: Test end-to-end per verificare l'integrazione dei nuovi parametri e dei relativi codici risposta nel flusso di autorizzazione.
+Obiettivo: Confermare che i nuovi parametri e codici risposta siano gestiti correttamente in tutto il flusso di autorizzazione.
+Output atteso: Flusso di autorizzazione che gestisce correttamente i nuovi parametri e codici risposta.
+Input atteso: Setup regole con i nuovi parametri e messaggi autorizzativi per il test end-to-end.
+Keywords: Test end-to-end, parametri, codici risposta, autorizzazione
+
+These micro test cases are designed to cover various aspects of the new functionalities and updates described in the functional analysis documentation. Each test case focuses on a specific area of the system to ensure comprehensive testing of the new implementation.

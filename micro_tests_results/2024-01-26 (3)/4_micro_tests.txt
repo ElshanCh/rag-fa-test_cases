@@ -1,0 +1,74 @@
+##################################################
+MACRO TEST
+5. Titolo: Integrazione dati Trasferimento Fondi nella GUI Sistema Antifrode
+   Descrizione: Verifica che i nuovi campi siano integrati e disponibili per la creazione di regole e accumulatori nel Sistema Antifrode.
+   Obiettivo: Assicurarsi che i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" siano presenti e utilizzabili nella GUI.
+   Output atteso: Campi disponibili e funzionanti nella GUI.
+   Input atteso: Dati del trasferimento fondi.
+   Keywords: GUI, Sistema Antifrode, integrazione dati, regole, accumulatori.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica campo "Sender Identification Type" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Sender Identification Type" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Type" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Sender Identification Type" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Sender Identification Type" sia presente nella combo "Transazione" dei Parametri Regola.
+
+2. Titolo: Verifica campo "Sender Identification Value" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Sender Identification Value" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Value" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Sender Identification Value" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Sender Identification Value" sia presente nella combo "Transazione" dei Parametri Regola.
+
+3. Titolo: Verifica campo "Reg487 Verification Result" nella GUI
+   Descrizione: Controllo della presenza e corretta visualizzazione del campo "Reg487 Verification Result" nella GUI del Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia presente e correttamente visualizzabile nella GUI.
+   Input atteso: N/A
+   Output atteso: Campo "Reg487 Verification Result" visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare alla sezione di creazione/modifica delle regole e accumulatori.
+   - Verificare che il campo "Reg487 Verification Result" sia presente nella combo "Transazione" dei Parametri Regola.
+
+4. Titolo: Verifica integrazione campi in Dettaglio Transazione Finanziaria
+   Descrizione: Verifica che i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" siano visualizzati correttamente nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i nuovi campi siano integrati e mostrati correttamente nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: N/A
+   Output atteso: Campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" visualizzati nella sezione "Mastercard Money Send".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menu Autorizzazioni e eseguire una ricerca per PAN.
+   - Selezionare una transazione dalla lista e visualizzare il dettaglio.
+   - Verificare la presenza e corretta visualizzazione dei campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" nella sezione "Mastercard Money Send".
+
+5. Titolo: Verifica creazione regole con nuovi campi
+   Descrizione: Testare la possibilità di creare nuove regole utilizzando i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Obiettivo: Assicurarsi che sia possibile creare regole che includano i nuovi campi integrati.
+   Input atteso: N/A
+   Output atteso: Creazione di una nuova regola che include i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menù Regole e selezionare Gestione Regole.
+   - Creare una nuova regola e selezionare i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" dalla combo "Transazione" dei Parametri Regola.
+   - Salvare la regola e verificare che sia stata creata correttamente.
+
+6. Titolo: Verifica creazione accumulatori evoluti con nuovi campi
+   Descrizione: Testare la possibilità di creare nuovi accumulatori evoluti utilizzando i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Obiettivo: Assicurarsi che sia possibile creare accumulatori evoluti che includano i nuovi campi integrati.
+   Input atteso: N/A
+   Output atteso: Creazione di un nuovo accumulatore evoluto che include i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result".
+   Procedura: 
+   - Accedere alla GUI del Sistema Antifrode.
+   - Navigare al Menù Regole e selezionare Accumulatori Evoluti.
+   - Creare un nuovo accumulatore evoluto e selezionare i campi "Sender Identification Type", "Sender Identification Value", e "Reg487 Verification Result" dalla combo "Transazione" dei Parametri Regola.
+   - Salvare l'accumulatore evoluto e verificare che sia stato creato correttamente.

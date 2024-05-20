@@ -1,0 +1,70 @@
+##################################################
+MACRO TEST
+4. Titolo: Integrazione dati Trasferimento Fondi nella GUI Sistema Antifrode
+   Descrizione: Aggiunta dei nuovi campi associati al Trasferimento Fondi nelle regole e accumulatori evoluti della GUI Sistema Antifrode.
+   Obiettivo: Verificare che i nuovi campi siano disponibili e utilizzabili nelle regole e accumulatori evoluti.
+   Output atteso: I nuovi campi devono essere visibili e funzionanti nella GUI Sistema Antifrode.
+   Input atteso: Dati associati al Trasferimento Fondi.
+   Keywords: GUI, Sistema Antifrode, regole, accumulatori evoluti, Trasferimento Fondi
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica visibilità campo "Sender Identification Type" nella GUI
+   Descrizione: Controllo che il campo "Sender Identification Type" sia visibile nella GUI Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Type" sia presente e visualizzabile nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Output atteso: Il campo "Sender Identification Type" è visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI Sistema Antifrode.
+   - Navigare al Menu Autorizzazioni e procedere con la ricerca per PAN.
+   - Selezionare una transazione dalla Lista transazioni e aprire il Dettaglio.
+   - Verificare la presenza del campo "Sender Identification Type" nella sezione "Mastercard Money Send".
+
+2. Titolo: Verifica visibilità campo "Sender Identification Value" nella GUI
+   Descrizione: Controllo che il campo "Sender Identification Value" sia visibile nella GUI Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Sender Identification Value" sia presente e visualizzabile nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Output atteso: Il campo "Sender Identification Value" è visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI Sistema Antifrode.
+   - Navigare al Menu Autorizzazioni e procedere con la ricerca per PAN.
+   - Selezionare una transazione dalla Lista transazioni e aprire il Dettaglio.
+   - Verificare la presenza del campo "Sender Identification Value" nella sezione "Mastercard Money Send".
+
+3. Titolo: Verifica visibilità campo "Reg487 Verification Result" nella GUI
+   Descrizione: Controllo che il campo "Reg487 Verification Result" sia visibile nella GUI Sistema Antifrode.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia presente e visualizzabile nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Output atteso: Il campo "Reg487 Verification Result" è visibile nella GUI.
+   Procedura: 
+   - Accedere alla GUI Sistema Antifrode.
+   - Navigare al Menu Autorizzazioni e procedere con la ricerca per PAN.
+   - Selezionare una transazione dalla Lista transazioni e aprire il Dettaglio.
+   - Verificare la presenza del campo "Reg487 Verification Result" nella sezione "Mastercard Money Send".
+
+4. Titolo: Verifica funzionalità creazione regole con nuovi campi
+   Descrizione: Testare la possibilità di creare nuove regole utilizzando i campi aggiunti relativi al Trasferimento Fondi.
+   Obiettivo: Assicurarsi che sia possibile creare regole prioritarie, RealTime, NearRealTime e accumulatori evoluti finanziari utilizzando i nuovi campi.
+   Output atteso: Creazione di nuove regole e accumulatori evoluti finanziari con i nuovi campi è possibile.
+   Procedura: 
+   - Accedere alla GUI Sistema Antifrode.
+   - Navigare al Menù Regole e selezionare Gestione Regole.
+   - Tentare di creare una nuova regola selezionando i nuovi campi dalla combo "Transazione" dei Parametri Regola.
+   - Ripetere il processo per gli accumulatori evoluti selezionando i nuovi campi dalla combo "Transazione" di tutti i Parametri Regola.
+
+5. Titolo: Verifica integrazione campi "Sender Identification Type" e "Sender Identification Value" nei messaggi ISO
+   Descrizione: Verificare che i campi "Sender Identification Type" e "Sender Identification Value" siano correttamente integrati nei messaggi ISO 1100, 1120 e 1121.
+   Obiettivo: Assicurarsi che i nuovi sottocampi siano presenti e correttamente valorizzati nei messaggi ISO pertinenti.
+   Output atteso: I sottocampi "Sender Identification Type" e "Sender Identification Value" sono presenti e correttamente valorizzati nei messaggi ISO.
+   Procedura: 
+   - Simulare l'invio di un messaggio ISO 1100 di richiesta autorizzazione contenente i nuovi sottocampi.
+   - Verificare che i sottocampi siano presenti e correttamente valorizzati.
+   - Ripetere la procedura per i messaggi ISO 1120 e 1121.
+
+6. Titolo: Verifica corretta gestione dei campi in caso di Time-out e Off-line
+   Descrizione: Assicurarsi che i valori dei campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" non vengano sovrascritti in caso di ricezione dei messaggi 1120 di Time-out o Off-line se già presenti nella tabella TR.
+   Obiettivo: Verificare che i valori dei campi non vengano sovrascritti in caso di ricezione dei messaggi 1120 di Time-out o Off-line.
+   Output atteso: I valori dei campi nella tabella TR rimangono invariati in caso di ricezione dei messaggi 1120 di Time-out o Off-line.
+   Procedura: 
+   - Simulare la ricezione di un messaggio 1120 di Time-out o Off-line.
+   - Verificare che i valori dei campi nella tabella TR non vengano sovrascritti se già presenti.
+
+Questi micro test cases coprono la verifica della visibilità e funzionalità dei nuovi campi nella GUI Sistema Antifrode, nonché l'integrazione e la gestione corretta dei campi nei messaggi ISO e nella tabella TR.

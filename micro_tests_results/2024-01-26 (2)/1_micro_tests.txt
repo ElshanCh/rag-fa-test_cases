@@ -1,0 +1,67 @@
+##################################################
+MACRO TEST
+2. Titolo: Controllo del nuovo sottocampo 047.01
+   Descrizione: Implementazione del sottocampo 047.01 per trasportare l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Verificare che il sottocampo 047.01 rifletta correttamente l'esito dei controlli formali.
+   Output atteso: Il sottocampo 047.01 deve contenere il valore corretto in base all'esito dei controlli formali.
+   Input atteso: Risultati dei controlli formali effettuati da Autorizzativo.
+   Keywords: sottocampo 047.01, controlli formali, esito, messaggi ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica presenza sottocampo 047.01 per transazioni intra-UE
+   Descrizione: Verifica che il sottocampo 047.01 sia presente e correttamente valorizzato per transazioni di trasferimento fondi intra-UE.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia popolato con il valore '0' per transazioni intra-UE che superano i controlli formali.
+   Input atteso: Transazione intra-UE con dati completi.
+   Output atteso: Sottocampo 047.01 valorizzato con '0'.
+   Procedura: 
+   - Inviare una transazione intra-UE con tutti i campi obbligatori correttamente compilati.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '0'.
+
+2. Titolo: Verifica sottocampo 047.01 per transazioni extra-UE con importo < 1.000,00
+   Descrizione: Verifica che il sottocampo 047.01 sia correttamente valorizzato per transazioni extra-UE con importo inferiore a 1.000,00.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 rifletta l'esito dei controlli formali per transazioni extra-UE con importo < 1.000,00.
+   Input atteso: Transazione extra-UE con importo < 1.000,00 e dati completi.
+   Output atteso: Sottocampo 047.01 valorizzato con '0'.
+   Procedura: 
+   - Inviare una transazione extra-UE con importo < 1.000,00 e tutti i campi obbligatori correttamente compilati.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '0'.
+
+3. Titolo: Verifica sottocampo 047.01 per transazioni extra-UE con importo >= 1.000,00
+   Descrizione: Verifica che il sottocampo 047.01 sia correttamente valorizzato per transazioni extra-UE con importo maggiore o uguale a 1.000,00.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 rifletta l'esito dei controlli formali per transazioni extra-UE con importo >= 1.000,00.
+   Input atteso: Transazione extra-UE con importo >= 1.000,00 e dati completi.
+   Output atteso: Sottocampo 047.01 valorizzato con '0'.
+   Procedura: 
+   - Inviare una transazione extra-UE con importo >= 1.000,00 e tutti i campi obbligatori correttamente compilati.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '0'.
+
+4. Titolo: Verifica sottocampo 047.01 per errore cognome ordinante
+   Descrizione: Verifica che il sottocampo 047.01 sia correttamente valorizzato in caso di errore nel cognome dell'ordinante.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia popolato con il valore '2' se il cognome dell'ordinante è errato.
+   Input atteso: Transazione con cognome ordinante errato.
+   Output atteso: Sottocampo 047.01 valorizzato con '2'.
+   Procedura: 
+   - Inviare una transazione con un cognome ordinante errato.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '2'.
+
+5. Titolo: Verifica sottocampo 047.01 per errore indirizzo ordinante
+   Descrizione: Verifica che il sottocampo 047.01 sia correttamente valorizzato in caso di errore nell'indirizzo dell'ordinante.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia popolato con il valore '4' se l'indirizzo dell'ordinante è errato.
+   Input atteso: Transazione con indirizzo ordinante errato.
+   Output atteso: Sottocampo 047.01 valorizzato con '4'.
+   Procedura: 
+   - Inviare una transazione con un indirizzo ordinante errato.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '4'.
+
+6. Titolo: Verifica sottocampo 047.01 per errore numero account ordinante
+   Descrizione: Verifica che il sottocampo 047.01 sia correttamente valorizzato in caso di errore nel numero di account dell'ordinante.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia popolato con il valore '6' se il numero di account dell'ordinante è errato.
+   Input atteso: Transazione con numero di account ordinante errato.
+   Output atteso: Sottocampo 047.01 valorizzato con '6'.
+   Procedura: 
+   - Inviare una transazione con un numero di account ordinante errato.
+   - Verificare che il sottocampo 047.01 sia presente nel messaggio ISO e contenga il valore '6'.
+
+Questi micro test cases coprono diversi scenari di errore e successo per il sottocampo 047.01, assicurando che il sistema gestisca correttamente l'esito dei controlli formali in base ai requisiti di tracciabilità del trasferimento di fondi.

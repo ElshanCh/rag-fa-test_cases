@@ -1,0 +1,48 @@
+1. Titolo: Verifica dell'implementazione dei controlli formali Autorizzativo
+   Descrizione: Implementazione di nuovi controlli formali da parte del FE Autorizzativo per il Trasferimento Fondi.
+   Obiettivo: Assicurarsi che il FE Autorizzativo esegua correttamente i controlli formali sui dati informativi obbligatori.
+   Output atteso: Esito positivo dei controlli formali o codici di errore specifici in caso di dati mancanti o errati.
+   Input atteso: Dati informativi obbligatori per il Trasferimento Fondi.
+   Keywords: FE Autorizzativo, controlli formali, Trasferimento Fondi, dati informativi obbligatori.
+
+2. Titolo: Test dell'integrazione dei nuovi sottocampi nel messaggio ISO
+   Descrizione: Aggiunta di due nuovi sottocampi (111.66 e 111.67) nel messaggio ISO per il documento di identificazione dell'ordinante.
+   Obiettivo: Verificare che i nuovi sottocampi siano correttamente valorizzati e inviati nei messaggi ISO.
+   Output atteso: Corretta valorizzazione e invio dei sottocampi nei messaggi 1100, 1120, 1121.
+   Input atteso: Valori per i sottocampi 111.66 e 111.67.
+   Keywords: messaggio ISO, sottocampi, documento di identificazione, ordinante.
+
+3. Titolo: Test del mapping dei campi ISO con la tabella TR
+   Descrizione: Mappatura dei nuovi campi del messaggio ISO con la tabella TR del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che i nuovi campi ISO siano correttamente mappati e salvati nella tabella TR.
+   Output atteso: Corretta mappatura e salvataggio dei dati nella tabella TR.
+   Input atteso: Dati del messaggio ISO.
+   Keywords: mapping, campi ISO, tabella TR, Sistema AntiFrode.
+
+4. Titolo: Test dell'integrazione dati Trasferimento Fondi nella GUI Sistema AntiFrode
+   Descrizione: Integrazione dei dati dell'Ordinante e del Beneficiario nella GUI del Sistema AntiFrode.
+   Obiettivo: Verificare che i dati siano disponibili e correttamente visualizzati nella GUI.
+   Output atteso: Corretta visualizzazione dei dati nelle sezioni Regole e Accumulatori della GUI.
+   Input atteso: Dati dell'Ordinante e del Beneficiario.
+   Keywords: GUI, Sistema AntiFrode, dati Ordinante, dati Beneficiario.
+
+5. Titolo: Test delle risposte di negazione dal Sistema AntiFrode
+   Descrizione: Configurazione delle risposte di negazione per mancata verifica dell'obbligatoriet� dei dati.
+   Obiettivo: Assicurarsi che il Sistema AntiFrode risponda con i codici di negazione appropriati.
+   Output atteso: Risposta "57" o "119" in caso di mancata tracciabilit� del Trasferimento Fondi.
+   Input atteso: Risultati dei controlli delle Regole finanziarie.
+   Keywords: Sistema AntiFrode, risposte di negazione, codici di risposta, tracciabilit�.
+
+6. Titolo: Test del motivo di rifiuto "R4 - No dati Reg847"
+   Descrizione: Utilizzo di un nuovo motivo di rifiuto per le negate per mancata tracciabilit� del Trasferimento Fondi.
+   Obiettivo: Verificare che il motivo di rifiuto "R4" sia configurato e utilizzato correttamente.
+   Output atteso: Corretta configurazione e utilizzo del motivo di rifiuto "R4" nel sistema.
+   Input atteso: Transazioni negate per mancata tracciabilit�.
+   Keywords: motivo di rifiuto, R4, No dati Reg847, configurazione.
+
+7. Titolo: Test contesto svolgimento TEST sui nuovi parametri e codici risposta
+   Descrizione: Test delle nuove implementazioni nei diversi ambiti funzionali del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che le nuove informazioni siano correttamente gestite in tutti gli ambiti funzionali.
+   Output atteso: Corretto setup delle regole, gestione dei messaggi autorizzativi e inquiry autorizzativo.
+   Input atteso: Nuove informazioni previste per i test.
+   Keywords: test, ambiti funzionali, Sistema AntiFrode, setup regole, codici risposta.

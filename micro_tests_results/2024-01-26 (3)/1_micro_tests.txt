@@ -1,0 +1,53 @@
+##################################################
+MACRO TEST
+2. Titolo: Controllo Trasferimento Fondi infra UE
+   Descrizione: Verifica della presenza del campo "Cod. unico di identificazione operazione" per trasferimenti infra UE.
+   Obiettivo: Verificare l'obbligatorietà del campo per trasferimenti infra UE.
+   Output atteso: Campo obbligatorio valorizzato.
+   Input atteso: Cod. unico di identificazione operazione.
+   Keywords: Trasferimento fondi, infra UE, codice identificativo, obbligatorio.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Cod. unico di identificazione operazione per Mastercard Payment Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione Mastercard Payment Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni Mastercard Payment Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione Mastercard Payment Transaction (processingCode = 280000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+2. Titolo: Verifica Cod. unico di identificazione operazione per Mastercard Funding Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione Mastercard Funding Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni Mastercard Funding Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione Mastercard Funding Transaction (processingCode = 200000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+3. Titolo: Verifica Cod. unico di identificazione operazione per VISA Original Credit Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione VISA Original Credit Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni VISA Original Credit Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione VISA Original Credit Transaction (processingCode = 260000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+4. Titolo: Verifica Cod. unico di identificazione operazione per VISA Account Funding Transaction
+   Descrizione: Controllo della presenza e corretta valorizzazione del campo "Cod. unico di identificazione operazione" per una transazione VISA Account Funding Transaction infra UE.
+   Obiettivo: Assicurarsi che il campo sia obbligatorio e correttamente valorizzato per le transazioni VISA Account Funding Transaction infra UE.
+   Input atteso: Cod. unico di identificazione operazione.
+   Output atteso: Campo obbligatorio valorizzato correttamente.
+   Procedura: 
+   - Creare una transazione VISA Account Funding Transaction (processingCode = 200000) infra UE.
+   - Verificare che il campo "Cod. unico di identificazione operazione" sia presente e valorizzato.
+   - Confermare che la transazione non venga bloccata dal sistema Antifrode.
+
+Each of these micro test cases focuses on a specific transaction type within the Mastercard and VISA networks, ensuring that the "Cod. unico di identificazione operazione" is mandatory and correctly populated for intra-EU fund transfers as per the new regulatory requirements.

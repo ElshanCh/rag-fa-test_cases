@@ -1,0 +1,41 @@
+1. Titolo: Verifica dell'implementazione dei controlli formali Autorizzativo
+   Descrizione: Implementazione di un nuovo sottocampo nel messaggio ISO per trasportare l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 venga correttamente popolato con i valori di dominio attesi.
+   Output atteso: Valori di dominio corretti per il sottocampo 047.01.
+   Input atteso: Messaggi ISO 1100, 1120, 1121 con il sottocampo 047.01 popolato.
+   Keywords: Autorizzativo, controlli formali, sottocampo 047.01, messaggio ISO
+
+2. Titolo: Controllo dei dati aggiuntivi Documento Ordinante nel Sistema Antifrode
+   Descrizione: Aggiunta di due nuovi sottocampi nel campo ISO 111 per identificare il tipo e il valore del documento dell'ordinante.
+   Obiettivo: Verificare che i sottocampi 111.66 e 111.67 siano correttamente valorizzati e inviati nei messaggi ISO pertinenti.
+   Output atteso: Valorizzazione corretta dei sottocampi 111.66 e 111.67.
+   Input atteso: Transazioni Visa/Mastercard con i valori del campo ISO 003 ProcessingCode specificati.
+   Keywords: Sistema Antifrode, sottocampi 111.66, 111.67, documento ordinante, messaggio ISO
+
+3. Titolo: Mappatura dei nuovi sottocampi ISO con la tabella TR
+   Descrizione: Salvataggio dei sottocampi 111.66, 111.67 e 047.01 nella tabella TR del Sistema Antifrode.
+   Obiettivo: Assicurarsi che i sottocampi ISO siano correttamente mappati e salvati nella tabella TR.
+   Output atteso: Corretta mappatura e salvataggio dei sottocampi nella tabella TR.
+   Input atteso: Messaggi ISO 1100, 1120/1121 con i sottocampi pertinenti.
+   Keywords: mappatura, sottocampi ISO, tabella TR, Sistema Antifrode
+
+4. Titolo: Integrazione dei dati di Trasferimento Fondi nella GUI del Sistema Antifrode
+   Descrizione: Integrazione dei nuovi campi associati al Trasferimento Fondi nelle regole e accumulatori evoluti del Sistema Antifrode.
+   Obiettivo: Verificare che i nuovi campi siano disponibili e utilizzabili nelle regole e accumulatori evoluti.
+   Output atteso: Disponibilità dei nuovi campi nella GUI per la creazione di regole e accumulatori.
+   Input atteso: Accesso alla GUI del Sistema Antifrode e navigazione alle sezioni pertinenti.
+   Keywords: GUI, Sistema Antifrode, Trasferimento Fondi, regole, accumulatori evoluti
+
+5. Titolo: Verifica delle risposte di negazione del Sistema Antifrode
+   Descrizione: Configurazione delle risposte di negazione del Sistema Antifrode in caso di mancata verifica dell'obbligatorietà dei dati.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda con i codici di negazione corretti in base alle regole finanziarie.
+   Output atteso: Risposte di negazione corrette dal Sistema Antifrode.
+   Input atteso: Condizioni di validità sui dati associati al Trasferimento Fondi che generano negazioni.
+   Keywords: Sistema Antifrode, risposte di negazione, codici di risposta, regole finanziarie
+
+6. Titolo: Regole per la verifica del Trasferimento Fondi
+   Descrizione: Definizione di regole per intercettare le condizioni di validità sui dati del Trasferimento Fondi e generare negazioni appropriate.
+   Obiettivo: Verificare che le regole siano configurate per negare le transazioni in base ai criteri specificati.
+   Output atteso: Negazione delle transazioni non conformi ai criteri di tracciabilità.
+   Input atteso: Dati del Trasferimento Fondi non conformi ai criteri di tracciabilità.
+   Keywords: regole, verifica, Trasferimento Fondi, negazione, Sistema Antifrode

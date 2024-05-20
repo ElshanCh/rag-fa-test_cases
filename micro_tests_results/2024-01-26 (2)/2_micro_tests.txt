@@ -1,0 +1,69 @@
+##################################################
+MACRO TEST
+3. Titolo: Mappatura dei sottocampi ISO con la tabella TR
+   Descrizione: Salvataggio dei sottocampi 111.66, 111.67 e 047.01 nella tabella TR del Sistema Antifrode.
+   Obiettivo: Assicurarsi che i sottocampi ISO siano correttamente mappati e salvati nella tabella TR.
+   Output atteso: Corrispondenza tra i sottocampi ISO e i campi della tabella TR.
+   Input atteso: Messaggi 1100 e 1120/1121 di Time-out e Off-line.
+   Keywords: mappatura, sottocampi ISO, tabella TR, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+Micro Test Case 1:
+- Titolo: Verifica salvataggio sottocampo 111.66 per transazioni Mastercard
+- Descrizione: Assicurarsi che il sottocampo 111.66 (Sender Identification Type) sia correttamente salvato nella tabella TR per le transazioni Mastercard.
+- Obiettivo: Verificare la corretta mappatura e salvataggio del sottocampo 111.66 per le transazioni Mastercard con processingCode = 280000 e 200000.
+- Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+- Output atteso: Valore del sottocampo 111.66 salvato nel campo "Sender Identification Type" della tabella TR.
+- Procedura: 
+  1. Generare un messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+  2. Inviare il messaggio al Sistema Antifrode.
+  3. Verificare che il valore del sottocampo 111.66 sia correttamente salvato nel campo "Sender Identification Type" della tabella TR.
+
+Micro Test Case 2:
+- Titolo: Verifica salvataggio sottocampo 111.67 per transazioni VISA
+- Descrizione: Assicurarsi che il sottocampo 111.67 (Sender Identification Value) sia correttamente salvato nella tabella TR per le transazioni VISA.
+- Obiettivo: Verificare la corretta mappatura e salvataggio del sottocampo 111.67 per le transazioni VISA con processingCode = 260000 e 200000.
+- Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+- Output atteso: Valore del sottocampo 111.67 salvato nel campo "Sender Identification Value" della tabella TR.
+- Procedura: 
+  1. Generare un messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+  2. Inviare il messaggio al Sistema Antifrode.
+  3. Verificare che il valore del sottocampo 111.67 sia correttamente salvato nel campo "Sender Identification Value" della tabella TR.
+
+Micro Test Case 3:
+- Titolo: Verifica non sovrascrittura sottocampo 047.01 in caso di riallineamento
+- Descrizione: Assicurarsi che il sottocampo 047.01 (Reg487 Verification Result) non venga sovrascritto nella tabella TR in caso di ricezione di messaggi 1120 di riallineamento.
+- Obiettivo: Confermare che i valori esistenti del sottocampo 047.01 nella tabella TR non vengano sovrascritti durante il riallineamento.
+- Input atteso: Messaggio ISO 1120 di riallineamento con un valore preesistente per il sottocampo 047.01 nella tabella TR.
+- Output atteso: Conferma che il valore preesistente del sottocampo 047.01 non sia stato modificato nella tabella TR.
+- Procedura: 
+  1. Assicurarsi che un valore per il sottocampo 047.01 sia già presente nella tabella TR.
+  2. Generare un messaggio ISO 1120 di riallineamento.
+  3. Inviare il messaggio al Sistema Antifrode.
+  4. Verificare che il valore preesistente del sottocampo 047.01 non sia stato sovrascritto nella tabella TR.
+
+Micro Test Case 4:
+- Titolo: Verifica corretta mappatura sottocampo 111.66 per transazioni VISA
+- Descrizione: Assicurarsi che il sottocampo 111.66 (Sender Identification Type) sia correttamente mappato e salvato nella tabella TR per le transazioni VISA.
+- Obiettivo: Verificare la corretta mappatura e salvataggio del sottocampo 111.66 per le transazioni VISA con processingCode = 260000 e 200000.
+- Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+- Output atteso: Valore del sottocampo 111.66 salvato nel campo "Sender Identification Type" della tabella TR.
+- Procedura: 
+  1. Generare un messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+  2. Inviare il messaggio al Sistema Antifrode.
+  3. Verificare che il valore del sottocampo 111.66 sia correttamente salvato nel campo "Sender Identification Type" della tabella TR.
+
+Micro Test Case 5:
+- Titolo: Verifica corretta mappatura sottocampo 047.01 per messaggi di Time-out e Off-line
+- Descrizione: Assicurarsi che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente mappato e salvato nella tabella TR per i messaggi di Time-out e Off-line.
+- Obiettivo: Verificare la corretta mappatura e salvataggio del sottocampo 047.01 per i messaggi 1120/1121 di Time-out e Off-line.
+- Input atteso: Messaggio ISO 1120/1121 di Time-out o Off-line con un valore per il sottocampo 047.01.
+- Output atteso: Valore del sottocampo 047.01 salvato nel campo "Reg487 Verification Result" della tabella TR.
+- Procedura: 
+  1. Generare un messaggio ISO 1120/1121 di Time-out o Off-line con un valore per il sottocampo 047.01.
+  2. Inviare il messaggio al Sistema Antifrode.
+  3. Verificare che il valore del sottocampo 047.01 sia correttamente salvato nel campo "Reg487 Verification Result" della tabella TR.
+
+These micro test cases are designed to ensure that the mapping of ISO subfields to the TR table is functioning correctly as per the functional analysis documentation and the summarized Macro Test provided.

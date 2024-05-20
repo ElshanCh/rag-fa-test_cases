@@ -1,0 +1,77 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Risposte Sistema AntiFrode
+Descrizione: Verifica delle configurazioni delle risposte di negazione dal sistema AntiFrode per mancata verifica dell'obbligatorietà dei dati.
+Obiettivo: Assicurarsi che le risposte di negazione siano configurate correttamente e che i codici risposta siano appropriati.
+Output atteso: Risposte di negazione corrette in base ai fallimenti dei controlli nelle Regole finanziarie.
+Input atteso: Transazioni con dati non conformi alle regole di tracciabilità.
+Keywords: Risposte Sistema AntiFrode, codici risposta, negazione, Regole finanziarie
+
+##################################################
+
+Based on the provided context, here are the micro test cases formatted similarly to the provided Macro Test:
+
+**Micro Test Case 1: Verifica Controllo Codice Unico di Identificazione Operazione**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con un codice unico di identificazione operazione errato.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando il codice unico di identificazione operazione è errato.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con codice unico di identificazione operazione errato.
+- **Keywords**: Codice unico di identificazione operazione, negazione, sistema AntiFrode.
+
+**Micro Test Case 2: Verifica Controllo Dati Ordinante**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con dati errati dell'ordinante.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando i dati dell'ordinante sono errati.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con cognome e/o nome dell'ordinante errati.
+- **Keywords**: Dati ordinante, negazione, sistema AntiFrode.
+
+**Micro Test Case 3: Verifica Controllo Dati Beneficiario**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con dati errati del beneficiario.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando i dati del beneficiario sono errati.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con cognome e/o nome del beneficiario errati.
+- **Keywords**: Dati beneficiario, negazione, sistema AntiFrode.
+
+**Micro Test Case 4: Verifica Controllo Indirizzo Ordinante**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con indirizzo ordinante errato.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando l'indirizzo dell'ordinante è errato.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con indirizzo ordinante errato.
+- **Keywords**: Indirizzo ordinante, negazione, sistema AntiFrode.
+
+**Micro Test Case 5: Verifica Controllo Documento Identità Ordinante**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con documento di identità ordinante errato.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando il documento di identità dell'ordinante è errato.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con documento di identità ordinante errato.
+- **Keywords**: Documento identità ordinante, negazione, sistema AntiFrode.
+
+**Micro Test Case 6: Verifica Controllo Account Ordinante**
+- **Descrizione**: Verifica che il sistema AntiFrode rifiuti le transazioni con numero di account ordinante errato.
+- **Obiettivo**: Assicurarsi che il sistema AntiFrode risponda con il codice di negazione appropriato quando il numero di account dell'ordinante è errato.
+- **Output atteso**: Risposta di negazione "57 - Transaction not permitted to issuer/cardholder" o "119 - Transaction not permitted to cardholder" a seconda del circuito.
+- **Input atteso**: Transazione con numero di account ordinante errato.
+- **Keywords**: Account ordinante, negazione, sistema AntiFrode.
+
+**Micro Test Case 7: Verifica Configurazione Motivo di Rifiuto R4**
+- **Descrizione**: Verifica che il sistema AntiFrode utilizzi il motivo di rifiuto "R4 - No dati Reg847" per le transazioni negate per mancata tracciabilità.
+- **Obiettivo**: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia configurato e utilizzato correttamente nel sistema AntiFrode.
+- **Output atteso**: Utilizzo del motivo di rifiuto "R4 - No dati Reg847" nelle transazioni negate.
+- **Input atteso**: Transazione negata per mancata tracciabilità.
+- **Keywords**: Motivo di rifiuto R4, configurazione, sistema AntiFrode.
+
+**Micro Test Case 8: Verifica Visualizzazione Dati Aggiuntivi in GUI**
+- **Descrizione**: Verifica che i dati aggiuntivi siano visualizzati correttamente nella GUI del sistema AntiFrode.
+- **Obiettivo**: Assicurarsi che i dati aggiuntivi come "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" siano mostrati nella pagina di dettaglio della transazione finanziaria.
+- **Output atteso**: Visualizzazione corretta dei dati aggiuntivi nella sezione "Mastercard Money Send" della GUI.
+- **Input atteso**: Accesso alla pagina di dettaglio della transazione finanziaria.
+- **Keywords**: GUI, dati aggiuntivi, visualizzazione, sistema AntiFrode.
+
+**Micro Test Case 9: Verifica Risposta Messaggi Autorizzativi**
+- **Descrizione**: Verifica che i messaggi autorizzativi 1100, 1120, 1121 rispondano con i codici di risposta corretti.
+- **Obiettivo**: Assicurarsi che i messaggi autorizzativi rispondano con i codici di risposta appropriati in caso di negazione.
+- **Output atteso**: Risposte corrette nei messaggi autorizzativi in base ai fallimenti dei controlli.
+- **Input atteso**: Messaggi autorizzativi con dati non conformi.
+- **Keywords**: Messaggi autorizzativi, codici risposta, negazione, sistema AntiFrode.
+
+These micro test cases are designed to cover various scenarios based on the functional analysis documentation provided, ensuring that the AntiFraud system responds correctly to non-compliant transactions and that the new configurations are properly set up and displayed in the system's GUI.

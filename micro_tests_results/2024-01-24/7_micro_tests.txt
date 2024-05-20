@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+8. Titolo: Verifica Funzionalità GUI Web Sistema AntiFrode
+   Descrizione: Verifica che la GUI Web del Sistema AntiFrode gestisca correttamente i nuovi parametri e codici risposta.
+   Obiettivo: Assicurarsi che l'interfaccia utente del Sistema AntiFrode rifletta le nuove implementazioni.
+   Output atteso: GUI Web che mostra e permette la gestione dei nuovi parametri e codici risposta.
+   Input atteso: Interazione con la GUI Web per la configurazione delle regole e la visualizzazione dei dettagli delle transazioni.
+   Keywords: GUI Web, Sistema AntiFrode, nuovi parametri, codici risposta
+##################################################
+
+Based on the provided context and the Macro Test, here are the detailed micro test cases:
+
+1. Titolo: Verifica Visualizzazione Nuovi Parametri in Gestione Regole
+   Descrizione: Assicurarsi che i nuovi parametri siano visualizzabili nella GUI Web del Sistema AntiFrode sotto il menu Gestione Regole.
+   Obiettivo: Verificare che i nuovi parametri (es. "Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result") siano presenti nella combo "Transazione" dei Parametri Regola.
+   Output atteso: I nuovi parametri appaiono correttamente nella combo "Transazione" nella form Regola Finanziaria.
+   Input atteso: Accesso alla sezione Gestione Regole e visualizzazione dei parametri della transazione.
+
+2. Titolo: Verifica Aggiunta Nuovi Parametri in Accumulatori Evoluti
+   Descrizione: Controllare che i nuovi parametri siano aggiunti correttamente nella GUI Web del Sistema AntiFrode sotto il menu Accumulatori Evoluti.
+   Obiettivo: Assicurarsi che i nuovi parametri siano presenti nella combo "Transazione" di tutti i Parametri Regola negli Accumulatori Evoluti.
+   Output atteso: I nuovi parametri sono visibili e gestibili nella combo "Transazione" nella form Accumulatore Evoluto.
+   Input atteso: Accesso alla sezione Accumulatori Evoluti e verifica della presenza dei nuovi parametri.
+
+3. Titolo: Verifica Dettaglio Transazione Finanziaria con Nuovi Dati
+   Descrizione: Verificare che i dati aggiuntivi siano mostrati correttamente nella pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Controllare che i nuovi dati ("Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result") siano visualizzati nella sezione "Mastercard Money Send" del dettaglio Autorizzazione.
+   Output atteso: I nuovi dati sono presenti e correttamente visualizzati nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: Navigazione alla pagina di dettaglio della transazione finanziaria attraverso il menu Autorizzazioni.
+
+4. Titolo: Verifica Configurazione Codici Risposta di Negazione
+   Descrizione: Assicurarsi che i codici di risposta di negazione siano configurati correttamente per i casi di mancata tracciabilità.
+   Obiettivo: Verificare che i codici di risposta "57" e "119" siano impostati nelle form delle Regole finanziarie e consultabili nel dettaglio dell’Autorizzazione.
+   Output atteso: I codici di risposta "57" e "119" sono configurati e visualizzabili correttamente.
+   Input atteso: Accesso alla form delle Regole finanziarie e verifica dei codici di risposta nel dettaglio dell’Autorizzazione.
+
+5. Titolo: Verifica Blocco Transazioni Non Conformi
+   Descrizione: Testare il blocco delle transazioni che non rispettano i requisiti di tracciabilità.
+   Obiettivo: Assicurarsi che il Sistema AntiFrode blocchi le transazioni che non contengono i dati obbligatori o che non superano i controlli formali.
+   Output atteso: Transazioni non conformi vengono bloccate e il trasferimento di fondi viene rifiutato.
+   Input atteso: Simulazione di transazioni con dati incompleti o non verificati per testare il blocco da parte del Sistema AntiFrode.
+
+6. Titolo: Verifica Gestione Nuovi Parametri per Transazioni UE e Extra UE
+   Descrizione: Controllare che la GUI Web del Sistema AntiFrode gestisca correttamente i nuovi parametri in base all'ambito geografico e ai vincoli di importo.
+   Obiettivo: Verificare che i campi obbligatori siano gestiti in modo appropriato per le transazioni infra UE, extra UE con importo < 1.000,00 e extra UE con importo >= 1.000,00.
+   Output atteso: La GUI Web riflette correttamente l'obbligatorietà dei campi in base all'ambito geografico e ai vincoli di importo.
+   Input atteso: Inserimento e verifica dei dati obbligatori per diverse tipologie di transazioni in base alla geografia e all'importo.
+
+Questi micro test cases dovrebbero coprire le principali funzionalità della GUI Web del Sistema AntiFrode in relazione ai nuovi parametri e codici risposta come descritto nella documentazione di analisi funzionale.

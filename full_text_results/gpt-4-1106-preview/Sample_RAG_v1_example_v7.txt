@@ -1,0 +1,41 @@
+Titolo: Test Case per Verifica Dati Aggiuntivi Documento Ordinante
+Descrizione: Verifica dell'integrazione dei nuovi sottocampi 111.66 e 111.67 nel messaggio ISO per dati identificativi dell'ordinante.
+Obiettivo: Assicurarsi che i sottocampi "Sender Identification Type" e "Sender Identification Value" siano correttamente valorizzati e inviati nei messaggi ISO 1100, 1120, 1121.
+Output atteso: I sottocampi 111.66 e 111.67 devono essere presenti e correttamente valorizzati nei messaggi ISO pertinenti.
+Input atteso: Transazioni Visa/Mastercard con i valori del campo ISO 003: ProcessingCode = 280000, 200000 (Mastercard) e 260000, 200000 (VISA).
+Keywords: Sender Identification Type, Sender Identification Value, ISO 111, messaggio ISO, Mastercard, VISA, ProcessingCode
+
+Titolo: Test Case per Verifica Controlli Formali Autorizzativo
+Descrizione: Verifica dell'aggiunta del nuovo sottocampo 047.01 nel messaggio ISO che trasporta l'esito dei controlli formali effettuati da Autorizzativo.
+Obiettivo: Confermare che il sottocampo "Reg487 Verification Result" sia correttamente implementato e che rifletta l'esito dei controlli formali.
+Output atteso: Il sottocampo 047.01 deve essere presente nei messaggi ISO 1100, 1120, 1121 e deve contenere l'esito dei controlli formali.
+Input atteso: Messaggi ISO con i possibili valori di esito dei controlli formali (0-6).
+Keywords: Reg487 Verification Result, controlli formali, ISO 047, messaggio ISO
+
+Titolo: Test Case per Mapping Campi ISO con Tabella TR
+Descrizione: Verifica della corretta mappatura dei nuovi campi ISO con la tabella TR del Sistema AntiFrode.
+Obiettivo: Assicurarsi che i nuovi campi ISO siano correttamente mappati e salvati nella tabella TR.
+Output atteso: I nuovi campi devono essere presenti e correttamente mappati nella tabella TR.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con i nuovi campi ISO.
+Keywords: Mapping, campi ISO, tabella TR, Sistema AntiFrode
+
+Titolo: Test Case per Integrazione Dati GUI Sistema AntiFrode
+Descrizione: Verifica dell'integrazione dei nuovi dati di Trasferimento Fondi nella GUI del Sistema AntiFrode.
+Obiettivo: Confermare che i nuovi dati siano disponibili e correttamente visualizzati nella GUI del Sistema AntiFrode.
+Output atteso: I nuovi dati devono essere visualizzati nelle sezioni appropriate della GUI.
+Input atteso: Dati di Trasferimento Fondi inclusi i nuovi campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result".
+Keywords: GUI, Sistema AntiFrode, Trasferimento Fondi, dati aggiuntivi
+
+Titolo: Test Case per Risposte Sistema AntiFrode
+Descrizione: Verifica delle configurazioni delle risposte di negazione dal sistema AntiFrode per mancata verifica dell'obbligatorietà dei dati.
+Obiettivo: Assicurarsi che le risposte di negazione siano configurate correttamente e che i codici risposta siano appropriati.
+Output atteso: Risposte di negazione corrette in base ai fallimenti dei controlli nelle Regole finanziarie.
+Input atteso: Transazioni con dati non conformi alle regole di tracciabilità.
+Keywords: Risposte Sistema AntiFrode, codici risposta, negazione, Regole finanziarie
+
+Titolo: Test Case per Contesto Svolgimento TEST
+Descrizione: Verifica complessiva dell'implementazione delle nuove funzionalità nel contesto dei test funzionali di riferimento.
+Obiettivo: Eseguire test end-to-end per validare l'implementazione delle nuove funzionalità in diversi ambiti funzionali.
+Output atteso: Successo nei test funzionali in tutti gli ambiti di riferimento.
+Input atteso: Setup regole, messaggi autorizzativi, inquiry autorizzativo con i nuovi dati e controlli implementati.
+Keywords: Test end-to-end, funzionalità, ambiti funzionali, setup regole, messaggi autorizzativi

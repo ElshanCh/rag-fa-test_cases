@@ -1,0 +1,43 @@
+##################################################
+MACRO TEST
+6. Titolo: Regole per la verifica del Trasferimento Fondi
+   Descrizione: Definizione di regole per intercettare le condizioni di validità sui dati del Trasferimento Fondi e generare negazioni appropriate.
+   Obiettivo: Verificare che le regole siano configurate per negare le transazioni in base ai criteri specificati.
+   Output atteso: Negazione delle transazioni non conformi ai criteri di tracciabilità.
+   Input atteso: Dati del Trasferimento Fondi non conformi ai criteri di tracciabilità.
+   Keywords: regole, verifica, Trasferimento Fondi, negazione, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Trasferimento Fondi intra-UE senza Codice Unico
+   Descrizione: Testare la negazione di un trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il trasferimento fondi intra-UE senza codice unico venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+
+2. Titolo: Verifica Trasferimento Fondi extra-UE < 1000,00 senza Dati Ordinante
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo inferiore a 1000,00 euro e dati ordinante mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra-UE senza dati completi dell'ordinante venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza cognome e nome dell'ordinante.
+
+3. Titolo: Verifica Trasferimento Fondi extra-UE >= 1000,00 senza Dati Completi
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo maggiore o uguale a 1000,00 euro e dati completi mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra-UE senza tutti i dati richiesti venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza uno o più dei seguenti dati: indirizzo ordinante, documento di identità ordinante, numero di identificazione account ordinante.
+
+4. Titolo: Verifica Risultato Controllo Reg487 non Superato
+   Descrizione: Testare la negazione di un trasferimento fondi con risultato controllo Reg487 diverso da 0.
+   Obiettivo: Assicurarsi che il trasferimento fondi con esito controllo Reg487 non superato venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi con campo "Reg487 Verification Result" contenente un valore diverso da 0.
+
+5. Titolo: Verifica Trasferimento Fondi con Dati Beneficiario Mancanti
+   Descrizione: Testare la negazione di un trasferimento fondi con dati del beneficiario mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi senza dati completi del beneficiario venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi con cognome e nome del beneficiario mancanti.
+
+Questi micro test cases coprono diversi scenari di negazione basati sui criteri di tracciabilità e conformità ai requisiti di completezza dei dati informativi sull'ordinante e sul beneficiario come descritto nella documentazione di analisi funzionale.

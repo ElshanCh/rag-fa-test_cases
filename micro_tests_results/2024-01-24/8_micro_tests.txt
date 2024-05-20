@@ -1,0 +1,55 @@
+##################################################
+MACRO TEST
+9. Titolo: Verifica Messaggi Autorizzativi e Codici Risposta
+   Descrizione: Verifica che i messaggi autorizzativi 1100, 1120, 1121 gestiscano correttamente i nuovi dati e forniscano i relativi codici risposta.
+   Obiettivo: Assicurarsi che i messaggi autorizzativi riflettano le nuove implementazioni e forniscano risposte appropriate.
+   Output atteso: Messaggi autorizzativi che includono i nuovi dati e generano i codici risposta corretti.
+   Input atteso: Messaggi autorizzativi inviati con i nuovi dati implementati.
+   Keywords: messaggi autorizzativi, codici risposta, 1100, 1120, 1121
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Messaggio Autorizzativo 1100 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1100 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1100 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1100 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1100 inviato con tutti i dati obbligatori completi.
+
+2. Titolo: Verifica Messaggio Autorizzativo 1120 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1120 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1120 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1120 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1120 inviato con tutti i dati obbligatori completi.
+
+3. Titolo: Verifica Messaggio Autorizzativo 1121 con Dati Completi
+   Descrizione: Verifica che il messaggio autorizzativo 1121 includa i nuovi sottocampi 111.66 e 111.67 e che il sistema fornisca il codice risposta corretto.
+   Obiettivo: Assicurarsi che il messaggio 1121 gestisca i nuovi dati e che il sistema risponda con il codice di risposta appropriato.
+   Output atteso: Messaggio 1121 con i sottocampi 111.66 e 111.67 valorizzati e codice risposta corretto.
+   Input atteso: Messaggio 1121 inviato con tutti i dati obbligatori completi.
+
+4. Titolo: Verifica Risposta Sistema AntiFrode per Messaggio 1100 con Dati Mancanti
+   Descrizione: Verifica che il sistema AntiFrode risponda correttamente con il codice di negazione "57" o "119" quando il messaggio 1100 non contiene tutti i dati obbligatori.
+   Obiettivo: Assicurarsi che il sistema AntiFrode blocchi le transazioni con dati mancanti e fornisca il codice di risposta di negazione appropriato.
+   Output atteso: Codice di risposta "57" o "119" in risposta a un messaggio 1100 con dati mancanti.
+   Input atteso: Messaggio 1100 inviato senza alcuni dati obbligatori.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 nei Messaggi 1120 e 1121
+   Descrizione: Verifica che i messaggi 1120 e 1121 di riallineamento non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i campi 111.66 e 111.67 non vengano sovrascritti nei messaggi di riallineamento.
+   Output atteso: Campi 111.66 e 111.67 preservati nei messaggi 1120 e 1121 se già presenti nel messaggio 1100.
+   Input atteso: Messaggi 1120 e 1121 inviati dopo un messaggio 1100 con i campi 111.66 e 111.67 valorizzati.
+
+6. Titolo: Verifica Esito Controlli Formali nel Campo 047.01 per Messaggio 1100
+   Descrizione: Verifica che il messaggio 1100 includa il nuovo sottocampo 047.01 con l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il messaggio 1100 rifletta l'esito dei controlli formali nel campo 047.01.
+   Output atteso: Messaggio 1100 con il sottocampo 047.01 che indica l'esito dei controlli formali.
+   Input atteso: Messaggio 1100 inviato con i dati obbligatori per la tracciabilità.
+
+7. Titolo: Verifica Salvataggio Campi 111.66, 111.67 e 047.01 nella Tabella TR
+   Descrizione: Verifica che i campi 111.66, 111.67 e 047.01 siano correttamente salvati nella tabella delle transazioni Sistema AntiFrode (tabella TR) dopo l'invio dei messaggi 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che i dati dei nuovi campi siano correttamente registrati nella tabella TR.
+   Output atteso: Campi 111.66, 111.67 e 047.01 presenti e correttamente valorizzati nella tabella TR.
+   Input atteso: Messaggi 1100, 1120, 1121 inviati con i nuovi dati implementati.
+
+Questi micro test cases sono stati creati per assicurare che i messaggi autorizzativi e i codici di risposta siano gestiti correttamente in relazione alle nuove implementazioni descritte nella documentazione di analisi funzionale.

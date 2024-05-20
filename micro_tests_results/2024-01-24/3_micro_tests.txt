@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+4. Titolo: Verifica Integrazione Nuovi Sottocampi nel Messaggio ISO
+   Descrizione: Verifica che i nuovi sottocampi 111.66 e 111.67 siano correttamente integrati nel messaggio ISO.
+   Obiettivo: Assicurarsi che i dati del documento di identificazione dell'ordinante siano correttamente trasmessi nel messaggio ISO.
+   Output atteso: Messaggio ISO contenente i nuovi sottocampi valorizzati.
+   Input atteso: Messaggio ISO con i campi 111.66 e 111.67 valorizzati secondo le regole specificate.
+   Keywords: messaggio ISO, sottocampi, documento identificazione, ordinante
+##################################################
+
+Based on the provided context and the Macro Test, here are the detailed micro test cases:
+
+1. Titolo: Verifica Valorizzazione Campo 111.66 per Mastercard Payment Transaction
+   Descrizione: Verifica che il sottocampo 111.66 sia correttamente valorizzato per una transazione Mastercard con processingCode = 280000.
+   Obiettivo: Assicurarsi che il tipo di documento di identificazione dell'ordinante (Sender Identification Type) sia correttamente trasmesso nel messaggio ISO per una Payment Transaction Mastercard.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.66 valorizzato con il tipo di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 280000 e campo 111.66 valorizzato secondo la regola: Se MC SE 02 SF 12 Sender Data – Identification type.
+
+2. Titolo: Verifica Valorizzazione Campo 111.67 per Mastercard Funding Transaction
+   Descrizione: Verifica che il sottocampo 111.67 sia correttamente valorizzato per una transazione Mastercard con processingCode = 200000.
+   Obiettivo: Assicurarsi che il valore del documento di identificazione dell'ordinante (Sender Identification Value) sia correttamente trasmesso nel messaggio ISO per una Funding Transaction Mastercard.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.67 valorizzato con il numero di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 200000 e campo 111.67 valorizzato secondo la regola: Se MC SE 02 SF 13 Sender Data – Identification number.
+
+3. Titolo: Verifica Valorizzazione Campo 111.66 per Visa Original Credit Transaction
+   Descrizione: Verifica che il sottocampo 111.66 sia correttamente valorizzato per una transazione Visa con processingCode = 260000.
+   Obiettivo: Assicurarsi che il tipo di documento di identificazione dell'ordinante (Sender Identification Type) sia correttamente trasmesso nel messaggio ISO per una Original Credit Transaction Visa.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.66 valorizzato con il tipo di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 260000 e campo 111.66 valorizzato secondo la regola: Se VISA Field 56 DataSetID 03 Tag 9F20 Sender identification type code.
+
+4. Titolo: Verifica Valorizzazione Campo 111.67 per Visa Account Funding Transaction
+   Descrizione: Verifica che il sottocampo 111.67 sia correttamente valorizzato per una transazione Visa con processingCode = 200000.
+   Obiettivo: Assicurarsi che il valore del documento di identificazione dell'ordinante (Sender Identification Value) sia correttamente trasmesso nel messaggio ISO per una Account Funding Transaction Visa.
+   Output atteso: Messaggio ISO 1100, 1120, 1121 contenente il sottocampo 111.67 valorizzato con il numero di documento di identificazione dell'ordinante.
+   Input atteso: Messaggio ISO con processingCode = 200000 e campo 111.67 valorizzato secondo la regola: Se VISA Field 56 DataSetID 03 Tag 9F22 Sender identification value.
+
+5. Titolo: Verifica Non Sovrascrittura Campi 111.66 e 111.67 su Advice Messaggi
+   Descrizione: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano i campi 111.66 e 111.67 registrati con il messaggio 1100.
+   Obiettivo: Assicurarsi che i sottocampi 111.66 e 111.67 non vengano sovrascritti durante l'invio degli advice di riallineamento.
+   Output atteso: Advice dei messaggi 1120 e 1121 che mantengono i valori dei campi 111.66 e 111.67 come registrati nel messaggio 1100.
+   Input atteso: Messaggi ISO 1120 e 1121 inviati come advice di riallineamento (non per Time-out o Off-line).
+
+6. Titolo: Verifica Integrazione Campo 047.01 nei Messaggi ISO
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente integrato e valorizzato nei messaggi ISO 1100, 1120, 1121.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali effettuati da Autorizzativo sia correttamente trasmesso e registrato nel Sistema AntiFrode.
+   Output atteso: Messaggio ISO contenente il sottocampo 047.01 con l'esito dei controlli formali.
+   Input atteso: Messaggio ISO con campo 047.01 valorizzato con uno dei possibili valori (0-6) a seconda dell'esito dei controlli formali.
+
+Questi micro test cases sono stati creati per verificare l'integrazione e la corretta valorizzazione dei nuovi sottocampi nel messaggio ISO, come descritto nel contesto fornito.

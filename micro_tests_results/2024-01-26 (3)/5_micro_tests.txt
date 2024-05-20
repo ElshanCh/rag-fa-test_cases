@@ -1,0 +1,53 @@
+##################################################
+MACRO TEST
+6. Titolo: Risposta Sistema Antifrode per mancata tracciabilità
+   Descrizione: Configurazione e verifica delle risposte del Sistema Antifrode in caso di mancata tracciabilità del Trasferimento Fondi.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda correttamente in caso di fallimento dei controlli di tracciabilità.
+   Output atteso: Codici Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale, con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Fallimento dei controlli nelle Regole finanziarie.
+   Keywords: Sistema Antifrode, tracciabilità, risposta negativa, codici risposta, motivo rifiuto.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Codice Risposta per Trasferimento Fondi intra-UE senza Cod. Unico
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi intra-UE senza Codice Unico di Identificazione Operazione.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando manca il Codice Unico di Identificazione Operazione per trasferimenti intra-UE.
+   Input atteso: Trasferimento fondi intra-UE senza Cod. unico di identificazione operazione.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi intra-UE senza valorizzare il campo Cod. unico di identificazione operazione.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+2. Titolo: Verifica Codice Risposta per Trasferimento Fondi extra-UE < 1000 senza Dati Ordinante
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi extra-UE con importo inferiore a 1000 euro senza dati completi dell'ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando mancano i dati dell'ordinante per trasferimenti extra-UE con importo inferiore a 1000 euro.
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000 euro senza dati completi dell'ordinante.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo inferiore a 1000 euro senza valorizzare i campi Cognome e Nome dell'ordinante.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+3. Titolo: Verifica Codice Risposta per Trasferimento Fondi extra-UE >= 1000 senza Dati Completi
+   Descrizione: Verifica che il Sistema Antifrode risponda con il codice di rifiuto corretto per un trasferimento fondi extra-UE con importo pari o superiore a 1000 euro senza tutti i dati obbligatori.
+   Obiettivo: Assicurarsi che il Sistema Antifrode generi il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale quando mancano uno o più dati obbligatori per trasferimenti extra-UE con importo pari o superiore a 1000 euro.
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000 euro senza uno o più dati obbligatori.
+   Output atteso: Codice Risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo pari o superiore a 1000 euro senza valorizzare uno o più dei seguenti campi: Cod. unico di identificazione operazione, Cognome e Nome dell'ordinante, Indirizzo dell'ordinante, Documento di identità dell'ordinante, Num. di identificazione account dell'ordinante.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il Sistema Antifrode risponda con il codice risposta "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+
+4. Titolo: Verifica Motivo Rifiuto "R4 - No dati Reg847" per Dati Mancanti
+   Descrizione: Verifica che il Sistema Antifrode utilizzi il motivo di rifiuto "R4 - No dati Reg847" in caso di dati mancanti che impediscono la tracciabilità del trasferimento fondi.
+   Obiettivo: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia utilizzato correttamente dal Sistema Antifrode in caso di mancata tracciabilità.
+   Input atteso: Qualsiasi transazione di trasferimento fondi che non supera i controlli di tracciabilità.
+   Output atteso: Motivo Rifiuto "R4 - No dati Reg847".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi che non supera i controlli di tracciabilità.
+   - Inviare la transazione al Sistema Antifrode.
+   - Verificare che il motivo di rifiuto "R4 - No dati Reg847" sia utilizzato nella risposta del Sistema Antifrode.
+
+Questi micro test cases coprono diversi scenari di mancata tracciabilità e verificano che il Sistema Antifrode risponda correttamente in base alle specifiche fornite.

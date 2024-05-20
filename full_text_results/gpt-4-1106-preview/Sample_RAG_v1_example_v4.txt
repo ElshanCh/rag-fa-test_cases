@@ -1,0 +1,39 @@
+Based on the provided Functional Analysis documentation, here is a summary of test cases for each implemented update:
+
+1. **Gestione dati aggiuntivi su messaggio ISO (Handling additional data on ISO message)**
+   - Description: Addition of two subfields (111.66 and 111.67) related to the sender's identification document in the ISO message.
+   - Goal: To verify that the new subfields are correctly populated and transmitted in messages 1100, 1120, and 1121, and saved in the AntiFraud System's TR table without being overwritten by advice messages.
+   - Expected output: Correct population and transmission of subfields 111.66 and 111.67.
+   - Expected input: Transactions with processing codes 280000 and 200000 for Mastercard, and 260000 and 200000 for VISA.
+
+2. **Controlli formali Autorizzativo (Formal Authoritative Checks)**
+   - Description: Addition of a new subfield (047.01) to the ISO message to carry the result of formal checks performed by the Authoritative FE.
+   - Goal: To ensure that the new subfield 047.01 correctly reflects the outcome of the formal checks and is transmitted in messages 1100, 1120, and 1121, and saved in the AntiFraud System's TR table without being overwritten by advice messages.
+   - Expected output: Correct reflection of the formal checks' outcome in subfield 047.01.
+   - Expected input: ISO messages with the results of the formal checks.
+
+3. **Mapping Campi ISO con Tabella TR (Mapping ISO Fields with TR Table)**
+   - Description: Mapping of new and existing ISO message fields with the AntiFraud System's TR table, including the new fields in bold.
+   - Goal: To validate the correct mapping of ISO message fields to the TR table, ensuring that new fields are correctly stored and existing fields remain unchanged.
+   - Expected output: Accurate mapping of ISO fields to the TR table.
+   - Expected input: ISO messages with the fields to be mapped.
+
+4. **Integrazione dati Trasferimento Fondi nella GUI Sistema AntiFrode (Integration of Fund Transfer Data into the AntiFraud System GUI)**
+   - Description: Addition of new data fields ("Sender Identification Type", "Sender Identification Value", and "Reg487 Verification Result") to the financial transaction detail page in the AntiFraud System GUI.
+   - Goal: To confirm that the new data fields are displayed in the financial transaction detail page and that the information is complete and accurate.
+   - Expected output: Display of new data fields with correct information in the financial transaction detail page.
+   - Expected input: Financial transaction details including the new data fields.
+
+5. **Risposte Sistema AntiFrode (AntiFraud System Responses)**
+   - Description: Configuration of response codes and refusal reasons in the AntiFraud System for transactions that fail financial rule checks due to lack of traceability.
+   - Goal: To ensure that the AntiFraud System provides the correct response codes and refusal reasons for transactions that do not meet traceability requirements.
+   - Expected output: "57 - Transaction not permitted to issuer/cardholder" for Visa and Mastercard, and "119 - Transaction not permitted to cardholder" for international debit banks.
+   - Expected input: Transactions that fail the financial rule checks.
+
+6. **Contesto svolgimento TEST (Test Execution Context)**
+   - Description: Testing of each new feature in the specified functional areas and in the following order: AntiFraud System Web GUI, ON-LINE messages, and AntiFraud System Web GUI inquiries.
+   - Goal: To perform comprehensive testing of all new features and ensure they function correctly in the specified areas.
+   - Expected output: Successful setup and inquiry of rules, transmission of authorization messages, and correct response codes.
+   - Expected input: Scenarios covering all new information and functionalities.
+
+Please note that the expected inputs and outputs are based on the provided documentation and may require additional details from the actual system behavior or requirements.

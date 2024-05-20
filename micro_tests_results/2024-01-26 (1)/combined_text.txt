@@ -1,0 +1,300 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica dell'implementazione dei controlli formali Autorizzativo
+   Descrizione: Implementazione di un nuovo sottocampo nel messaggio ISO per trasportare l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 venga correttamente popolato con i valori di dominio attesi.
+   Output atteso: Valori di dominio corretti per il sottocampo 047.01.
+   Input atteso: Messaggi ISO 1100, 1120, 1121 con il sottocampo 047.01 popolato.
+   Keywords: Autorizzativo, controlli formali, sottocampo 047.01, messaggio ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica campo 047.01 per transazione intra-UE senza Cod. unico di identificazione
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente quando manca il Cod. unico di identificazione per una transazione intra-UE.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali un errore quando il Cod. unico di identificazione operazione non è presente in una transazione intra-UE.
+   Output atteso: 047.01 = 1 (Identificativo operazione errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 intra-UE senza Cod. unico di identificazione operazione.
+
+2. Titolo: Verifica campo 047.01 per transazione extra-UE < 1000 euro con dati incompleti
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente per una transazione extra-UE con importo inferiore a 1000 euro e dati ordinante/beneficiario incompleti.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali l'errore specifico quando mancano i dati obbligatori del beneficiario o dell'ordinante in una transazione extra-UE con importo inferiore a 1000 euro.
+   Output atteso: 047.01 = 2 o 3 (Cognome, nome ordinante/beneficiario errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 extra-UE < 1000 euro con dati ordinante/beneficiario incompleti.
+
+3. Titolo: Verifica campo 047.01 per transazione extra-UE >= 1000 euro con dati incompleti
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente per una transazione extra-UE con importo pari o superiore a 1000 euro e dati ordinante incompleti.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali l'errore specifico quando mancano i dati obbligatori dell'ordinante in una transazione extra-UE con importo pari o superiore a 1000 euro.
+   Output atteso: 047.01 = 4, 5 o 6 (Indirizzo ordinante errato, Documento ordinante errato, Account ordinante errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 extra-UE >= 1000 euro con dati ordinante incompleti.
+
+4. Titolo: Verifica corretta valorizzazione campo 047.01 per tutti i controlli superati
+   Descrizione: Controllo che il sottocampo 047.01 sia correttamente valorizzato a 0 quando tutti i controlli formali sono superati.
+   Obiettivo: Verificare che il sottocampo 047.01 sia impostato a 0 per indicare che tutti i controlli Reg487 sono stati superati.
+   Output atteso: 047.01 = 0 (Tutti i controlli Reg487 superati)
+   Input atteso: Messaggio ISO 1100/1120/1121 con tutti i dati obbligatori presenti e corretti.
+
+5. Titolo: Verifica persistenza campo 047.01 in tabella TR senza sovrascrittura
+   Descrizione: Controllo che il valore del sottocampo 047.01 non venga sovrascritto nella tabella TR in caso di ricezione di messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Obiettivo: Assicurarsi che i valori precedentemente salvati del sottocampo 047.01 nella tabella TR non vengano sovrascritti da messaggi successivi.
+   Output atteso: Valore del campo "Reg487 Verification Result" invariato nella tabella TR dopo la ricezione di messaggi 1120/1121 di riallineamento o di Time-out o di Off-line.
+   Input atteso: Messaggi ISO 1120/1121 di riallineamento o di Time-out o di Off-line dopo un primo salvataggio del sottocampo 047.01 nella tabella TR.
+
+Questi micro test cases coprono diversi scenari di validazione per il sottocampo 047.01 in relazione ai requisiti di tracciabilità e alle regole di gestione dei dati.
+##################################################
+MACRO TEST
+2. Titolo: Controllo dei dati aggiuntivi Documento Ordinante nel Sistema Antifrode
+   Descrizione: Aggiunta di due nuovi sottocampi nel campo ISO 111 per identificare il tipo e il valore del documento dell'ordinante.
+   Obiettivo: Verificare che i sottocampi 111.66 e 111.67 siano correttamente valorizzati e inviati nei messaggi ISO pertinenti.
+   Output atteso: Valorizzazione corretta dei sottocampi 111.66 e 111.67.
+   Input atteso: Transazioni Visa/Mastercard con i valori del campo ISO 003 ProcessingCode specificati.
+   Keywords: Sistema Antifrode, sottocampi 111.66, 111.67, documento ordinante, messaggio ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica valorizzazione sottocampo 111.66 per Mastercard Payment Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia correttamente valorizzato per una transazione Mastercard con ProcessingCode 280000.
+   Obiettivo: Assicurarsi che il tipo di documento dell'ordinante sia correttamente inserito nel sottocampo 111.66 per le Payment Transaction Mastercard.
+   Output atteso: Valorizzazione corretta del sottocampo 111.66 con il tipo di documento dell'ordinante.
+   Input atteso: Transazione Mastercard con ProcessingCode 280000.
+
+2. Titolo: Verifica valorizzazione sottocampo 111.67 per Mastercard Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia correttamente valorizzato per una transazione Mastercard con ProcessingCode 200000.
+   Obiettivo: Assicurarsi che il valore del documento dell'ordinante sia correttamente inserito nel sottocampo 111.67 per le Funding Transaction Mastercard.
+   Output atteso: Valorizzazione corretta del sottocampo 111.67 con il valore del documento dell'ordinante.
+   Input atteso: Transazione Mastercard con ProcessingCode 200000.
+
+3. Titolo: Verifica valorizzazione sottocampo 111.66 per VISA Original Credit Transaction
+   Descrizione: Controllo che il sottocampo 111.66 sia correttamente valorizzato per una transazione VISA con ProcessingCode 260000.
+   Obiettivo: Assicurarsi che il tipo di documento dell'ordinante sia correttamente inserito nel sottocampo 111.66 per le Original Credit Transaction VISA.
+   Output atteso: Valorizzazione corretta del sottocampo 111.66 con il tipo di documento dell'ordinante.
+   Input atteso: Transazione VISA con ProcessingCode 260000.
+
+4. Titolo: Verifica valorizzazione sottocampo 111.67 per VISA Account Funding Transaction
+   Descrizione: Controllo che il sottocampo 111.67 sia correttamente valorizzato per una transazione VISA con ProcessingCode 200000.
+   Obiettivo: Assicurarsi che il valore del documento dell'ordinante sia correttamente inserito nel sottocampo 111.67 per le Account Funding Transaction VISA.
+   Output atteso: Valorizzazione corretta del sottocampo 111.67 con il valore del documento dell'ordinante.
+   Input atteso: Transazione VISA con ProcessingCode 200000.
+
+5. Titolo: Verifica invio sottocampi 111.66 e 111.67 nei messaggi ISO 1100
+   Descrizione: Controllo che i sottocampi 111.66 e 111.67 siano presenti e correttamente valorizzati nei messaggi di richiesta autorizzazione ISO 1100.
+   Obiettivo: Assicurarsi che i sottocampi relativi al documento dell'ordinante siano inviati correttamente nei messaggi di richiesta autorizzazione.
+   Output atteso: Presenza e corretta valorizzazione dei sottocampi 111.66 e 111.67 nei messaggi ISO 1100.
+   Input atteso: Messaggio ISO 1100 per transazioni Visa/Mastercard.
+
+6. Titolo: Verifica non sovrascrittura sottocampi in tabella TR per messaggi 1120 di riallineamento
+   Descrizione: Assicurarsi che la ricezione dei messaggi 1120 di riallineamento non sovrascriva i valori dei sottocampi 111.66, 111.67 e 047.01 già salvati nella tabella TR.
+   Obiettivo: Verificare che i valori esistenti nella tabella TR non vengano sovrascritti in caso di ricezione di messaggi 1120 di riallineamento.
+   Output atteso: Mantenimento dei valori originali dei sottocampi nella tabella TR dopo la ricezione di messaggi 1120 di riallineamento.
+   Input atteso: Messaggi 1120 di riallineamento per transazioni Visa/Mastercard.
+
+7. Titolo: Verifica corretta valorizzazione sottocampo 047.01 per controlli formali Autorizzativo
+   Descrizione: Controllo che il sottocampo 047.01 sia correttamente valorizzato con l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che l'esito dei controlli formali sia correttamente riportato nel sottocampo 047.01.
+   Output atteso: Valorizzazione corretta del sottocampo 047.01 con l'esito dei controlli formali.
+   Input atteso: Risultato dei controlli formali effettuati da Autorizzativo.
+
+Questi micro test cases sono stati creati per verificare la corretta implementazione e funzionamento dei nuovi sottocampi aggiunti al sistema Antifrode, in relazione al documento dell'ordinante nelle transazioni Visa e Mastercard, come descritto nella documentazione fornita.
+##################################################
+MACRO TEST
+3. Titolo: Mappatura dei nuovi sottocampi ISO con la tabella TR
+   Descrizione: Salvataggio dei sottocampi 111.66, 111.67 e 047.01 nella tabella TR del Sistema Antifrode.
+   Obiettivo: Assicurarsi che i sottocampi ISO siano correttamente mappati e salvati nella tabella TR.
+   Output atteso: Corretta mappatura e salvataggio dei sottocampi nella tabella TR.
+   Input atteso: Messaggi ISO 1100, 1120/1121 con i sottocampi pertinenti.
+   Keywords: mappatura, sottocampi ISO, tabella TR, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica mappatura sottocampo 111.66 per transazioni Mastercard
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente mappato e salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 sia correttamente mappato per le transazioni Mastercard.
+   Output atteso: Il sottocampo 111.66 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+
+2. Titolo: Verifica mappatura sottocampo 111.66 per transazioni VISA
+   Descrizione: Verifica che il sottocampo 111.66 (Sender Identification Type) sia correttamente mappato e salvato nella tabella TR per le transazioni VISA con processingCode = 260000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.66 sia correttamente mappato per le transazioni VISA.
+   Output atteso: Il sottocampo 111.66 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+
+3. Titolo: Verifica mappatura sottocampo 111.67 per transazioni Mastercard
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente mappato e salvato nella tabella TR per le transazioni Mastercard con processingCode = 280000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 sia correttamente mappato per le transazioni Mastercard.
+   Output atteso: Il sottocampo 111.67 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 280000 o 200000 per Mastercard.
+
+4. Titolo: Verifica mappatura sottocampo 111.67 per transazioni VISA
+   Descrizione: Verifica che il sottocampo 111.67 (Sender Identification Value) sia correttamente mappato e salvato nella tabella TR per le transazioni VISA con processingCode = 260000 e 200000.
+   Obiettivo: Assicurarsi che il sottocampo 111.67 sia correttamente mappato per le transazioni VISA.
+   Output atteso: Il sottocampo 111.67 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con processingCode = 260000 o 200000 per VISA.
+
+5. Titolo: Verifica mappatura sottocampo 047.01 per tutti i messaggi
+   Descrizione: Verifica che il sottocampo 047.01 (Reg487 Verification Result) sia correttamente mappato e salvato nella tabella TR per tutti i messaggi ISO 1100 e 1120/1121.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 sia correttamente mappato per tutti i messaggi ISO pertinenti.
+   Output atteso: Il sottocampo 047.01 è presente e correttamente valorizzato nella tabella TR.
+   Input atteso: Messaggio ISO 1100 o 1120/1121 con i valori di dominio specificati per il sottocampo 047.01.
+
+6. Titolo: Verifica non sovrascrittura sottocampi in tabella TR
+   Descrizione: Verifica che i sottocampi 111.66, 111.67 e 047.01 non vengano sovrascritti nella tabella TR se già presenti, alla ricezione dei messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Obiettivo: Assicurarsi che i valori esistenti dei sottocampi nella tabella TR non vengano sovrascritti in caso di ricezione di messaggi specifici.
+   Output atteso: I valori esistenti dei sottocampi nella tabella TR rimangono invariati dopo la ricezione dei messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Input atteso: Messaggi ISO 1120 di riallineamento o di Time-out o di Off-line con i sottocampi pertinenti già presenti nella tabella TR.
+
+Questi micro test cases coprono la mappatura e il salvataggio dei sottocampi ISO specificati nella tabella TR del Sistema Antifrode, come richiesto dal Macro Test fornito.
+##################################################
+MACRO TEST
+4. Titolo: Integrazione dei dati di Trasferimento Fondi nella GUI del Sistema Antifrode
+   Descrizione: Integrazione dei nuovi campi associati al Trasferimento Fondi nelle regole e accumulatori evoluti del Sistema Antifrode.
+   Obiettivo: Verificare che i nuovi campi siano disponibili e utilizzabili nelle regole e accumulatori evoluti.
+   Output atteso: Disponibilità dei nuovi campi nella GUI per la creazione di regole e accumulatori.
+   Input atteso: Accesso alla GUI del Sistema Antifrode e navigazione alle sezioni pertinenti.
+   Keywords: GUI, Sistema Antifrode, Trasferimento Fondi, regole, accumulatori evoluti
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica della presenza del campo "Cod. unico di identificazione operazione" per trasferimenti infra-UE
+   Descrizione: Controllo della presenza del campo "Cod. unico di identificazione operazione" nelle regole e accumulatori evoluti per trasferimenti di fondi all'interno dell'UE.
+   Obiettivo: Assicurarsi che il campo "Cod. unico di identificazione operazione" sia presente e validato per i trasferimenti infra-UE.
+   Output atteso: Il campo "Cod. unico di identificazione operazione" è visibile e utilizzabile nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi infra-UE.
+
+2. Titolo: Verifica dei campi obbligatori per trasferimenti extra-UE con importo < 1.000,00 euro
+   Descrizione: Controllo della presenza e validazione dei campi obbligatori per trasferimenti extra-UE con importo inferiore a 1.000,00 euro.
+   Obiettivo: Verificare che tutti i campi obbligatori siano presenti e correttamente validati per trasferimenti extra-UE con importo < 1.000,00 euro.
+   Output atteso: Tutti i campi obbligatori sono presenti e validati nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi extra-UE con importo < 1.000,00 euro.
+
+3. Titolo: Verifica dei campi obbligatori per trasferimenti extra-UE con importo >= 1.000,00 euro
+   Descrizione: Controllo della presenza e validazione dei campi obbligatori per trasferimenti extra-UE con importo maggiore o uguale a 1.000,00 euro.
+   Obiettivo: Verificare che tutti i campi obbligatori siano presenti e correttamente validati per trasferimenti extra-UE con importo >= 1.000,00 euro.
+   Output atteso: Tutti i campi obbligatori sono presenti e validati nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi extra-UE con importo >= 1.000,00 euro.
+
+4. Titolo: Verifica integrazione campi "Sender Identification Type" e "Sender Identification Value"
+   Descrizione: Controllo dell'integrazione dei nuovi sottocampi "Sender Identification Type" e "Sender Identification Value" nel messaggio ISO.
+   Obiettivo: Assicurarsi che i sottocampi "Sender Identification Type" e "Sender Identification Value" siano correttamente integrati e valorizzati nel messaggio ISO.
+   Output atteso: I sottocampi sono presenti e correttamente valorizzati nel messaggio ISO.
+   Input atteso: Simulazione di una transazione Visa/Mastercard con i valori del campo ISO 003: ProcessingCode corrispondenti.
+
+5. Titolo: Verifica del campo "Reg487 Verification Result" nel messaggio ISO
+   Descrizione: Controllo dell'integrazione e della corretta valorizzazione del campo "Reg487 Verification Result" nel messaggio ISO.
+   Obiettivo: Verificare che il campo "Reg487 Verification Result" sia presente e valorizzato correttamente nel messaggio ISO.
+   Output atteso: Il campo "Reg487 Verification Result" è presente e valorizzato con uno dei valori di dominio nel messaggio ISO.
+   Input atteso: Simulazione di una transazione con esito dei controlli formali da parte di Autorizzativo.
+
+6. Titolo: Verifica visualizzazione dettagli "Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result"
+   Descrizione: Controllo della visualizzazione dei campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i campi siano visibili e correttamente mostrati nella GUI.
+   Output atteso: I campi sono visibili nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Input atteso: Accesso al dettaglio di una transazione finanziaria Mastercard Money Send attraverso la GUI.
+
+7. Titolo: Verifica configurazione risposta negativa Sistema Antifrode per mancata tracciabilità
+   Descrizione: Controllo della configurazione delle risposte di negazione dal sistema Antifrode per mancata verifica dell'obbligatorietà dei dati.
+   Obiettivo: Verificare che il sistema Antifrode risponda con i codici di risposta corretti in caso di mancata tracciabilità del Trasferimento Fondi.
+   Output atteso: Il sistema Antifrode risponde con "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Input atteso: Simulazione di una transazione con dati non tracciabili e verifica della risposta del sistema Antifrode.
+
+Questi micro test cases sono stati creati per coprire le funzionalità descritte nel contesto fornito e per assicurare che l'integrazione dei dati di Trasferimento Fondi nella GUI del Sistema Antifrode sia stata implementata correttamente.
+##################################################
+MACRO TEST
+5. Titolo: Verifica delle risposte di negazione del Sistema Antifrode
+   Descrizione: Configurazione delle risposte di negazione del Sistema Antifrode in caso di mancata verifica dell'obbligatorietà dei dati.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda con i codici di negazione corretti in base alle regole finanziarie.
+   Output atteso: Risposte di negazione corrette dal Sistema Antifrode.
+   Input atteso: Condizioni di validità sui dati associati al Trasferimento Fondi che generano negazioni.
+   Keywords: Sistema Antifrode, risposte di negazione, codici di risposta, regole finanziarie
+##################################################
+
+Based on the provided Macro Test and context from the Functional Analysis documentation, here are the detailed micro test cases:
+
+1. Titolo: Verifica negazione per mancanza Cod. unico di identificazione operazione in trasferimento fondi infra-UE
+   Descrizione: Testare la negazione di un trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il Cod. unico di identificazione operazione per trasferimenti infra-UE.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+
+2. Titolo: Verifica negazione per dati ordinante incompleti in trasferimento fondi extra-UE < 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro e dati ordinante incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi dell'ordinante per trasferimenti extra-UE con importo < 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza dati completi dell'ordinante.
+
+3. Titolo: Verifica negazione per dati beneficiario incompleti in trasferimento fondi extra-UE < 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro e dati beneficiario incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi del beneficiario per trasferimenti extra-UE con importo < 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza dati completi del beneficiario.
+
+4. Titolo: Verifica negazione per dati ordinante e beneficiario incompleti in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro e dati ordinante e beneficiario incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi dell'ordinante e del beneficiario per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza dati completi dell'ordinante e del beneficiario.
+
+5. Titolo: Verifica negazione per mancanza di indirizzo ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza indirizzo ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca l'indirizzo dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza indirizzo ordinante.
+
+6. Titolo: Verifica negazione per mancanza di documento di identità ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza documento di identità ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il documento di identità dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza documento di identità ordinante.
+
+7. Titolo: Verifica negazione per mancanza di numero di identificazione account ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza numero di identificazione account ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il numero di identificazione account dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza numero di identificazione account ordinante.
+
+Please note that these micro test cases are designed to validate the correct response of the Anti-Fraud System when mandatory data verification fails, as per the provided context and Macro Test.
+##################################################
+MACRO TEST
+6. Titolo: Regole per la verifica del Trasferimento Fondi
+   Descrizione: Definizione di regole per intercettare le condizioni di validità sui dati del Trasferimento Fondi e generare negazioni appropriate.
+   Obiettivo: Verificare che le regole siano configurate per negare le transazioni in base ai criteri specificati.
+   Output atteso: Negazione delle transazioni non conformi ai criteri di tracciabilità.
+   Input atteso: Dati del Trasferimento Fondi non conformi ai criteri di tracciabilità.
+   Keywords: regole, verifica, Trasferimento Fondi, negazione, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Trasferimento Fondi intra-UE senza Codice Unico
+   Descrizione: Testare la negazione di un trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il trasferimento fondi intra-UE senza codice unico venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi intra-UE senza codice unico di identificazione operazione.
+
+2. Titolo: Verifica Trasferimento Fondi extra-UE < 1000,00 senza Dati Ordinante
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo inferiore a 1000,00 euro e dati ordinante mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra-UE senza dati completi dell'ordinante venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza cognome e nome dell'ordinante.
+
+3. Titolo: Verifica Trasferimento Fondi extra-UE >= 1000,00 senza Dati Completi
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo maggiore o uguale a 1000,00 euro e dati completi mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra-UE senza tutti i dati richiesti venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza uno o più dei seguenti dati: indirizzo ordinante, documento di identità ordinante, numero di identificazione account ordinante.
+
+4. Titolo: Verifica Risultato Controllo Reg487 non Superato
+   Descrizione: Testare la negazione di un trasferimento fondi con risultato controllo Reg487 diverso da 0.
+   Obiettivo: Assicurarsi che il trasferimento fondi con esito controllo Reg487 non superato venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi con campo "Reg487 Verification Result" contenente un valore diverso da 0.
+
+5. Titolo: Verifica Trasferimento Fondi con Dati Beneficiario Mancanti
+   Descrizione: Testare la negazione di un trasferimento fondi con dati del beneficiario mancanti.
+   Obiettivo: Assicurarsi che il trasferimento fondi senza dati completi del beneficiario venga negato.
+   Output atteso: Transazione negata con motivo "R4 - No dati Reg847" e codice risposta "57" o "119".
+   Input atteso: Trasferimento fondi con cognome e nome del beneficiario mancanti.
+
+Questi micro test cases coprono diversi scenari di negazione basati sui criteri di tracciabilità e conformità ai requisiti di completezza dei dati informativi sull'ordinante e sul beneficiario come descritto nella documentazione di analisi funzionale.

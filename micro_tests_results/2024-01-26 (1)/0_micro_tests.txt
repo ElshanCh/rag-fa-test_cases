@@ -1,0 +1,43 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica dell'implementazione dei controlli formali Autorizzativo
+   Descrizione: Implementazione di un nuovo sottocampo nel messaggio ISO per trasportare l'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il sottocampo 047.01 venga correttamente popolato con i valori di dominio attesi.
+   Output atteso: Valori di dominio corretti per il sottocampo 047.01.
+   Input atteso: Messaggi ISO 1100, 1120, 1121 con il sottocampo 047.01 popolato.
+   Keywords: Autorizzativo, controlli formali, sottocampo 047.01, messaggio ISO
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica campo 047.01 per transazione intra-UE senza Cod. unico di identificazione
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente quando manca il Cod. unico di identificazione per una transazione intra-UE.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali un errore quando il Cod. unico di identificazione operazione non è presente in una transazione intra-UE.
+   Output atteso: 047.01 = 1 (Identificativo operazione errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 intra-UE senza Cod. unico di identificazione operazione.
+
+2. Titolo: Verifica campo 047.01 per transazione extra-UE < 1000 euro con dati incompleti
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente per una transazione extra-UE con importo inferiore a 1000 euro e dati ordinante/beneficiario incompleti.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali l'errore specifico quando mancano i dati obbligatori del beneficiario o dell'ordinante in una transazione extra-UE con importo inferiore a 1000 euro.
+   Output atteso: 047.01 = 2 o 3 (Cognome, nome ordinante/beneficiario errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 extra-UE < 1000 euro con dati ordinante/beneficiario incompleti.
+
+3. Titolo: Verifica campo 047.01 per transazione extra-UE >= 1000 euro con dati incompleti
+   Descrizione: Controllo che il sottocampo 047.01 sia popolato correttamente per una transazione extra-UE con importo pari o superiore a 1000 euro e dati ordinante incompleti.
+   Obiettivo: Verificare che il sottocampo 047.01 segnali l'errore specifico quando mancano i dati obbligatori dell'ordinante in una transazione extra-UE con importo pari o superiore a 1000 euro.
+   Output atteso: 047.01 = 4, 5 o 6 (Indirizzo ordinante errato, Documento ordinante errato, Account ordinante errato)
+   Input atteso: Messaggio ISO 1100/1120/1121 extra-UE >= 1000 euro con dati ordinante incompleti.
+
+4. Titolo: Verifica corretta valorizzazione campo 047.01 per tutti i controlli superati
+   Descrizione: Controllo che il sottocampo 047.01 sia correttamente valorizzato a 0 quando tutti i controlli formali sono superati.
+   Obiettivo: Verificare che il sottocampo 047.01 sia impostato a 0 per indicare che tutti i controlli Reg487 sono stati superati.
+   Output atteso: 047.01 = 0 (Tutti i controlli Reg487 superati)
+   Input atteso: Messaggio ISO 1100/1120/1121 con tutti i dati obbligatori presenti e corretti.
+
+5. Titolo: Verifica persistenza campo 047.01 in tabella TR senza sovrascrittura
+   Descrizione: Controllo che il valore del sottocampo 047.01 non venga sovrascritto nella tabella TR in caso di ricezione di messaggi 1120 di riallineamento o di Time-out o di Off-line.
+   Obiettivo: Assicurarsi che i valori precedentemente salvati del sottocampo 047.01 nella tabella TR non vengano sovrascritti da messaggi successivi.
+   Output atteso: Valore del campo "Reg487 Verification Result" invariato nella tabella TR dopo la ricezione di messaggi 1120/1121 di riallineamento o di Time-out o di Off-line.
+   Input atteso: Messaggi ISO 1120/1121 di riallineamento o di Time-out o di Off-line dopo un primo salvataggio del sottocampo 047.01 nella tabella TR.
+
+Questi micro test cases coprono diversi scenari di validazione per il sottocampo 047.01 in relazione ai requisiti di tracciabilità e alle regole di gestione dei dati.

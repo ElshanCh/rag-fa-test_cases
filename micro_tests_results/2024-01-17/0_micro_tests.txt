@@ -1,0 +1,63 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Verifica Dati Aggiuntivi Documento Ordinante
+Descrizione: Verifica dell'integrazione dei nuovi sottocampi 111.66 e 111.67 nel messaggio ISO per dati identificativi dell'ordinante.
+Obiettivo: Assicurarsi che i sottocampi "Sender Identification Type" e "Sender Identification Value" siano correttamente valorizzati e inviati nei messaggi ISO 1100, 1120, 1121.
+Output atteso: I sottocampi 111.66 e 111.67 devono essere presenti e correttamente valorizzati nei messaggi ISO pertinenti.
+Input atteso: Transazioni Visa/Mastercard con i valori del campo ISO 003: ProcessingCode = 280000, 200000 (Mastercard) e 260000, 200000 (VISA).
+Keywords: Sender Identification Type, Sender Identification Value, ISO 111, messaggio ISO, Mastercard, VISA, ProcessingCode
+
+##################################################
+
+Based on the provided Macro Test and the context from the Functional Analysis documentation, here are the micro test cases formatted similarly to the Macro Test:
+
+**Micro Test Case 1: Verifica Presenza Sottocampi 111.66 e 111.67 in Messaggio ISO 1100**
+- **Descrizione**: Verifica che i sottocampi "Sender Identification Type" (111.66) e "Sender Identification Value" (111.67) siano presenti nel messaggio ISO 1100 per transazioni Mastercard e Visa.
+- **Obiettivo**: Assicurarsi che i sottocampi 111.66 e 111.67 siano inclusi nel messaggio ISO 1100.
+- **Output atteso**: I sottocampi 111.66 e 111.67 sono presenti e correttamente valorizzati nel messaggio ISO 1100.
+- **Input atteso**: Transazioni Mastercard e Visa con i valori del campo ISO 003: ProcessingCode specificati.
+- **Keywords**: 111.66, 111.67, ISO 1100, Mastercard, Visa, ProcessingCode
+
+**Micro Test Case 2: Verifica Valorizzazione Sottocampi 111.66 e 111.67 per Mastercard**
+- **Descrizione**: Verifica che i sottocampi "Sender Identification Type" (111.66) e "Sender Identification Value" (111.67) siano correttamente valorizzati per transazioni Mastercard.
+- **Obiettivo**: Assicurarsi che i sottocampi 111.66 e 111.67 abbiano valori conformi alle regole per Mastercard.
+- **Output atteso**: I sottocampi 111.66 e 111.67 hanno valori validi secondo le specifiche Mastercard.
+- **Input atteso**: Transazioni Mastercard con ProcessingCode = 280000 e 200000.
+- **Keywords**: 111.66, 111.67, Mastercard, ProcessingCode
+
+**Micro Test Case 3: Verifica Valorizzazione Sottocampi 111.66 e 111.67 per Visa**
+- **Descrizione**: Verifica che i sottocampi "Sender Identification Type" (111.66) e "Sender Identification Value" (111.67) siano correttamente valorizzati per transazioni Visa.
+- **Obiettivo**: Assicurarsi che i sottocampi 111.66 e 111.67 abbiano valori conformi alle regole per Visa.
+- **Output atteso**: I sottocampi 111.66 e 111.67 hanno valori validi secondo le specifiche Visa.
+- **Input atteso**: Transazioni Visa con ProcessingCode = 260000 e 200000.
+- **Keywords**: 111.66, 111.67, Visa, ProcessingCode
+
+**Micro Test Case 4: Verifica Non Sovrascrittura Sottocampi 111.66 e 111.67 in Messaggi 1120 e 1121**
+- **Descrizione**: Verifica che gli advice dei messaggi 1120 e 1121 non sovrascrivano i sottocampi 111.66 e 111.67 registrati con il messaggio 1100.
+- **Obiettivo**: Assicurarsi che i sottocampi 111.66 e 111.67 non vengano sovrascritti nei messaggi di riallineamento.
+- **Output atteso**: I sottocampi 111.66 e 111.67 rimangono invariati nei messaggi 1120 e 1121 rispetto al valore originale del messaggio 1100.
+- **Input atteso**: Messaggi 1120 e 1121 di riallineamento.
+- **Keywords**: 111.66, 111.67, ISO 1120, ISO 1121, Non Sovrascrittura
+
+**Micro Test Case 5: Verifica Esito Controlli Formali Autorizzativo nel Sottocampo 047.01**
+- **Descrizione**: Verifica che il sottocampo "Reg487 Verification Result" (047.01) trasporti correttamente l'esito dei controlli formali effettuati da Autorizzativo.
+- **Obiettivo**: Assicurarsi che il sottocampo 047.01 rifletta accuratamente l'esito dei controlli formali.
+- **Output atteso**: Il sottocampo 047.01 contiene il risultato dei controlli formali come specificato.
+- **Input atteso**: Messaggi ISO 1100, 1120, 1121 con esiti dei controlli formali.
+- **Keywords**: 047.01, Reg487 Verification Result, Controlli Formali, Autorizzativo
+
+**Micro Test Case 6: Verifica Salvataggio Sottocampi 111.66, 111.67 e 047.01 nella Tabella TR**
+- **Descrizione**: Verifica che i sottocampi "Sender Identification Type" (111.66), "Sender Identification Value" (111.67) e "Reg487 Verification Result" (047.01) siano salvati nella tabella TR del Sistema AntiFrode.
+- **Obiettivo**: Assicurarsi che i sottocampi siano correttamente memorizzati nella tabella TR.
+- **Output atteso**: I sottocampi 111.66, 111.67 e 047.01 sono presenti e correttamente salvati nella tabella TR.
+- **Input atteso**: Messaggi ISO 1100, 1120, 1121 contenenti i sottocampi pertinenti.
+- **Keywords**: 111.66, 111.67, 047.01, Tabella TR, Sistema AntiFrode
+
+**Micro Test Case 7: Verifica Visualizzazione Dati Aggiuntivi nella GUI Sistema AntiFrode**
+- **Descrizione**: Verifica che i dati aggiuntivi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" siano visualizzati nella pagina di dettaglio della transazione finanziaria nella GUI del Sistema AntiFrode.
+- **Obiettivo**: Assicurarsi che i dati aggiuntivi siano correttamente mostrati nella GUI.
+- **Output atteso**: I dati aggiuntivi sono visibili e corretti nella sezione "Mastercard Money Send" del dettaglio autorizzazione.
+- **Input atteso**: Accesso alla pagina di dettaglio della transazione finanziaria nella GUI.
+- **Keywords**: GUI, Sistema AntiFrode, Dati Aggiuntivi, Visualizzazione
+
+These micro test cases are designed to cover the various aspects of the new implementation or update to the software or service as described in the Functional Analysis documentation. Each test case focuses on a specific requirement or functionality to ensure comprehensive testing of the system.

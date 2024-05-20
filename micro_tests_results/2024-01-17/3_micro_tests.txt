@@ -1,0 +1,62 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Integrazione Dati GUI Sistema AntiFrode
+Descrizione: Verifica dell'integrazione dei nuovi dati di Trasferimento Fondi nella GUI del Sistema AntiFrode.
+Obiettivo: Confermare che i nuovi dati siano disponibili e correttamente visualizzati nella GUI del Sistema AntiFrode.
+Output atteso: I nuovi dati devono essere visualizzati nelle sezioni appropriate della GUI.
+Input atteso: Dati di Trasferimento Fondi inclusi i nuovi campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result".
+Keywords: GUI, Sistema AntiFrode, Trasferimento Fondi, dati aggiuntivi
+
+##################################################
+
+Based on the provided context, here are the micro test cases formatted similarly to the provided Macro Test:
+
+**Micro Test Case 1: Verifica Campi Nuovi in Regole Finanziarie**
+Titolo: Verifica Campi Nuovi in Regole Finanziarie GUI Sistema AntiFrode
+Descrizione: Assicurarsi che i nuovi campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" siano disponibili e selezionabili nelle regole finanziarie nella GUI del Sistema AntiFrode.
+Obiettivo: Confermare l'integrazione e la corretta visualizzazione dei nuovi campi nelle regole finanziarie.
+Output atteso: I nuovi campi devono essere presenti e selezionabili nella combo "Transazione" dei Parametri Regola.
+Input atteso: Accesso alla sezione Gestione Regole sotto il Menù Regole.
+Keywords: GUI, Sistema AntiFrode, Regole Finanziarie, Campi Nuovi
+
+**Micro Test Case 2: Verifica Campi Nuovi in Accumulatori Evoluti**
+Titolo: Verifica Campi Nuovi in Accumulatori Evoluti GUI Sistema AntiFrode
+Descrizione: Verificare che i nuovi campi siano aggiunti e funzionanti correttamente negli accumulatori evoluti.
+Obiettivo: Assicurarsi che i nuovi campi siano disponibili per la configurazione degli accumulatori evoluti.
+Output atteso: I nuovi campi devono essere visibili e funzionanti nella combo "Transazione" di tutti i Parametri Regola.
+Input atteso: Accesso alla sezione Accumulatori Evoluti sotto il Menù Regole.
+Keywords: GUI, Sistema AntiFrode, Accumulatori Evoluti, Campi Nuovi
+
+**Micro Test Case 3: Verifica Visualizzazione Dettaglio Transazione Finanziaria**
+Titolo: Verifica Visualizzazione Dettaglio Transazione Finanziaria GUI Sistema AntiFrode
+Descrizione: Controllare che i dati aggiuntivi siano correttamente visualizzati nella pagina di dettaglio della transazione finanziaria.
+Obiettivo: Confermare che i nuovi dati siano visualizzati correttamente nella sezione "Mastercard Money Send" del dettaglio autorizzazione.
+Output atteso: I nuovi dati devono essere presenti e correttamente formattati nella pagina di dettaglio.
+Input atteso: Accesso al dettaglio della transazione finanziaria tramite Menu Autorizzazioni.
+Keywords: GUI, Sistema AntiFrode, Dettaglio Transazione, Dati Aggiuntivi
+
+**Micro Test Case 4: Verifica Codici Risposta Sistema AntiFrode**
+Titolo: Verifica Codici Risposta Sistema AntiFrode per Trasferimento Fondi
+Descrizione: Testare che i codici di risposta "57" e "119" siano configurati e restituiti correttamente dal Sistema AntiFrode in caso di mancata tracciabilità.
+Obiettivo: Assicurarsi che i codici di risposta siano impostati e funzionanti come previsto per le transazioni negate.
+Output atteso: Ricezione dei codici di risposta "57" o "119" in caso di negazione della transazione.
+Input atteso: Simulazione di una transazione con dati incompleti o non conformi.
+Keywords: Sistema AntiFrode, Codici Risposta, Trasferimento Fondi, Negazione Transazione
+
+**Micro Test Case 5: Verifica Configurazione Motivo di Rifiuto R4**
+Titolo: Verifica Configurazione Nuovo Motivo di Rifiuto R4 nel Sistema AntiFrode
+Descrizione: Verificare che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia configurato e utilizzato correttamente nel sistema.
+Obiettivo: Confermare l'aggiunta e l'uso del nuovo motivo di rifiuto per le transazioni negate per mancata tracciabilità.
+Output atteso: Il motivo di rifiuto "R4" deve essere selezionabile e visualizzabile nelle negazioni di transazione.
+Input atteso: Configurazione del nuovo motivo di rifiuto nel sistema AntiFrode.
+Keywords: Sistema AntiFrode, Motivo di Rifiuto, R4, Configurazione
+
+**Micro Test Case 6: Verifica Integrazione Dati Autorizzativi**
+Titolo: Verifica Integrazione Dati Autorizzativi nel Sistema AntiFrode
+Descrizione: Testare l'integrazione e la corretta trasmissione dei dati autorizzativi dal FE Autorizzativo al Sistema AntiFrode.
+Obiettivo: Assicurarsi che i dati autorizzativi siano ricevuti e gestiti correttamente dal Sistema AntiFrode.
+Output atteso: Conferma della ricezione e del corretto trattamento dei dati autorizzativi da parte del Sistema AntiFrode.
+Input atteso: Messaggi autorizzativi 1100, 1120, 1121 con i dati obbligatori ordinante/ricevente e l'esito dei controlli.
+Keywords: Sistema AntiFrode, Dati Autorizzativi, Integrazione, Messaggi ISO
+
+These micro test cases are designed to cover various aspects of the new implementation, ensuring that the integration of new data fields and functionalities into the Anti-Fraud System GUI is thoroughly tested.

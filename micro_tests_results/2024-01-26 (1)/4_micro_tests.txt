@@ -1,0 +1,55 @@
+##################################################
+MACRO TEST
+5. Titolo: Verifica delle risposte di negazione del Sistema Antifrode
+   Descrizione: Configurazione delle risposte di negazione del Sistema Antifrode in caso di mancata verifica dell'obbligatorietà dei dati.
+   Obiettivo: Assicurarsi che il Sistema Antifrode risponda con i codici di negazione corretti in base alle regole finanziarie.
+   Output atteso: Risposte di negazione corrette dal Sistema Antifrode.
+   Input atteso: Condizioni di validità sui dati associati al Trasferimento Fondi che generano negazioni.
+   Keywords: Sistema Antifrode, risposte di negazione, codici di risposta, regole finanziarie
+##################################################
+
+Based on the provided Macro Test and context from the Functional Analysis documentation, here are the detailed micro test cases:
+
+1. Titolo: Verifica negazione per mancanza Cod. unico di identificazione operazione in trasferimento fondi infra-UE
+   Descrizione: Testare la negazione di un trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il Cod. unico di identificazione operazione per trasferimenti infra-UE.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+
+2. Titolo: Verifica negazione per dati ordinante incompleti in trasferimento fondi extra-UE < 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro e dati ordinante incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi dell'ordinante per trasferimenti extra-UE con importo < 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza dati completi dell'ordinante.
+
+3. Titolo: Verifica negazione per dati beneficiario incompleti in trasferimento fondi extra-UE < 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro e dati beneficiario incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi del beneficiario per trasferimenti extra-UE con importo < 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza dati completi del beneficiario.
+
+4. Titolo: Verifica negazione per dati ordinante e beneficiario incompleti in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro e dati ordinante e beneficiario incompleti.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se mancano dati completi dell'ordinante e del beneficiario per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza dati completi dell'ordinante e del beneficiario.
+
+5. Titolo: Verifica negazione per mancanza di indirizzo ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza indirizzo ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca l'indirizzo dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza indirizzo ordinante.
+
+6. Titolo: Verifica negazione per mancanza di documento di identità ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza documento di identità ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il documento di identità dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza documento di identità ordinante.
+
+7. Titolo: Verifica negazione per mancanza di numero di identificazione account ordinante in trasferimento fondi extra-UE >= 1000,00 euro
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza numero di identificazione account ordinante.
+   Obiettivo: Assicurarsi che il Sistema Antifrode neghi la transazione se manca il numero di identificazione account dell'ordinante per trasferimenti extra-UE con importo >= 1000,00 euro.
+   Output atteso: Risposta di negazione "57" o "119" con Motivo Rifiuto "R4 - No dati Reg847".
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza numero di identificazione account ordinante.
+
+Please note that these micro test cases are designed to validate the correct response of the Anti-Fraud System when mandatory data verification fails, as per the provided context and Macro Test.

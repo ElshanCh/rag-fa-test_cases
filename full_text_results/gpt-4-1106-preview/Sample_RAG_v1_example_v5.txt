@@ -1,0 +1,41 @@
+Descrizione: Aggiunta di dati aggiuntivi del Documento Ordinante (Sender) nel messaggio ISO.
+Obiettivo: Verificare che i nuovi sottocampi 111.66 (Sender Identification Type) e 111.67 (Sender Identification Value) siano correttamente valorizzati e inviati nei messaggi ISO 1100, 1120, 1121 e salvati nella tabella TR.
+Output atteso: I sottocampi 111.66 e 111.67 devono essere presenti e correttamente valorizzati nei messaggi ISO e nella tabella TR.
+Input atteso: Transazioni Visa/Mastercard con i valori specificati per i campi ISO 003: ProcessingCode.
+Keywords: Sender Identification Type, Sender Identification Value, messaggio ISO, tabella TR, Visa, Mastercard.
+
+Descrizione: Implementazione del nuovo sottocampo 047.01 (Reg487 Verification Result) per trasportare l'esito dei controlli formali Autorizzativo.
+Obiettivo: Assicurarsi che il sottocampo 047.01 sia correttamente implementato e che trasporti l'esito dei controlli formali nei messaggi ISO 1100, 1120, 1121.
+Output atteso: Il sottocampo 047.01 deve riflettere l'esito dei controlli formali e deve essere salvato nella tabella TR.
+Input atteso: Valori possibili per il sottocampo 047.01 come specificato nella documentazione.
+Keywords: Reg487 Verification Result, controlli formali, messaggio ISO, tabella TR.
+
+Descrizione: Mappatura dei nuovi campi ISO con la tabella TR nel Sistema AntiFrode.
+Obiettivo: Verificare che la mappatura dei nuovi campi ISO con la tabella TR sia corretta e che i dati siano salvati come previsto.
+Output atteso: Corrispondenza tra i campi ISO e i campi TR come da documentazione.
+Input atteso: Messaggi ISO 1100, 1120, 1121 con i nuovi campi.
+Keywords: Mappatura, campi ISO, tabella TR, Sistema AntiFrode.
+
+Descrizione: Integrazione dei dati di Trasferimento Fondi nella GUI del Sistema AntiFrode e aggiornamento delle regole e accumulatori.
+Obiettivo: Verificare che i nuovi dati siano integrati nella GUI e che le regole e gli accumulatori siano aggiornati per gestire i nuovi parametri.
+Output atteso: I nuovi dati devono essere visibili nella GUI e utilizzabili nelle regole e accumulatori.
+Input atteso: Dati di Trasferimento Fondi come da specifiche.
+Keywords: GUI, Sistema AntiFrode, regole, accumulatori, Trasferimento Fondi.
+
+Descrizione: Configurazione delle risposte di negazione dal sistema AntiFrode per mancata verifica dell'obbligatorietà dei dati.
+Obiettivo: Assicurarsi che le risposte di negazione siano configurate correttamente in base ai fallimenti dei controlli.
+Output atteso: Risposte di negazione appropriate ("57" per Visa/Mastercard, "119" per banche di debito internazionale) configurate nelle regole finanziarie.
+Input atteso: Fallimento dei controlli nelle Regole finanziarie.
+Keywords: Risposte di negazione, Sistema AntiFrode, configurazione, regole finanziarie.
+
+Descrizione: Configurazione del nuovo motivo di rifiuto "R4 - No dati Reg847" nel sistema AntiFrode.
+Obiettivo: Configurare il nuovo motivo di rifiuto per distinguere le negate per mancata tracciabilità del Trasferimento Fondi.
+Output atteso: Il nuovo motivo di rifiuto "R4" deve essere configurato e funzionante nel sistema.
+Input atteso: Transazioni negate per mancata tracciabilità.
+Keywords: Motivo di rifiuto, Sistema AntiFrode, configurazione, Reg847.
+
+Descrizione: Test dell'ambito GUI Web Sistema AntiFrode, dei messaggi autorizzativi e dell'inquiry autorizzativo.
+Obiettivo: Eseguire test completi per verificare l'integrazione dei nuovi dati e la corretta configurazione delle risposte e dei motivi di rifiuto.
+Output atteso: Funzionamento corretto dell'ambito GUI Web, dei messaggi autorizzativi e dell'inquiry autorizzativo con i nuovi dati e configurazioni.
+Input atteso: Setup regole, messaggi autorizzativi 1100, 1120, 1121, inquiry autorizzativo.
+Keywords: Test, GUI Web, messaggi autorizzativi, inquiry autorizzativo, Sistema AntiFrode.

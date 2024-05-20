@@ -1,0 +1,56 @@
+##################################################
+MACRO TEST
+Titolo: Test Case per Verifica Controlli Formali Autorizzativo
+Descrizione: Verifica dell'aggiunta del nuovo sottocampo 047.01 nel messaggio ISO che trasporta l'esito dei controlli formali effettuati da Autorizzativo.
+Obiettivo: Confermare che il sottocampo "Reg487 Verification Result" sia correttamente implementato e che rifletta l'esito dei controlli formali.
+Output atteso: Il sottocampo 047.01 deve essere presente nei messaggi ISO 1100, 1120, 1121 e deve contenere l'esito dei controlli formali.
+Input atteso: Messaggi ISO con i possibili valori di esito dei controlli formali (0-6).
+Keywords: Reg487 Verification Result, controlli formali, ISO 047, messaggio ISO
+
+##################################################
+
+Based on the provided context and the summarized Macro Test, here are the micro test cases formatted similarly:
+
+**Micro Test Case 1: Verifica Presenza Sottocampo 047.01 con Esito Positivo**
+- **Descrizione**: Verifica che il sottocampo 047.01 sia presente nel messaggio ISO 1100 e contenga il valore "0" che indica che tutti i controlli Reg487 sono stati superati.
+- **Obiettivo**: Assicurarsi che il sottocampo 047.01 rifletta correttamente un esito positivo dei controlli formali.
+- **Output atteso**: Il sottocampo 047.01 è presente e valorizzato con "0".
+- **Input atteso**: Messaggio ISO 1100 con tutti i dati corretti e completi.
+- **Keywords**: 047.01, Reg487 Verification Result, esito positivo, messaggio ISO 1100.
+
+**Micro Test Case 2: Verifica Presenza Sottocampo 047.01 con Esito Negativo**
+- **Descrizione**: Verifica che il sottocampo 047.01 sia presente nel messaggio ISO 1100 e contenga valori da "1" a "6" che indicano i diversi tipi di errore nei controlli formali.
+- **Obiettivo**: Confermare che il sottocampo 047.01 rifletta correttamente gli esiti negativi dei controlli formali.
+- **Output atteso**: Il sottocampo 047.01 è presente e valorizzato con un numero da "1" a "6".
+- **Input atteso**: Messaggio ISO 1100 con uno o più errori nei dati.
+- **Keywords**: 047.01, Reg487 Verification Result, esito negativo, messaggio ISO 1100.
+
+**Micro Test Case 3: Verifica Aggiornamento Tabella TR con Sottocampo 047.01**
+- **Descrizione**: Verifica che il sottocampo 047.01 sia correttamente salvato nella tabella TR del Sistema AntiFrode dopo la ricezione del messaggio ISO 1100.
+- **Obiettivo**: Assicurarsi che il sottocampo 047.01 sia persistente nel database.
+- **Output atteso**: Il sottocampo 047.01 è presente nella tabella TR con il valore corretto.
+- **Input atteso**: Messaggio ISO 1100 con esito dei controlli formali.
+- **Keywords**: 047.01, tabella TR, persistenza, messaggio ISO 1100.
+
+**Micro Test Case 4: Verifica Non Sovrascrittura Sottocampo 047.01 su Advice**
+- **Descrizione**: Verifica che gli advice dei messaggi ISO 1120 e 1121 non sovrascrivano il sottocampo 047.01 registrato con il messaggio ISO 1100.
+- **Obiettivo**: Confermare che il valore originale del sottocampo 047.01 sia mantenuto anche dopo la ricezione di advice.
+- **Output atteso**: Il valore del sottocampo 047.01 rimane invariato dopo la ricezione di advice.
+- **Input atteso**: Messaggi ISO 1120 e 1121 di riallineamento.
+- **Keywords**: 047.01, advice, sovrascrittura, messaggi ISO 1120, 1121.
+
+**Micro Test Case 5: Verifica Visualizzazione Sottocampo 047.01 in Dettaglio Transazione**
+- **Descrizione**: Verifica che il sottocampo 047.01 sia visualizzato correttamente nella pagina di dettaglio della transazione finanziaria nel Sistema AntiFrode.
+- **Obiettivo**: Assicurarsi che l'interfaccia utente mostri il sottocampo 047.01 con il valore corretto.
+- **Output atteso**: Il sottocampo 047.01 è visibile e correttamente valorizzato nella GUI.
+- **Input atteso**: Accesso alla pagina di dettaglio della transazione finanziaria.
+- **Keywords**: 047.01, GUI, dettaglio transazione, visualizzazione.
+
+**Micro Test Case 6: Verifica Mappatura Sottocampo 047.01 con Tabella TR**
+- **Descrizione**: Verifica che la mappatura del sottocampo 047.01 con la tabella TR sia corretta e che i dati siano coerenti.
+- **Obiettivo**: Confermare che la mappatura dei dati tra il messaggio ISO e la tabella TR sia eseguita correttamente.
+- **Output atteso**: Corrispondenza tra il valore del sottocampo 047.01 nel messaggio ISO e il valore nella tabella TR.
+- **Input atteso**: Messaggio ISO 1100, 1120, 1121 con sottocampo 047.01.
+- **Keywords**: 047.01, mappatura, tabella TR, coerenza dati.
+
+These micro test cases are designed to cover various scenarios related to the new subfield 047.01, ensuring that it is correctly implemented, stored, and displayed as per the functional requirements.

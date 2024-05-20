@@ -1,0 +1,43 @@
+##################################################
+MACRO TEST
+6. Titolo: Verifica Risposta Negativa per Mancata Tracciabilità
+   Descrizione: Verifica che il Sistema AntiFrode fornisca una risposta negativa in caso di mancata tracciabilità dei dati del trasferimento fondi.
+   Obiettivo: Assicurarsi che le transazioni non conformi alle regole di tracciabilità siano correttamente bloccate.
+   Output atteso: Codice di risposta "57" o "119" in caso di mancata tracciabilità.
+   Input atteso: Trasferimento fondi con dati non conformi alle regole di tracciabilità.
+   Keywords: Sistema AntiFrode, risposta negativa, mancata tracciabilità, codici risposta
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Infra UE senza Codice Unico
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi infra UE senza codice unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il trasferimento fondi infra UE senza codice unico di identificazione sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi infra UE senza codice unico di identificazione operazione.
+
+2. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE < 1.000,00 senza Cognome Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo inferiore a 1.000,00 euro senza cognome dell'ordinante.
+
+3. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Indirizzo Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza indirizzo dell'ordinante.
+
+4. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Documento di Identità Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza documento di identità dell'ordinante.
+
+5. Titolo: Verifica Risposta Negativa per Trasferimento Fondi Extra UE >= 1.000,00 senza Num. di Identificazione Account Ordinante
+   Descrizione: Verifica che il Sistema AntiFrode blocchi un trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante.
+   Obiettivo: Assicurarsi che il trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante sia bloccato.
+   Output atteso: Codice di risposta "57" o "119".
+   Input atteso: Trasferimento fondi extra UE con importo pari o superiore a 1.000,00 euro senza numero di identificazione account dell'ordinante.
+
+Please note that these micro test cases are designed to test the specific scenarios where the Sistema AntiFrode should provide a negative response due to the lack of traceability data as per the requirements outlined in the functional analysis documentation. Each test case focuses on a different aspect of the traceability data requirements for intra-EU and extra-EU fund transfers with varying amounts.

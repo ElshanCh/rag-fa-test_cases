@@ -1,0 +1,49 @@
+##################################################
+MACRO TEST
+7. Titolo: Verifica Configurazione Nuovo Motivo di Rifiuto R4
+   Descrizione: Verifica che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia correttamente configurato nel Sistema AntiFrode.
+   Obiettivo: Distinguere le negate per mancata tracciabilità del Trasferimento Fondi.
+   Output atteso: Nuovo motivo di rifiuto "R4" configurato e utilizzabile nel sistema.
+   Input atteso: Configurazione del nuovo motivo di rifiuto nel Sistema AntiFrode.
+   Keywords: Sistema AntiFrode, motivo di rifiuto, R4, configurazione
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Presenza Nuovo Motivo di Rifiuto R4 in Configurazione
+   Descrizione: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia presente nella configurazione del Sistema AntiFrode.
+   Obiettivo: Confermare l'aggiunta del nuovo motivo di rifiuto "R4" nella lista dei motivi di rifiuto disponibili.
+   Output atteso: Il motivo di rifiuto "R4" è elencato tra i motivi di rifiuto nel Sistema AntiFrode.
+   Input atteso: Accesso alla configurazione dei motivi di rifiuto nel Sistema AntiFrode.
+
+2. Titolo: Test Integrazione Nuovo Motivo di Rifiuto R4 in GUI Sistema AntiFrode
+   Descrizione: Verificare che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia integrato e visualizzabile nella GUI del Sistema AntiFrode.
+   Obiettivo: Assicurarsi che il motivo di rifiuto "R4" sia selezionabile e gestibile attraverso la GUI del Sistema AntiFrode.
+   Output atteso: Il motivo di rifiuto "R4" appare nella combo "Transazione" dei Parametri Regola e nei dettagli dell'Autorizzazione.
+   Input atteso: Navigazione nella GUI del Sistema AntiFrode per verificare la presenza del motivo di rifiuto "R4".
+
+3. Titolo: Test Risposta Sistema AntiFrode con Motivo di Rifiuto R4
+   Descrizione: Controllare che il Sistema AntiFrode fornisca la risposta di rifiuto "R4 - No dati Reg847" quando una transazione non supera i controlli di tracciabilità.
+   Obiettivo: Verificare che il Sistema AntiFrode risponda correttamente con il motivo di rifiuto "R4" in caso di dati mancanti secondo il Reg. (UE) 847/2015.
+   Output atteso: Ricezione del codice di risposta "57" o "119" con il motivo di rifiuto "R4" per transazioni non conformi.
+   Input atteso: Simulazione di una transazione che non soddisfa i requisiti di tracciabilità.
+
+4. Titolo: Test Configurazione Regole Finanziarie con Motivo di Rifiuto R4
+   Descrizione: Verificare che le regole finanziarie siano configurate per utilizzare il nuovo motivo di rifiuto "R4 - No dati Reg847".
+   Obiettivo: Assicurarsi che le regole finanziarie nel Sistema AntiFrode siano aggiornate per includere il motivo di rifiuto "R4" come possibile esito.
+   Output atteso: Le regole finanziarie includono il motivo di rifiuto "R4" tra le opzioni configurabili.
+   Input atteso: Accesso alla configurazione delle regole finanziarie nel Sistema AntiFrode.
+
+5. Titolo: Test Autorizzativo Messaggi ISO con Motivo di Rifiuto R4
+   Descrizione: Verificare che i messaggi ISO 1100, 1120, 1121 includano il nuovo motivo di rifiuto "R4 - No dati Reg847" quando appropriato.
+   Obiettivo: Confermare che i messaggi autorizzativi riflettano correttamente il motivo di rifiuto "R4" quando una transazione viene negata per mancanza di dati.
+   Output atteso: I messaggi ISO contengono il motivo di rifiuto "R4" quando una transazione viene rifiutata per non conformità ai requisiti di tracciabilità.
+   Input atteso: Generazione di messaggi ISO con transazioni che non superano i controlli di tracciabilità.
+
+6. Titolo: Test Visualizzazione Motivo di Rifiuto R4 in Dettaglio Transazione
+   Descrizione: Assicurarsi che il motivo di rifiuto "R4 - No dati Reg847" sia visualizzato correttamente nei dettagli della transazione finanziaria nella GUI del Sistema AntiFrode.
+   Obiettivo: Verificare che il motivo di rifiuto "R4" sia mostrato nella sezione "Mastercard Money Send" dei dettagli della transazione.
+   Output atteso: Il motivo di rifiuto "R4" è visibile nella pagina di dettaglio della transazione finanziaria.
+   Input atteso: Navigazione nei dettagli della transazione finanziaria attraverso la GUI del Sistema AntiFrode.
+
+Questi micro test cases sono stati creati per assicurare che il nuovo motivo di rifiuto "R4 - No dati Reg847" sia correttamente implementato e funzionante in tutte le parti del Sistema AntiFrode, come descritto nella documentazione di analisi funzionale.

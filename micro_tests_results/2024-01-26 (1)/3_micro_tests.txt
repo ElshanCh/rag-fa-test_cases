@@ -1,0 +1,55 @@
+##################################################
+MACRO TEST
+4. Titolo: Integrazione dei dati di Trasferimento Fondi nella GUI del Sistema Antifrode
+   Descrizione: Integrazione dei nuovi campi associati al Trasferimento Fondi nelle regole e accumulatori evoluti del Sistema Antifrode.
+   Obiettivo: Verificare che i nuovi campi siano disponibili e utilizzabili nelle regole e accumulatori evoluti.
+   Output atteso: Disponibilità dei nuovi campi nella GUI per la creazione di regole e accumulatori.
+   Input atteso: Accesso alla GUI del Sistema Antifrode e navigazione alle sezioni pertinenti.
+   Keywords: GUI, Sistema Antifrode, Trasferimento Fondi, regole, accumulatori evoluti
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica della presenza del campo "Cod. unico di identificazione operazione" per trasferimenti infra-UE
+   Descrizione: Controllo della presenza del campo "Cod. unico di identificazione operazione" nelle regole e accumulatori evoluti per trasferimenti di fondi all'interno dell'UE.
+   Obiettivo: Assicurarsi che il campo "Cod. unico di identificazione operazione" sia presente e validato per i trasferimenti infra-UE.
+   Output atteso: Il campo "Cod. unico di identificazione operazione" è visibile e utilizzabile nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi infra-UE.
+
+2. Titolo: Verifica dei campi obbligatori per trasferimenti extra-UE con importo < 1.000,00 euro
+   Descrizione: Controllo della presenza e validazione dei campi obbligatori per trasferimenti extra-UE con importo inferiore a 1.000,00 euro.
+   Obiettivo: Verificare che tutti i campi obbligatori siano presenti e correttamente validati per trasferimenti extra-UE con importo < 1.000,00 euro.
+   Output atteso: Tutti i campi obbligatori sono presenti e validati nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi extra-UE con importo < 1.000,00 euro.
+
+3. Titolo: Verifica dei campi obbligatori per trasferimenti extra-UE con importo >= 1.000,00 euro
+   Descrizione: Controllo della presenza e validazione dei campi obbligatori per trasferimenti extra-UE con importo maggiore o uguale a 1.000,00 euro.
+   Obiettivo: Verificare che tutti i campi obbligatori siano presenti e correttamente validati per trasferimenti extra-UE con importo >= 1.000,00 euro.
+   Output atteso: Tutti i campi obbligatori sono presenti e validati nella GUI.
+   Input atteso: Creazione di una regola o accumulatore evoluto per un trasferimento fondi extra-UE con importo >= 1.000,00 euro.
+
+4. Titolo: Verifica integrazione campi "Sender Identification Type" e "Sender Identification Value"
+   Descrizione: Controllo dell'integrazione dei nuovi sottocampi "Sender Identification Type" e "Sender Identification Value" nel messaggio ISO.
+   Obiettivo: Assicurarsi che i sottocampi "Sender Identification Type" e "Sender Identification Value" siano correttamente integrati e valorizzati nel messaggio ISO.
+   Output atteso: I sottocampi sono presenti e correttamente valorizzati nel messaggio ISO.
+   Input atteso: Simulazione di una transazione Visa/Mastercard con i valori del campo ISO 003: ProcessingCode corrispondenti.
+
+5. Titolo: Verifica del campo "Reg487 Verification Result" nel messaggio ISO
+   Descrizione: Controllo dell'integrazione e della corretta valorizzazione del campo "Reg487 Verification Result" nel messaggio ISO.
+   Obiettivo: Verificare che il campo "Reg487 Verification Result" sia presente e valorizzato correttamente nel messaggio ISO.
+   Output atteso: Il campo "Reg487 Verification Result" è presente e valorizzato con uno dei valori di dominio nel messaggio ISO.
+   Input atteso: Simulazione di una transazione con esito dei controlli formali da parte di Autorizzativo.
+
+6. Titolo: Verifica visualizzazione dettagli "Sender Identification Type", "Sender Identification Value", "Reg487 Verification Result"
+   Descrizione: Controllo della visualizzazione dei campi "Sender Identification Type", "Sender Identification Value" e "Reg487 Verification Result" nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Obiettivo: Assicurarsi che i campi siano visibili e correttamente mostrati nella GUI.
+   Output atteso: I campi sono visibili nella sezione "Mastercard Money Send" della pagina di dettaglio della transazione finanziaria.
+   Input atteso: Accesso al dettaglio di una transazione finanziaria Mastercard Money Send attraverso la GUI.
+
+7. Titolo: Verifica configurazione risposta negativa Sistema Antifrode per mancata tracciabilità
+   Descrizione: Controllo della configurazione delle risposte di negazione dal sistema Antifrode per mancata verifica dell'obbligatorietà dei dati.
+   Obiettivo: Verificare che il sistema Antifrode risponda con i codici di risposta corretti in caso di mancata tracciabilità del Trasferimento Fondi.
+   Output atteso: Il sistema Antifrode risponde con "57" per Visa/Mastercard e "119" per le banche di debito internazionale.
+   Input atteso: Simulazione di una transazione con dati non tracciabili e verifica della risposta del sistema Antifrode.
+
+Questi micro test cases sono stati creati per coprire le funzionalità descritte nel contesto fornito e per assicurare che l'integrazione dei dati di Trasferimento Fondi nella GUI del Sistema Antifrode sia stata implementata correttamente.

@@ -1,0 +1,76 @@
+##################################################
+MACRO TEST
+1. Titolo: Verifica Reg487 Verification Result
+   Descrizione: Controllo dell'esito dei controlli formali effettuati da Autorizzativo.
+   Obiettivo: Assicurarsi che il campo "Reg487 Verification Result" sia valorizzato correttamente.
+   Output atteso: 0 = Tutti i controlli Reg487 superati, 1-6 = Specifico errore di validazione.
+   Input atteso: Valori da 0 a 6.
+   Keywords: Reg487 Verification Result, controllo formale, Autorizzativo, validazione.
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Reg487 Verification Result - Codice 0
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 0 quando tutti i controlli Reg487 sono superati.
+   Obiettivo: Assicurarsi che il valore 0 sia assegnato correttamente quando non ci sono errori di validazione.
+   Input atteso: Nessun errore di validazione presente.
+   Output atteso: Reg487 Verification Result = 0
+   Procedura: 
+   - Inviare una transazione con tutti i campi obbligatori correttamente valorizzati.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 0.
+
+2. Titolo: Verifica Reg487 Verification Result - Codice 1
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 1 in caso di Identificativo operazione errato.
+   Obiettivo: Assicurarsi che il valore 1 sia assegnato correttamente quando l'Identificativo operazione è errato.
+   Input atteso: Identificativo operazione errato.
+   Output atteso: Reg487 Verification Result = 1
+   Procedura: 
+   - Inviare una transazione con Identificativo operazione errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 1.
+
+3. Titolo: Verifica Reg487 Verification Result - Codice 2
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 2 in caso di Cognome, nome ordinante errato.
+   Obiettivo: Assicurarsi che il valore 2 sia assegnato correttamente quando il Cognome o il nome dell'ordinante sono errati.
+   Input atteso: Cognome, nome ordinante errato.
+   Output atteso: Reg487 Verification Result = 2
+   Procedura: 
+   - Inviare una transazione con Cognome o nome dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 2.
+
+4. Titolo: Verifica Reg487 Verification Result - Codice 3
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 3 in caso di Cognome, nome beneficiario errato.
+   Obiettivo: Assicurarsi che il valore 3 sia assegnato correttamente quando il Cognome o il nome del beneficiario sono errati.
+   Input atteso: Cognome, nome beneficiario errato.
+   Output atteso: Reg487 Verification Result = 3
+   Procedura: 
+   - Inviare una transazione con Cognome o nome del beneficiario errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 3.
+
+5. Titolo: Verifica Reg487 Verification Result - Codice 4
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 4 in caso di Indirizzo ordinante errato.
+   Obiettivo: Assicurarsi che il valore 4 sia assegnato correttamente quando l'Indirizzo dell'ordinante è errato.
+   Input atteso: Indirizzo ordinante errato.
+   Output atteso: Reg487 Verification Result = 4
+   Procedura: 
+   - Inviare una transazione con Indirizzo dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 4.
+
+6. Titolo: Verifica Reg487 Verification Result - Codice 5
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 5 in caso di Documento ordinante errato.
+   Obiettivo: Assicurarsi che il valore 5 sia assegnato correttamente quando il Documento dell'ordinante è errato.
+   Input atteso: Documento ordinante errato.
+   Output atteso: Reg487 Verification Result = 5
+   Procedura: 
+   - Inviare una transazione con Documento dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 5.
+
+7. Titolo: Verifica Reg487 Verification Result - Codice 6
+   Descrizione: Verifica che il campo "Reg487 Verification Result" sia valorizzato con 6 in caso di Account ordinante errato.
+   Obiettivo: Assicurarsi che il valore 6 sia assegnato correttamente quando il Numero di identificazione account dell'ordinante è errato.
+   Input atteso: Account ordinante errato.
+   Output atteso: Reg487 Verification Result = 6
+   Procedura: 
+   - Inviare una transazione con Numero di identificazione account dell'ordinante errato.
+   - Verificare che il campo "Reg487 Verification Result" nel messaggio ISO 047.01 sia valorizzato con 6.
+
+Please note that each test case should be executed with the appropriate transaction type and processing code as mentioned in the context to ensure the correct functioning of the "Reg487 Verification Result" field.

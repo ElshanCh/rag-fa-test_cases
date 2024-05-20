@@ -1,0 +1,53 @@
+##################################################
+MACRO TEST
+6. Titolo: Creazione di Regole per la verifica del Trasferimento Fondi
+   Descrizione: Definizione di Regole per intercettare condizioni di validità non soddisfatte sui dati del Trasferimento Fondi.
+   Obiettivo: Verificare che le Regole generino negazioni appropriate quando i dati del Trasferimento Fondi non soddisfano i requisiti.
+   Output atteso: Negazioni corrette in base alle condizioni di validità dei dati del Trasferimento Fondi.
+   Input atteso: Dati del Trasferimento Fondi e risultati dei controlli formali.
+   Keywords: Regole, verifica, Trasferimento Fondi, negazioni, Sistema Antifrode
+##################################################
+
+Based on the provided Macro Test and context, here are the detailed micro test cases:
+
+1. Titolo: Verifica Reg487 per Trasferimento Fondi infra-UE senza Codice Unico
+   Descrizione: Testare la negazione di un trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+   Obiettivo: Assicurarsi che il sistema neghi il trasferimento fondi infra-UE se manca il Cod. unico di identificazione operazione.
+   Input atteso: Trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+   Output atteso: Negazione con Motivo Rifiuto "R4 - No dati Reg847" e Codice Risposta "57" o "119".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi infra-UE senza Cod. unico di identificazione operazione.
+   - Inviare la transazione al sistema Antifrode.
+   - Verificare che il sistema Antifrode risponda con la negazione appropriata.
+
+2. Titolo: Verifica Reg487 per Trasferimento Fondi extra-UE < 1000,00 senza Dati Ordinante
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo < 1000,00 euro senza dati completi dell'ordinante.
+   Obiettivo: Assicurarsi che il sistema neghi il trasferimento fondi extra-UE se mancano i dati completi dell'ordinante.
+   Input atteso: Trasferimento fondi extra-UE con importo < 1000,00 euro senza Cognome e Nome ordinante.
+   Output atteso: Negazione con Motivo Rifiuto "R4 - No dati Reg847" e Codice Risposta "57" o "119".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo < 1000,00 euro senza Cognome e Nome ordinante.
+   - Inviare la transazione al sistema Antifrode.
+   - Verificare che il sistema Antifrode risponda con la negazione appropriata.
+
+3. Titolo: Verifica Reg487 per Trasferimento Fondi extra-UE >= 1000,00 senza Dati Completi
+   Descrizione: Testare la negazione di un trasferimento fondi extra-UE con importo >= 1000,00 euro senza tutti i dati obbligatori.
+   Obiettivo: Assicurarsi che il sistema neghi il trasferimento fondi extra-UE se mancano uno o più dati obbligatori.
+   Input atteso: Trasferimento fondi extra-UE con importo >= 1000,00 euro senza dati completi.
+   Output atteso: Negazione con Motivo Rifiuto "R4 - No dati Reg847" e Codice Risposta "57" o "119".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi extra-UE con importo >= 1000,00 euro senza uno o più dei seguenti dati: Cod. unico, Cognome e Nome ordinante, Indirizzo ordinante, Documento di identità ordinante, Num. di identificazione account ordinante.
+   - Inviare la transazione al sistema Antifrode.
+   - Verificare che il sistema Antifrode risponda con la negazione appropriata.
+
+4. Titolo: Verifica Reg487 con Risultato di Verifica Errato
+   Descrizione: Testare la negazione di un trasferimento fondi con un risultato di verifica formale errato.
+   Obiettivo: Assicurarsi che il sistema neghi il trasferimento fondi se il campo "Reg487 Verification Result" contiene un valore diverso da 0.
+   Input atteso: Trasferimento fondi con "Reg487 Verification Result" diverso da 0.
+   Output atteso: Negazione con Motivo Rifiuto "R4 - No dati Reg847" e Codice Risposta "57" o "119".
+   Procedura: 
+   - Creare una transazione di trasferimento fondi con un valore di "Reg487 Verification Result" diverso da 0.
+   - Inviare la transazione al sistema Antifrode.
+   - Verificare che il sistema Antifrode risponda con la negazione appropriata.
+
+Questi micro test cases coprono diversi scenari di negazione basati sui requisiti di validità dei dati per il trasferimento fondi come descritto nella documentazione di analisi funzionale.
